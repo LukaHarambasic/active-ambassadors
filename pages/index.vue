@@ -24,16 +24,18 @@
                 <div class="content">
                   <h3>{{ organisationOpen.title }}</h3>
                   <p>{{ organisationOpen.description }}</p>
-                  <a :href="organisationOpen.website">Website 
+                  <a :href="organisationOpen.website"
+                    >Website
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="24"
                       viewBox="0 0 24 24"
                       width="24"
                     >
-                      <path d="M0 0h24v24H0z" fill="none"/>
-                      <path 
-                        d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"
+                      />
                     </svg>
                   </a>
                   <button class="close" @click.prevent="onCloseModal">
@@ -60,15 +62,15 @@
           />
           <h3>{{ organisation.title }}</h3>
           <button @click.prevent="onOpenModal(index)">
-            Read More 
+            Read More
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
               viewBox="0 0 24 24"
               width="24"
             >
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+              <path d="M0 0h24v24H0z" fill="none" />
             </svg>
           </button>
         </li>
@@ -197,7 +199,7 @@ h2
 
 .overlay
   background: rgba(255,255,255, 0.8)
-  position: absolute
+  position: fixed
   left: 0
   top: 0
   width: 100vw

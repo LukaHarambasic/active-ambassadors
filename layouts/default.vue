@@ -11,6 +11,13 @@
       </main>
       <footer>
         <ul>
+          <li>
+            <a
+              href="https://www.instagram.com/active_ambassadors/"
+              target="_blank"
+              >Instagram</a
+            >
+          </li>
           <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
         </ul>
       </footer>

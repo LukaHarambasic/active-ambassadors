@@ -11,7 +11,7 @@
           <div class="content">
             <h3>{{ organisationSelected.title }}</h3>
             <p>{{ organisationSelected.description }}</p>
-            <a :href="organisationSelected.website"
+            <a :href="organisationSelected.website" target="_blank"
               ><span>Website</span>
               <i class="material-icons">open_in_new</i>
             </a>

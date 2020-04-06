@@ -105,6 +105,7 @@ main
   margin: 0 0 2rem 0
 
 footer
+  margin: 6rem 0 0 0
   width: 100%
   display: flex
   flex-direction: row

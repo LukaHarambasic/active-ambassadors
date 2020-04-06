@@ -232,6 +232,7 @@ section
       border-color: #3352C4
       color: #3352C4
       font-weight: bold
+      transition: all 150ms ease-in-out
       &:hover
         background: #3352C4
         color: #ffffff

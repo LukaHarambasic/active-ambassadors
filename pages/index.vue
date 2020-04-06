@@ -38,6 +38,39 @@
         We bring athletes and NGOs together. Brand your jersey now.
       </blockquote>
     </section>
+    <section class="section-newsletter">
+      <h2>Stay updated</h2>
+      <div class="content">
+        <form
+          id="mc-embedded-subscribe-form"
+          action="https://active-ambassadors.us19.list-manage.com/subscribe/post?u=ff764f6cd454e326a56c63ca2&amp;id=93128bcb5f"
+          method="post"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
+          <div class="inputs">
+            <input id="mce-EMAIL" type="email" value="" name="EMAIL" required />
+            <input
+              id="mc-embedded-subscribe"
+              type="submit"
+              value="Subscribe"
+              name="subscribe"
+            />
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input
+              type="text"
+              name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
+              tabindex="-1"
+              value=""
+            />
+          </div>
+        </form>
+      </div>
+    </section>
     <section class="section-organisations">
       <h2>Organisations we support</h2>
       <ul class="tags">
@@ -83,39 +116,6 @@
         {{ tagSelected }}. But if you know an organisation which should be
         included here send as an email.
       </p>
-    </section>
-    <section class="section-newsletter">
-      <h2>Stay updated</h2>
-      <div class="content">
-        <form
-          id="mc-embedded-subscribe-form"
-          action="https://active-ambassadors.us19.list-manage.com/subscribe/post?u=ff764f6cd454e326a56c63ca2&amp;id=93128bcb5f"
-          method="post"
-          name="mc-embedded-subscribe-form"
-          class="validate"
-          target="_blank"
-          novalidate
-        >
-          <div class="inputs">
-            <input id="mce-EMAIL" type="email" value="" name="EMAIL" required />
-            <input
-              id="mc-embedded-subscribe"
-              type="submit"
-              value="Subscribe"
-              name="subscribe"
-            />
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input
-              type="text"
-              name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
-              tabindex="-1"
-              value=""
-            />
-          </div>
-        </form>
-      </div>
     </section>
     <section class="section-look">
       <h2>How it might look like</h2>

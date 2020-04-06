@@ -7,8 +7,8 @@
       <p>Leonard Schwier</p>
       <p>Weberstr. 59</p>
       <p>60318 Frankfurt am Main</p>
-
-      <p>Kontakt</p>
+      <br />
+      <h4>Kontakt</h4>
       <p>Telefon: +49 159 05811694</p>
       <p>
         E-Mail:

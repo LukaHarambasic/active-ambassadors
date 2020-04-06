@@ -39,7 +39,7 @@
       </blockquote>
     </section>
     <section class="section-organisations">
-      <h2>The Organisations We Support</h2>
+      <h2>Organisations We Support</h2>
       <ul class="tags">
         <li @click.prevent="onFilter('All')">
           All
@@ -83,6 +83,16 @@
         {{ tagSelected }}. But if you know an organisation which should be
         included here send as an email.
       </p>
+    </section>
+    <section class="section-look">
+      <h2>How it might look like</h2>
+      <div class="content">
+        <p>
+          You might not look as good as Leonard, but at least you would do
+          something valuable like he is doing :)
+        </p>
+        <img src="leonard_active_ambassadors.jpg" alt="" title="" />
+      </div>
     </section>
   </div>
 </template>
@@ -141,8 +151,8 @@ export default {
 h2
   font-size: 1.7rem
   text-align: center
+  margin: 0 0 1rem 0
 .section-hero
-  margin: 0 0 0 0
   img
     position: relative
     border-radius: 0.5rem
@@ -156,10 +166,25 @@ h2
     font-weight: bold
     color: #ffffff
 .section-organisations
-  margin: 2rem 0 0 0
+  margin: 6rem 0 0 0
+.section-look
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  .content
+    width: 45rem
+    p
+      margin: 0 0 1rem 0
+    img
+      border-radius: 0.5rem
 .tags
   padding: 0
-  margin: 1rem 0 0 0
+  margin: 0
+  display: flex
   flex-direction: row
   flex-wrap: wrap
   justify-content: center

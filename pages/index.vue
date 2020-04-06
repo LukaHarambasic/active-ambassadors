@@ -1,17 +1,17 @@
 <template>
   <div>
     <portal to="modal">
-      <div v-if="organisationOpen" class="overlay">
+      <div v-if="organisationSelected" class="overlay">
         <div class="modal">
           <img
-            :src="organisationOpen.logo"
-            :title="organisationOpen.title"
-            :alt="organisationOpen.title"
+            :src="organisationSelected.logo"
+            :title="organisationSelected.title"
+            :alt="organisationSelected.title"
           />
           <div class="content">
-            <h3>{{ organisationOpen.title }}</h3>
-            <p>{{ organisationOpen.description }}</p>
-            <a :href="organisationOpen.website"
+            <h3>{{ organisationSelected.title }}</h3>
+            <p>{{ organisationSelected.description }}</p>
+            <a :href="organisationSelected.website"
               ><span>Website</span>
               <i class="material-icons">open_in_new</i>
             </a>
@@ -41,11 +41,20 @@
     <section class="section-organisations">
       <h2>The Organisations We Support</h2>
       <ul class="tags">
-        <li v-for="(tag, index) in tags" :key="index">{{ tag }}</li>
-      </ul>
-      <ul class="organisations">
+        <li @click.prevent="onFilter('All')">
+          All
+        </li>
         <li
-          v-for="(organisation, index) in organisations"
+          v-for="(tag, index) in tags"
+          :key="index"
+          @click.prevent="onFilter(tag)"
+        >
+          {{ tag }}
+        </li>
+      </ul>
+      <ul v-if="!isOrganisationsFilteredEmpty" class="organisations">
+        <li
+          v-for="(organisation, index) in organisationsFiltered"
           :key="index"
           @click.prevent="onOpenModal(index)"
         >
@@ -69,6 +78,11 @@
           </button> -->
         </li>
       </ul>
+      <p v-else>
+        Sorry, there isn't a organisation which matches the tag
+        {{ tagSelected }}. But if you know an organisation which should be
+        included here send as an email.
+      </p>
     </section>
   </div>
 </template>
@@ -82,16 +96,42 @@ export default {
   data() {
     return {
       organisations,
-      tags,
-      organisationOpen: null
+      tags: this.sortArrayAlphabetically(tags),
+      organisationSelected: null,
+      tagSelected: 'All'
+    }
+  },
+  computed: {
+    organisationsFiltered() {
+      if (!this.tagSelected) return this.organisations
+      if (this.tagSelected === 'All') return this.organisations
+      return this.organisations.filter((organisation) =>
+        organisation.tags.includes(this.tagSelected)
+      )
+    },
+    isOrganisationsFilteredEmpty() {
+      return this.organisationsFiltered.length === 0
     }
   },
   methods: {
     onOpenModal(index) {
-      this.organisationOpen = organisations[index]
+      this.organisationSelected = organisations[index]
     },
     onCloseModal() {
-      this.organisationOpen = null
+      this.organisationSelected = null
+    },
+    onFilter(tag) {
+      this.tagSelected = tag
+    },
+    sortArrayAlphabetically(array) {
+      return array.sort()
+    },
+    shuffleArray(array) {
+      // https://gist.github.com/guilhermepontes/17ae0cc71fa2b13ea8c20c94c5c35dc4
+      return array
+        .map((a) => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map((a) => a[1])
     }
   }
 }
@@ -129,8 +169,8 @@ h2
   width: 100%
   li
     display: inline-block
-    padding: .5rem 1.5rem
-    margin: 0 1rem 1rem 0
+    padding: .25rem .75rem
+    margin: 0 .75rem .75rem 0
     border-radius: .5rem
     border: 2px solid
     border-color: #3352C4
@@ -156,7 +196,7 @@ h2
     // box-shadow: 2px 2px 4px 0px rgba(0,0,0, .5)
     border-radius: .5rem
     border: 2px solid
-    border-color: #E82C4E
+    border-color: #3352C4
     background: #ffffff
     display: inline-block
     margin: 0 0 2rem 0
@@ -182,21 +222,6 @@ h2
       text-align: center
       margin: 0 0 0.5rem 0
       width: 100%
-    button
-      border-radius: 0.5rem
-      border: 2px solid
-      border-color: #E82C4E
-      padding: .5rem 1rem
-      font-weight: bold
-      display: inline-block
-      text-decoration: none
-      font-size: 1.2rem
-      color: #ffffff
-      background: #E82C4E
-      &:hover
-        color: #E82C4E
-        background: transparent
-        cursor: pointer
 
 .overlay
   background: rgba(255,255,255, 0.8)
@@ -215,7 +240,7 @@ h2
   .modal
     position: relative
     border: 2px solid
-    border-color: #E82C4E
+    border-color: #3352C4
     background: #ffffff
     border-radius: 0.5rem
     padding: 4rem
@@ -244,29 +269,26 @@ h2
       width: 33.333333333333333333%
     .content
       width: calc(66.666666666666666666% - 2rem)
-      h3
+    h3
+      font-size: 1.5rem
+      margin: 0 0 .5rem 0
+    p
+      margin: 0 0 1rem 0
+    a
+      border-radius: 0.5rem
+      border: 2px solid
+      border-color: #E82C4E
+      padding: .5rem 1rem
+      font-weight: bold
+      display: inline-block
+      text-decoration: none
+      color: #E82C4E
+      background: transparent
+      &:hover
+        color: #ffffff
+        background: #E82C4E
+      span, i
+        vertical-align: middle
         font-size: 1.5rem
-        margin: 0 0 .5rem 0
-      p
-        margin: 0 0 1rem 0
-      a
-        display: flex
-        flex-direction: row
-        flex-wrap: nowrap
-        justify-content: center
-        align-content: center
-        align-items: center
-        border-radius: 0.5rem
-        border: 2px solid
-        border-color: #E82C4E
-        padding: .5rem 1rem
-        font-weight: bold
-        display: inline-block
-        text-decoration: none
-        color: #E82C4E
-        background: transparent
         line-height: 1.2
-        &:hover
-          color: #ffffff
-          background: #E82C4E
 </style>

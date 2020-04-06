@@ -39,7 +39,7 @@
       </blockquote>
     </section>
     <section class="section-organisations">
-      <h2>Organisations We Support</h2>
+      <h2>Organisations we support</h2>
       <ul class="tags">
         <li @click.prevent="onFilter('All')">
           All
@@ -83,6 +83,39 @@
         {{ tagSelected }}. But if you know an organisation which should be
         included here send as an email.
       </p>
+    </section>
+    <section class="section-newsletter">
+      <h2>Stay updated</h2>
+      <div class="content">
+        <form
+          id="mc-embedded-subscribe-form"
+          action="https://active-ambassadors.us19.list-manage.com/subscribe/post?u=ff764f6cd454e326a56c63ca2&amp;id=93128bcb5f"
+          method="post"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
+          <div class="inputs">
+            <input id="mce-EMAIL" type="email" value="" name="EMAIL" required />
+            <input
+              id="mc-embedded-subscribe"
+              type="submit"
+              value="Subscribe"
+              name="subscribe"
+            />
+          </div>
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input
+              type="text"
+              name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
+              tabindex="-1"
+              value=""
+            />
+          </div>
+        </form>
+      </div>
     </section>
     <section class="section-look">
       <h2>How it might look like</h2>
@@ -152,6 +185,11 @@ h2
   font-size: 1.7rem
   text-align: center
   margin: 0 0 1rem 0
+
+section
+  > .content
+    width: 45rem
+
 .section-hero
   img
     position: relative
@@ -165,88 +203,126 @@ h2
     font-size: 3.5rem
     font-weight: bold
     color: #ffffff
+
 .section-organisations
   margin: 6rem 0 0 0
+  .tags
+    padding: 0
+    margin: 0
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-content: center
+    align-items: center
+    list-style: none
+    width: 100%
+    li
+      display: inline-block
+      padding: .25rem .75rem
+      margin: 0 .75rem .75rem 0
+      border-radius: .5rem
+      border: 2px solid
+      border-color: #3352C4
+      color: #3352C4
+      font-weight: bold
+      &:hover
+        background: #3352C4
+        color: #ffffff
+        cursor: pointer
+  .organisations
+    padding: 0
+    margin: 1rem 0 0 0
+    list-style: none
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-between
+    align-content: flex-start
+    align-items: flex-start
+    position: relative
+    li
+      // box-shadow: 2px 2px 4px 0px rgba(0,0,0, .5)
+      border-radius: .5rem
+      border: 2px solid
+      border-color: #3352C4
+      background: #ffffff
+      display: inline-block
+      margin: 0 0 2rem 0
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: flex-start
+      align-content: flex-start
+      align-items: flex-start
+      padding: 2rem
+      height: 20rem
+      width: 20rem
+      transition: all 150ms ease-in-out
+      &:hover
+        transform: scale(1.05)
+        cursor: pointer
+      img
+        width: 100%
+        max-height: 11rem
+        margin: 0 0 0.5rem 0
+      h3
+        font-size: 1.5rem
+        text-align: center
+        margin: 0 0 0.5rem 0
+        width: 100%
+
+.section-newsletter
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  .inputs
+    width: 45rem
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: center
+    align-content: center
+    align-items: center
+    input[type="email"], input[type="submit"]
+      display: inline-block
+      padding: 10px 15px
+      font-size: 20px
+      border-radius: 0
+      border: 2px solid
+      transition: all 150ms ease-in-out
+    input[type="email"]
+      border-radius: .5rem 0 0 .5rem
+      width: 60%
+      border-color: #3352C4
+    input[type="submit"]
+      border-radius: 0 .5rem .5rem 0
+      width: 30%
+      color: #ffffff
+      background: #E82C4E
+      border-color: #E82C4E
+      margin: 0 0 0 .5rem
+      &:hover
+        color: #E82C4E
+        background: #ffffff
+        cursor: pointer
+
 .section-look
   margin: 6rem 0 0 0
   display: flex
   flex-direction: column
-  flex-wrap: wrap
+  flex-wrap: nowrap
   justify-content: center
   align-content: center
   align-items: center
-  .content
-    width: 45rem
-    p
-      margin: 0 0 1rem 0
-    img
-      border-radius: 0.5rem
-.tags
-  padding: 0
-  margin: 0
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: center
-  align-content: center
-  align-items: center
-  list-style: none
-  width: 100%
-  li
-    display: inline-block
-    padding: .25rem .75rem
-    margin: 0 .75rem .75rem 0
-    border-radius: .5rem
-    border: 2px solid
-    border-color: #3352C4
-    color: #3352C4
-    font-weight: bold
-    &:hover
-      background: #3352C4
-      color: #ffffff
-      cursor: pointer
-
-.organisations
-  padding: 0
-  margin: 1rem 0 0 0
-  list-style: none
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: space-between
-  align-content: flex-start
-  align-items: flex-start
-  position: relative
-  li
-    // box-shadow: 2px 2px 4px 0px rgba(0,0,0, .5)
-    border-radius: .5rem
-    border: 2px solid
-    border-color: #3352C4
-    background: #ffffff
-    display: inline-block
-    margin: 0 0 2rem 0
-    display: flex
-    flex-direction: column
-    flex-wrap: nowrap
-    justify-content: flex-start
-    align-content: flex-start
-    align-items: flex-start
-    padding: 2rem
-    height: 20rem
-    width: 20rem
-    transition: all 150ms ease-in-out
-    &:hover
-      transform: scale(1.05)
-      cursor: pointer
-    img
-      width: 100%
-      max-height: 11rem
-      margin: 0 0 0.5rem 0
-    h3
-      font-size: 1.5rem
-      text-align: center
-      margin: 0 0 0.5rem 0
-      width: 100%
+  p
+    margin: 0 0 1rem 0
+  img
+    border-radius: 0.5rem
 
 .overlay
   background: rgba(255,255,255, 0.8)
@@ -282,6 +358,7 @@ h2
       position: absolute
       top: 1rem
       right: 1rem
+      transition: all 150ms ease-in-out
       &:hover
         cursor: pointer
         svg
@@ -309,6 +386,7 @@ h2
       text-decoration: none
       color: #E82C4E
       background: transparent
+      transition: all 150ms ease-in-out
       &:hover
         color: #ffffff
         background: #E82C4E

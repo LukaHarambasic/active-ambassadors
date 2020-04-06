@@ -121,4 +121,6 @@ footer
     justify-content: center
     align-content: flex-start
     align-items: flex-start
+    li
+      margin: 0 1rem 0 0
 </style>

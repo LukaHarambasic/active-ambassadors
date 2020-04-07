@@ -82,22 +82,34 @@ a
   align-items: center
   font-size: 1.2rem
   color: #212121
+  @media screen and (max-width: 66rem)
+    width: calc(100% - 4rem)
 
 header
   width: 100%
   padding: 2rem 1rem
+  background: rgba(255,255,255, 0.99)
   display: flex
   flex-direction: row
   flex-wrap: nowrap
   justify-content: center
   align-content: flex-start
   align-items: flex-start
+  @media screen and (max-width: 45rem)
+    padding: 1rem
+  @media screen and (max-width: 28rem)
+    flex-direction: column
+    justify-content: flex-start
+    align-content: center
+    align-items: center
   h1
     font-weight: bold
     text-transform: uppercase
     font-size: 1.5rem
     margin: 0 0 0 0.5rem
     letter-spacing: 2px
+    @media screen and (max-width: 28rem)
+      text-align: center
 
 main
   width: 100%

@@ -3,12 +3,22 @@
     <portal to="modal">
       <div v-if="organisationSelected" class="overlay">
         <div class="modal">
-          <img
-            :src="organisationSelected.logo"
-            :title="organisationSelected.title"
-            :alt="organisationSelected.title"
-          />
-          <div class="content">
+          <div class="left">
+            <img
+              :src="organisationSelected.logo"
+              :title="organisationSelected.title"
+              :alt="organisationSelected.title"
+            />
+            <ul class="tags">
+              <li
+                v-for="(tag, index) in organisationSelected.tags"
+                :key="index"
+              >
+                {{ tag }}
+              </li>
+            </ul>
+          </div>
+          <div class="right">
             <h3>{{ organisationSelected.title }}</h3>
             <p>{{ organisationSelected.description }}</p>
             <a :href="organisationSelected.website" target="_blank"
@@ -51,7 +61,14 @@
           novalidate
         >
           <div class="inputs">
-            <input id="mce-EMAIL" type="email" value="" name="EMAIL" required />
+            <input
+              id="mce-EMAIL"
+              type="email"
+              value=""
+              name="EMAIL"
+              placeholder="support@us.com"
+              required
+            />
             <input
               id="mc-embedded-subscribe"
               type="submit"
@@ -73,7 +90,7 @@
     </section>
     <section class="section-organisations">
       <h2>Organisations we support</h2>
-      <ul class="tags">
+      <!-- <ul class="tags">
         <li @click.prevent="onFilter('All')">
           All
         </li>
@@ -84,7 +101,7 @@
         >
           {{ tag }}
         </li>
-      </ul>
+      </ul> -->
       <ul v-if="!isOrganisationsFilteredEmpty" class="organisations">
         <li
           v-for="(organisation, index) in organisationsFiltered"
@@ -102,7 +119,7 @@
       <p v-else>
         Sorry, there isn't a organisation which matches the tag
         {{ tagSelected }}. But if you know an organisation which should be
-        included here send as an email.
+        included here send us an email.
       </p>
     </section>
     <section class="section-look">
@@ -183,6 +200,8 @@ h2
 section
   > .content
     width: 45rem
+    @media screen and (max-width: 66rem)
+      width: 100%
 
 .section-hero
   img
@@ -197,9 +216,23 @@ section
     font-size: 3.5rem
     font-weight: bold
     color: #ffffff
+    @media screen and (max-width: 66rem)
+      top: 45%
+      font-size: 2.5rem
+    @media screen and (max-width: 45rem)
+      top: 30%
+      font-size: 2rem
+    @media screen and (max-width: 35rem)
+      top: 20%
+      font-size: 1.5rem
+      transform: translate(-50%, 0)
+    @media screen and (max-width: 28rem)
+      font-size: 1.2rem
 
 .section-organisations
   margin: 6rem 0 0 0
+  @media screen and (max-width: 45rem)
+    margin: 3rem 0 0 0
   .tags
     padding: 0
     margin: 0
@@ -236,8 +269,12 @@ section
     align-content: flex-start
     align-items: flex-start
     position: relative
+    @media screen and (max-width: 45rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-content: center
+      align-items: flex-start
     li
-      // box-shadow: 2px 2px 4px 0px rgba(0,0,0, .5)
       border-radius: .5rem
       border: 2px solid
       border-color: #3352C4
@@ -257,6 +294,11 @@ section
       &:hover
         transform: scale(1.05)
         cursor: pointer
+      @media screen and (max-width: 66rem)
+        width: calc(50% - 1rem)
+      @media screen and (max-width: 45rem)
+        width: calc(100% - 2rem)
+        height: auto
       img
         width: 100%
         max-height: 11rem
@@ -275,6 +317,8 @@ section
   justify-content: center
   align-content: center
   align-items: center
+  @media screen and (max-width: 45rem)
+    margin: 3rem 0 0 0
   .inputs
     width: 45rem
     display: flex
@@ -283,6 +327,14 @@ section
     justify-content: center
     align-content: center
     align-items: center
+    @media screen and (max-width: 66rem)
+      width: 100%
+    @media screen and (max-width: 28rem)
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: flex-start
+      align-content: flex-start
+      align-items: flex-start
     input[type="email"], input[type="submit"]
       display: inline-block
       padding: 10px 15px
@@ -294,6 +346,9 @@ section
       border-radius: .5rem 0 0 .5rem
       width: 60%
       border-color: #3352C4
+      @media screen and (max-width: 28rem)
+        width: 100%
+        border-radius: .5rem
     input[type="submit"]
       border-radius: 0 .5rem .5rem 0
       width: 30%
@@ -305,6 +360,50 @@ section
         color: #E82C4E
         background: #ffffff
         cursor: pointer
+      @media screen and (max-width: 28rem)
+        width: 100%
+        margin: .5rem 0 0 0
+        border-radius: .5rem
+
+.section-look
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  @media screen and (max-width: 45rem)
+    margin: 3rem 0 0 0
+  p
+    margin: 0 0 1rem 0
+    text-align: center
+  img
+    border-radius: 0.5rem
+
+.section-mail
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  text-align: center
+  @media screen and (max-width: 45rem)
+    margin: 3rem 0 0 0
+  a
+    font-size: 3rem
+    line-height: 3rem
+    text-align: center
+    border-bottom: 2px solid
+    border-color: #E82C4E
+    transition: all 150ms ease-in-out
+    &:hover
+      color: #E82C4E
+      border-color: transparent
+    @media screen and (max-width: 45rem)
+      font-size: 1.5rem
 
 .section-look
   margin: 6rem 0 0 0
@@ -367,6 +466,15 @@ section
     justify-content: space-between
     align-content: flex-start
     align-items: flex-start
+    @media screen and (max-width: 45rem)
+      width: calc(100% - 2rem)
+    @media screen and (max-width: 38rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-content: flex-start
+      align-items: flex-start
+    @media screen and (max-width: 28rem)
+      padding: 2rem
     .close
       border: none
       background: none
@@ -382,10 +490,25 @@ section
         fill: #3352C4
         width: 3rem
         height: 3rem
-    img
+    .left
       width: 33.333333333333333333%
-    .content
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      align-content: flex-start
+      align-items: flex-start
+      list-style: none
+      @media screen and (max-width: 38rem)
+        width: 100%
+        flex-direction: column
+        justify-content: flex-start
+        align-content: flex-start
+        align-items: flex-start
+    .right
       width: calc(66.666666666666666666% - 2rem)
+      @media screen and (max-width: 38rem)
+        width: 100%
     h3
       font-size: 1.5rem
       margin: 0 0 .5rem 0
@@ -409,4 +532,25 @@ section
         vertical-align: middle
         font-size: 1.5rem
         line-height: 1.2
+    .tags
+      padding: 0
+      margin: 1rem 0 0 0
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      align-content: flex-start
+      align-items: flex-start
+      list-style: none
+      width: 100%
+      @media screen and (max-width: 38rem)
+        justify-content: flex-start
+      li
+        display: inline-block
+        padding: .2rem .5rem
+        margin: 0 .5rem .5rem 0
+        border-radius: .5rem
+        font-size: 1rem
+        background: #3352C4
+        color: #ffffff
 </style>

@@ -3,12 +3,22 @@
     <portal to="modal">
       <div v-if="organisationSelected" class="overlay">
         <div class="modal">
-          <img
-            :src="organisationSelected.logo"
-            :title="organisationSelected.title"
-            :alt="organisationSelected.title"
-          />
-          <div class="content">
+          <div class="left">
+            <img
+              :src="organisationSelected.logo"
+              :title="organisationSelected.title"
+              :alt="organisationSelected.title"
+            />
+            <ul class="tags">
+              <li
+                v-for="(tag, index) in organisationSelected.tags"
+                :key="index"
+              >
+                {{ tag }}
+              </li>
+            </ul>
+          </div>
+          <div class="right">
             <h3>{{ organisationSelected.title }}</h3>
             <p>{{ organisationSelected.description }}</p>
             <a :href="organisationSelected.website" target="_blank"
@@ -51,7 +61,14 @@
           novalidate
         >
           <div class="inputs">
-            <input id="mce-EMAIL" type="email" value="" name="EMAIL" required />
+            <input
+              id="mce-EMAIL"
+              type="email"
+              value=""
+              name="EMAIL"
+              placeholder="support@us.com"
+              required
+            />
             <input
               id="mc-embedded-subscribe"
               type="submit"
@@ -73,7 +90,7 @@
     </section>
     <section class="section-organisations">
       <h2>Organisations we support</h2>
-      <ul class="tags">
+      <!-- <ul class="tags">
         <li @click.prevent="onFilter('All')">
           All
         </li>
@@ -84,7 +101,7 @@
         >
           {{ tag }}
         </li>
-      </ul>
+      </ul> -->
       <ul v-if="!isOrganisationsFilteredEmpty" class="organisations">
         <li
           v-for="(organisation, index) in organisationsFiltered"
@@ -114,7 +131,7 @@
       <p v-else>
         Sorry, there isn't a organisation which matches the tag
         {{ tagSelected }}. But if you know an organisation which should be
-        included here send as an email.
+        included here send us an email.
       </p>
     </section>
     <section class="section-look">
@@ -394,9 +411,16 @@ section
         fill: #3352C4
         width: 3rem
         height: 3rem
-    img
+    .left
       width: 33.333333333333333333%
-    .content
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      align-content: flex-start
+      align-items: flex-start
+      list-style: none
+    .right
       width: calc(66.666666666666666666% - 2rem)
     h3
       font-size: 1.5rem
@@ -421,4 +445,23 @@ section
         vertical-align: middle
         font-size: 1.5rem
         line-height: 1.2
+    .tags
+      padding: 0
+      margin: 1rem 0 0 0
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      align-content: flex-start
+      align-items: flex-start
+      list-style: none
+      width: 100%
+      li
+        display: inline-block
+        padding: .2rem .5rem
+        margin: 0 .5rem .5rem 0
+        border-radius: .5rem
+        font-size: 1rem
+        background: #3352C4
+        color: #ffffff
 </style>

@@ -86,6 +86,9 @@ a
 header
   width: 100%
   padding: 2rem 1rem
+  position: fixed
+  z-index: 1000
+  background: rgba(255,255,255, 0.99)
   display: flex
   flex-direction: row
   flex-wrap: nowrap
@@ -102,7 +105,7 @@ header
 main
   width: 100%
   min-height: 50rem
-  margin: 0 0 2rem 0
+  margin: 6.5rem 0 2rem 0
 
 footer
   margin: 6rem 0 0 0

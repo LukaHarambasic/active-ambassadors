@@ -365,22 +365,6 @@ section
         margin: .5rem 0 0 0
         border-radius: .5rem
 
-.section-look
-  margin: 6rem 0 0 0
-  display: flex
-  flex-direction: column
-  flex-wrap: nowrap
-  justify-content: center
-  align-content: center
-  align-items: center
-  @media screen and (max-width: 45rem)
-    margin: 3rem 0 0 0
-  p
-    margin: 0 0 1rem 0
-    text-align: center
-  img
-    border-radius: 0.5rem
-
 .section-mail
   margin: 6rem 0 0 0
   display: flex
@@ -416,6 +400,8 @@ section
   justify-content: center
   align-content: center
   align-items: center
+  @media screen and (max-width: 45rem)
+    margin: 3rem 0 0 0
   p
     margin: 0 0 1rem 0
   img

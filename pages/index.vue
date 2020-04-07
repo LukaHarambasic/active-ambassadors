@@ -405,6 +405,39 @@ section
     @media screen and (max-width: 45rem)
       font-size: 1.5rem
 
+.section-look
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  p
+    margin: 0 0 1rem 0
+  img
+    border-radius: 0.5rem
+
+.section-mail
+  margin: 6rem 0 0 0
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  text-align: center
+  a
+    font-size: 3rem
+    line-height: 3rem
+    text-align: center
+    border-bottom: 2px solid
+    border-color: #E82C4E
+    transition: all 150ms ease-in-out
+    &:hover
+      color: #E82C4E
+      border-color: transparent
+
 .overlay
   background: rgba(255,255,255, 0.8)
   position: fixed

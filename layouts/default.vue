@@ -9,6 +9,18 @@
       <main>
         <nuxt />
       </main>
+      <footer>
+        <ul>
+          <li>
+            <a
+              href="https://www.instagram.com/active_ambassadors/"
+              target="_blank"
+              >Instagram</a
+            >
+          </li>
+          <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
+        </ul>
+      </footer>
     </div>
   </div>
 </template>
@@ -47,6 +59,18 @@ h1, h2, h3, h4, h5
   color: #000000
   font-weight: bold
 
+h2
+  text-align: center
+
+a
+  color: #3352C4
+  text-decoration: none
+  transition: all 100ms ease-in-out
+  border-bottom: 1px solid
+  border-color: transparent
+  &:hover
+    border-color: #3352C4
+
 .container
   margin: 0 auto 4rem auto
   width: 64rem
@@ -78,4 +102,26 @@ header
 main
   width: 100%
   min-height: 50rem
+  margin: 0 0 2rem 0
+
+footer
+  margin: 6rem 0 0 0
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: flex-start
+  align-items: flex-start
+  ul
+    display: none
+    list-style: none
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
+    li
+      margin: 0 1rem 0 0
 </style>

@@ -114,7 +114,7 @@ header
 main
   width: 100%
   min-height: 50rem
-  margin: 0rem 0 2rem 0
+  margin: 0 0 2rem 0
 
 footer
   margin: 6rem 0 0 0

@@ -404,6 +404,8 @@ section
       border-color: transparent
     @media screen and (max-width: 45rem)
       font-size: 1.5rem
+    @media screen and (max-width: 28rem)
+      font-size: 1.2rem
 
 .overlay
   background: rgba(255,255,255, 0.8)

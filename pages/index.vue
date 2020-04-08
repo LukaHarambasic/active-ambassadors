@@ -123,12 +123,8 @@
       </p>
     </section>
     <section class="section-look">
-      <h2>How it might look like</h2>
+      <h2>How it looks like</h2>
       <div class="content">
-        <p>
-          You might not look as good as Leonard, but at least you would do
-          something valuable like he is doing :)
-        </p>
         <img src="leonard_active_ambassadors.jpg" alt="" title="" />
       </div>
     </section>

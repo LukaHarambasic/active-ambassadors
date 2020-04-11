@@ -61,8 +61,10 @@ export default {
   position: fixed
   left: 0
   top: 0
-  width: 100%
-  height: 100%
+  right: 0
+  bottom: 0
+  width: 100vw
+  height: 100vh
   display: flex
   flex-direction: column
   flex-wrap: nowrap
@@ -70,6 +72,8 @@ export default {
   align-content: center
   align-items: center
   z-index: 1000
+  @media screen and (max-width: 38rem)
+    padding: 1rem
 .modal
   z-index: 1500
   border: 2px solid
@@ -80,6 +84,7 @@ export default {
   width: 45rem
   height: auto
   display: flex
+  display: -webkit-flex
   flex-direction: row
   flex-wrap: nowrap
   justify-content: space-between
@@ -92,9 +97,9 @@ export default {
     justify-content: flex-start
     align-content: flex-start
     align-items: flex-start
-    overflow: auto
+    width: 100%
+    overflow-y: auto
   @media screen and (max-width: 28rem)
-    height: calc(100% - 2rem)
     padding: 2rem
   .close
     border: none
@@ -117,6 +122,7 @@ export default {
   .left
     width: 33.333333333333333333%
     display: flex
+    display: -webkit-flex
     flex-direction: row
     flex-wrap: wrap
     justify-content: center
@@ -126,6 +132,7 @@ export default {
     @media screen and (max-width: 38rem)
       width: 100%
       flex-direction: column
+      flex-wrap: nowrap
       justify-content: flex-start
       align-content: flex-start
       align-items: flex-start

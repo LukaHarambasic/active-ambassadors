@@ -60,7 +60,9 @@ h1, h2, h3, h4, h5
   font-weight: bold
 
 h2
+  font-size: 1.7rem
   text-align: center
+  margin: 0 0 1rem 0
 
 a
   color: #3352C4
@@ -116,6 +118,12 @@ main
   min-height: 50rem
   margin: 0 0 2rem 0
 
+section
+  > .content
+    width: 45rem
+    @media screen and (max-width: 66rem)
+      width: 100%
+
 footer
   margin: 6rem 0 0 0
   width: 100%
@@ -126,6 +134,7 @@ footer
   align-content: flex-start
   align-items: flex-start
   ul
+    margin: 0
     display: none
     list-style: none
     display: flex
@@ -136,4 +145,6 @@ footer
     align-items: flex-start
     li
       margin: 0 1rem 0 0
+      &:last-of-type
+        margin: 0
 </style>

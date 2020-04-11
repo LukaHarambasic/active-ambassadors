@@ -2,7 +2,7 @@
   <div>
     <portal to="modal">
       <div v-if="organisationSelected" class="overlay">
-        <div class="modal">
+        <div v-if="organisationSelected" class="modal">
           <div class="left">
             <img
               :src="organisationSelected.logo"
@@ -338,6 +338,7 @@ section
       border-radius: 0
       border: 2px solid
       transition: all 150ms ease-in-out
+      -webkit-appearance: none;
     input[type="email"]
       border-radius: .5rem 0 0 .5rem
       width: 60%
@@ -408,114 +409,120 @@ section
   position: fixed
   left: 0
   top: 0
-  width: 100vw
+  width: 100%
   height: 100%
   display: flex
   flex-direction: column
-  flex-wrap: wrap
+  flex-wrap: nowrap
   justify-content: center
   align-content: center
   align-items: center
-  z-index: 5000
-  .modal
-    position: relative
-    border: 2px solid
-    border-color: #3352C4
-    background: #ffffff
-    border-radius: 0.5rem
-    padding: 4rem
-    width: 45rem
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: space-between
+  z-index: 1000
+.modal
+  z-index: 1500
+  border: 2px solid
+  border-color: #3352C4
+  background: #ffffff
+  border-radius: 0.5rem
+  padding: 4rem
+  width: 45rem
+  height: auto
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-content: flex-start
+  align-items: flex-start
+  @media screen and (max-width: 45rem)
+    width: calc(100% - 2rem)
+  @media screen and (max-width: 38rem)
+    flex-direction: column
+    justify-content: flex-start
     align-content: flex-start
     align-items: flex-start
-    @media screen and (max-width: 45rem)
-      width: calc(100% - 2rem)
+    overflow: auto
+  @media screen and (max-width: 28rem)
+    height: calc(100% - 2rem)
+    padding: 2rem
+  .close
+    border: none
+    background: none
+    position: absolute
+    top: 1rem
+    right: 1rem
+    transition: all 150ms ease-in-out
+    @media screen and (max-width: 28rem)
+      top: 1.5rem
+      right: 1.5rem
+    &:hover
+      cursor: pointer
+      svg
+        fill: #E82C4E
+    svg
+      fill: #3352C4
+      width: 3rem
+      height: 3rem
+  .left
+    width: 33.333333333333333333%
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
+    list-style: none
     @media screen and (max-width: 38rem)
+      width: 100%
       flex-direction: column
       justify-content: flex-start
       align-content: flex-start
       align-items: flex-start
-    @media screen and (max-width: 28rem)
-      padding: 2rem
-    .close
-      border: none
-      background: none
-      position: absolute
-      top: 1rem
-      right: 1rem
-      transition: all 150ms ease-in-out
-      &:hover
-        cursor: pointer
-        svg
-          fill: #E82C4E
-      svg
-        fill: #3352C4
-        width: 3rem
-        height: 3rem
-    .left
-      width: 33.333333333333333333%
-      display: flex
-      flex-direction: row
-      flex-wrap: wrap
-      justify-content: center
-      align-content: flex-start
-      align-items: flex-start
-      list-style: none
-      @media screen and (max-width: 38rem)
-        width: 100%
-        flex-direction: column
-        justify-content: flex-start
-        align-content: flex-start
-        align-items: flex-start
-    .right
-      width: calc(66.666666666666666666% - 2rem)
-      @media screen and (max-width: 38rem)
-        width: 100%
-    h3
-      font-size: 1.5rem
-      margin: 0 0 .5rem 0
-    p
-      margin: 0 0 1rem 0
-    a
-      border-radius: 0.5rem
-      border: 2px solid
-      border-color: #E82C4E
-      padding: .5rem 1rem
-      font-weight: bold
-      display: inline-block
-      text-decoration: none
-      color: #E82C4E
-      background: transparent
-      transition: all 150ms ease-in-out
-      &:hover
-        color: #ffffff
-        background: #E82C4E
-      span, i
-        vertical-align: middle
-        font-size: 1.5rem
-        line-height: 1.2
-    .tags
-      padding: 0
-      margin: 1rem 0 0 0
-      display: flex
-      flex-direction: row
-      flex-wrap: wrap
-      justify-content: center
-      align-content: flex-start
-      align-items: flex-start
-      list-style: none
+  .right
+    width: calc(66.666666666666666666% - 2rem)
+    @media screen and (max-width: 38rem)
       width: 100%
-      @media screen and (max-width: 38rem)
-        justify-content: flex-start
-      li
-        display: inline-block
-        padding: .2rem .5rem
-        margin: 0 .5rem .5rem 0
-        border-radius: .5rem
-        font-size: 1rem
-        background: #3352C4
-        color: #ffffff
+  h3
+    font-size: 1.5rem
+    margin: 0 0 .5rem 0
+  p
+    margin: 0 0 1rem 0
+  a
+    border-radius: 0.5rem
+    border: 2px solid
+    border-color: #E82C4E
+    padding: .5rem 1rem
+    font-weight: bold
+    display: inline-block
+    text-decoration: none
+    color: #E82C4E
+    background: transparent
+    transition: all 150ms ease-in-out
+    &:hover
+      color: #ffffff
+      background: #E82C4E
+    span, i
+      vertical-align: middle
+      font-size: 1.5rem
+      line-height: 1.2
+  .tags
+    padding: 0
+    margin: 1rem 0 0 0
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
+    list-style: none
+    width: 100%
+    @media screen and (max-width: 38rem)
+      justify-content: flex-start
+    li
+      display: inline-block
+      padding: .2rem .5rem
+      margin: 0 .5rem .5rem 0
+      border-radius: .5rem
+      font-size: 1rem
+      background: #3352C4
+      color: #ffffff
 </style>

@@ -84,7 +84,6 @@ export default {
   width: 45rem
   height: auto
   display: flex
-  display: -webkit-flex
   flex-direction: row
   flex-wrap: nowrap
   justify-content: space-between
@@ -120,9 +119,8 @@ export default {
       width: 3rem
       height: 3rem
   .left
-    width: 33.333333333333333333%
+    flex: 1 0
     display: flex
-    display: -webkit-flex
     flex-direction: row
     flex-wrap: wrap
     justify-content: center
@@ -137,9 +135,12 @@ export default {
       align-content: flex-start
       align-items: flex-start
   .right
-    width: calc(66.666666666666666666% - 2rem)
+    flex: 2
+    margin: 0 0 0 2rem
     @media screen and (max-width: 38rem)
       width: 100%
+      flex: 1 0
+      margin: 0
   h3
     font-size: 1.5rem
     margin: 0 0 .5rem 0

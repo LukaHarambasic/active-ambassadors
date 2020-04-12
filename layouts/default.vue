@@ -1,6 +1,6 @@
 <template>
   <div>
-    <portal-target name="modal"> </portal-target>
+    <portal-target name="modal"></portal-target>
     <div class="container">
       <header>
         <logo />
@@ -12,13 +12,8 @@
       <footer>
         <ul>
           <li>
-            <a
-              href="https://www.instagram.com/active_ambassadors/"
-              target="_blank"
-              >Instagram</a
-            >
+            <nuxt-link to="/imprint">Imprint</nuxt-link>
           </li>
-          <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
         </ul>
       </footer>
     </div>
@@ -95,20 +90,20 @@ header
   flex-direction: row
   flex-wrap: nowrap
   justify-content: center
-  align-content: flex-start
-  align-items: flex-start
+  align-content: center
+  align-items: center
   @media screen and (max-width: 45rem)
     padding: 1rem
   @media screen and (max-width: 28rem)
     flex-direction: column
-    justify-content: flex-start
+    justify-content: center
     align-content: center
     align-items: center
   h1
     font-weight: bold
     text-transform: uppercase
-    font-size: 1.5rem
-    margin: 0 0 0 0.5rem
+    font-size: 1.75rem
+    margin: 0 0 0 1rem
     letter-spacing: 2px
     @media screen and (max-width: 28rem)
       text-align: center

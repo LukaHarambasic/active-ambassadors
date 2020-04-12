@@ -36,6 +36,12 @@ export default {
    */
   css: [],
   /*
+   ** Load Variables
+   */
+  styleResources: {
+    sass: ['~assets/style/_variables.sass']
+  },
+  /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
@@ -52,7 +58,8 @@ export default {
         dev: false,
         set: [{ field: 'anonymizeIp', value: true }]
       }
-    ]
+    ],
+    '@nuxtjs/style-resources'
   ],
   /*
    ** Nuxt.js modules

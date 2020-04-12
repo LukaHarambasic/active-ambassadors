@@ -76,10 +76,9 @@ export default {
     padding: 1rem
 .modal
   z-index: 1500
-  border: 2px solid
-  border-color: #3352C4
-  background: #ffffff
-  border-radius: 0.5rem
+  border: $border
+  background: $color-light
+  border-radius: $border-radius
   padding: 4rem
   width: 45rem
   height: auto
@@ -89,6 +88,7 @@ export default {
   justify-content: space-between
   align-content: flex-start
   align-items: flex-start
+  transition: $animation
   @media screen and (max-width: 45rem)
     width: calc(100% - 2rem)
   @media screen and (max-width: 38rem)
@@ -106,16 +106,16 @@ export default {
     position: absolute
     top: 1rem
     right: 1rem
-    transition: all 150ms ease-in-out
+    transition: $animation
     @media screen and (max-width: 28rem)
       top: 1.5rem
       right: 1.5rem
     &:hover
       cursor: pointer
       svg
-        fill: #E82C4E
+        fill: $color-secondary
     svg
-      fill: #3352C4
+      fill: $color-primary
       width: 3rem
       height: 3rem
   .left
@@ -147,19 +147,17 @@ export default {
   p
     margin: 0 0 1rem 0
   a
-    border-radius: 0.5rem
-    border: 2px solid
-    border-color: #E82C4E
+    border-radius: $border-radius
+    border: $border
     padding: .5rem 1rem
     font-weight: bold
     display: inline-block
     text-decoration: none
-    color: #E82C4E
+    color: $color-secondary
     background: transparent
-    transition: all 150ms ease-in-out
     &:hover
-      color: #ffffff
-      background: #E82C4E
+      color: $color-light
+      background: $color-secondary
     span, i
       vertical-align: middle
       font-size: 1.5rem
@@ -183,6 +181,6 @@ export default {
       margin: 0 .5rem .5rem 0
       border-radius: .5rem
       font-size: 1rem
-      background: #3352C4
-      color: #ffffff
+      background: $color-primary
+      color: $color-light
 </style>

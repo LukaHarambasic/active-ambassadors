@@ -10,7 +10,7 @@
 <style lang="sass" scoped>
 img
   position: relative
-  border-radius: 0.5rem
+  border-radius: $border-radius
 blockquote
   position: absolute
   top: 55%
@@ -19,7 +19,7 @@ blockquote
   text-align: center
   font-size: 3.5rem
   font-weight: bold
-  color: #ffffff
+  color: $color-light
   @media screen and (max-width: 66rem)
     top: 45%
     font-size: 2.5rem

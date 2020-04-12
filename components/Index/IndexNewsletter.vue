@@ -73,29 +73,29 @@
       padding: 10px 15px
       font-size: 20px
       border-radius: 0
-      border: 2px solid
-      transition: all 150ms ease-in-out
+      border: $border
+      transition: $animation
       -webkit-appearance: none;
     input[type="email"]
-      border-radius: .5rem 0 0 .5rem
+      border-radius: $border-radius 0 0 $border-radius
       width: 60%
-      border-color: #3352C4
+      border-color: $color-primary
       @media screen and (max-width: 28rem)
         width: 100%
-        border-radius: .5rem
+        border-radius: $border-radius
     input[type="submit"]
-      border-radius: 0 .5rem .5rem 0
+      border-radius: 0 $border-radius $border-radius 0
       width: 30%
-      color: #ffffff
-      background: #E82C4E
-      border-color: #E82C4E
+      color: $color-light
+      background: $color-secondary
+      border-color: $color-secondary
       margin: 0 0 0 .5rem
       &:hover
-        color: #E82C4E
-        background: #ffffff
+        color: $color-secondary
+        background: $color-light
         cursor: pointer
       @media screen and (max-width: 28rem)
         width: 100%
         margin: .5rem 0 0 0
-        border-radius: .5rem
+        border-radius: $border-radius
 </style>

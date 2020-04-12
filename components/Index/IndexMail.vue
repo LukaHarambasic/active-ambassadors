@@ -24,10 +24,10 @@
     line-height: 3rem
     text-align: center
     border-bottom: 2px solid
-    border-color: #E82C4E
-    transition: all 150ms ease-in-out
+    border-color: $color-secondary
+    transition: $animation
     &:hover
-      color: #E82C4E
+      color: $color-secondary
       border-color: transparent
     @media screen and (max-width: 45rem)
       font-size: 1.5rem

@@ -21,5 +21,5 @@
   p
     margin: 0 0 1rem 0
   img
-    border-radius: 0.5rem
+    border-radius: $border-radius
 </style>

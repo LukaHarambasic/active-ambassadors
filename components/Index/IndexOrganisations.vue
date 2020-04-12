@@ -92,15 +92,15 @@ export default {
       display: inline-block
       padding: .25rem .75rem
       margin: 0 .75rem .75rem 0
-      border-radius: .5rem
-      border: 2px solid
-      border-color: #3352C4
-      color: #3352C4
+      border-radius: $border-radius
+      border: $border
+      border-color: $color-primary
+      color: $color-primary
       font-weight: bold
-      transition: all 150ms ease-in-out
+      transition: $animation
       &:hover
-        background: #3352C4
-        color: #ffffff
+        background: $color-primary
+        color: $color-light
         cursor: pointer
   .organisations
     padding: 0
@@ -119,10 +119,10 @@ export default {
       align-content: center
       align-items: flex-start
     li
-      border-radius: .5rem
-      border: 2px solid
-      border-color: #3352C4
-      background: #ffffff
+      border-radius: $border-radius
+      border: $border
+      border-color: $color-primary
+      background: $color-light
       display: inline-block
       margin: 0 0 2rem 0
       display: flex
@@ -134,7 +134,7 @@ export default {
       padding: 2rem
       height: 20rem
       width: 20rem
-      transition: all 150ms ease-in-out
+      transition: $animation
       &:hover
         transform: scale(1.05)
         cursor: pointer

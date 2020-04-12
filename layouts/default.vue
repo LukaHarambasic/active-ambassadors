@@ -37,12 +37,12 @@ export default {
 
 <style lang="sass">
 html
-  font-family: 'Open Sans', sans-serif
+  font-family: $font-family
   font-size: 16px
   word-spacing: 1px
   text-size-adjust: 100%
   box-sizing: border-box
-  color: #000000
+  color: $color-dark
   line-height: 1.5
 
 *,
@@ -56,7 +56,7 @@ img
 
 h1, h2, h3, h4, h5
   margin: 0
-  color: #000000
+  color: $color-dark
   font-weight: bold
 
 h2
@@ -65,13 +65,13 @@ h2
   margin: 0 0 1rem 0
 
 a
-  color: #3352C4
+  color: $color-primary
   text-decoration: none
   transition: all 100ms ease-in-out
   border-bottom: 1px solid
   border-color: transparent
   &:hover
-    border-color: #3352C4
+    border-color: $color-primary
 
 .container
   margin: 0 auto 4rem auto

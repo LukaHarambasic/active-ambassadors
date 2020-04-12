@@ -1,6 +1,6 @@
 <template>
   <div>
-    <portal-target name="modal"> </portal-target>
+    <portal-target name="modal"></portal-target>
     <div class="container">
       <header>
         <logo />
@@ -12,13 +12,8 @@
       <footer>
         <ul>
           <li>
-            <a
-              href="https://www.instagram.com/active_ambassadors/"
-              target="_blank"
-              >Instagram</a
-            >
+            <nuxt-link to="/imprint">Imprint</nuxt-link>
           </li>
-          <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
         </ul>
       </footer>
     </div>
@@ -37,12 +32,12 @@ export default {
 
 <style lang="sass">
 html
-  font-family: 'Open Sans', sans-serif
+  font-family: $font-family
   font-size: 16px
   word-spacing: 1px
   text-size-adjust: 100%
   box-sizing: border-box
-  color: #000000
+  color: $color-dark
   line-height: 1.5
 
 *,
@@ -56,20 +51,22 @@ img
 
 h1, h2, h3, h4, h5
   margin: 0
-  color: #000000
+  color: $color-dark
   font-weight: bold
 
 h2
+  font-size: 1.7rem
   text-align: center
+  margin: 0 0 1rem 0
 
 a
-  color: #3352C4
+  color: $color-primary
   text-decoration: none
   transition: all 100ms ease-in-out
   border-bottom: 1px solid
   border-color: transparent
   &:hover
-    border-color: #3352C4
+    border-color: $color-primary
 
 .container
   margin: 0 auto 4rem auto
@@ -93,20 +90,20 @@ header
   flex-direction: row
   flex-wrap: nowrap
   justify-content: center
-  align-content: flex-start
-  align-items: flex-start
+  align-content: center
+  align-items: center
   @media screen and (max-width: 45rem)
     padding: 1rem
   @media screen and (max-width: 28rem)
     flex-direction: column
-    justify-content: flex-start
+    justify-content: center
     align-content: center
     align-items: center
   h1
     font-weight: bold
     text-transform: uppercase
-    font-size: 1.5rem
-    margin: 0 0 0 0.5rem
+    font-size: 1.75rem
+    margin: 0 0 0 1rem
     letter-spacing: 2px
     @media screen and (max-width: 28rem)
       text-align: center
@@ -115,6 +112,12 @@ main
   width: 100%
   min-height: 50rem
   margin: 0 0 2rem 0
+
+section
+  > .content
+    width: 45rem
+    @media screen and (max-width: 66rem)
+      width: 100%
 
 footer
   margin: 6rem 0 0 0
@@ -126,6 +129,7 @@ footer
   align-content: flex-start
   align-items: flex-start
   ul
+    margin: 0
     display: none
     list-style: none
     display: flex
@@ -136,4 +140,6 @@ footer
     align-items: flex-start
     li
       margin: 0 1rem 0 0
+      &:last-of-type
+        margin: 0
 </style>

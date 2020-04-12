@@ -1,6 +1,6 @@
 <template>
   <section class="section-hero">
-    <img src="/header_active_ambassadors.png" title="" alt="" />
+    <img src="/header_active_ambassadors.png" title alt />
     <blockquote>
       We bring athletes and NGOs together. Brand your jersey now.
     </blockquote>
@@ -8,28 +8,29 @@
 </template>
 
 <style lang="sass" scoped>
-img
+.section-hero
   position: relative
+img
   border-radius: $border-radius
 blockquote
   position: absolute
-  top: 55%
-  left: 50%
-  transform: translate(-50%, -50%)
-  text-align: center
+  width: 70%
+  top: 0
+  left: 0
   font-size: 3.5rem
   font-weight: bold
   color: $color-light
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  text-align: center
   @media screen and (max-width: 66rem)
-    top: 45%
     font-size: 2.5rem
   @media screen and (max-width: 45rem)
-    top: 30%
+    width: 80%
     font-size: 2rem
   @media screen and (max-width: 35rem)
-    top: 20%
     font-size: 1.5rem
-    transform: translate(-50%, 0)
   @media screen and (max-width: 28rem)
     font-size: 1.2rem
 </style>

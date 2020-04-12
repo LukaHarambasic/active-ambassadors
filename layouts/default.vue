@@ -130,6 +130,7 @@ footer
   align-items: flex-start
   ul
     margin: 0
+    padding: 0
     display: none
     list-style: none
     display: flex

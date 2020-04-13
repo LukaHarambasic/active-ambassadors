@@ -72,5 +72,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) { }
+  },
+  sitemap: {
+    hostname: 'https://active-ambassadors.org'
   }
 }

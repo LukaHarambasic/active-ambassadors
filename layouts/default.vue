@@ -13,6 +13,7 @@
         <ul>
           <li>
             <nuxt-link to="/imprint">Imprint</nuxt-link>
+            <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>
           </li>
         </ul>
       </footer>

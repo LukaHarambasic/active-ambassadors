@@ -17,6 +17,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "autoprefixer": "^9.7.6",
     "nuxt": "^2.0.0",
+    "nuxt-responsive-loader": "^2.0.1",
     "portal-vue": "^2.1.7",
     "vue-unicons": "^2.1.0"
   },

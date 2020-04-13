@@ -2,7 +2,13 @@
   <section class="section-look">
     <h2>How it looks like</h2>
     <div class="content">
-      <img src="leonard_active_ambassadors.jpg" alt="" title="" />
+      <img
+        :srcset="
+          require('~/assets/images/leonard_active_ambassadors.jpg').srcSet
+        "
+        title="ACTIVE-AMBASSADORS - How it looks like"
+        alt="ACTIVE-AMBASSADORS - How it looks like"
+      />
     </div>
   </section>
 </template>

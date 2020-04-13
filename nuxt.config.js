@@ -16,15 +16,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
-      }
+      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-regular.woff2', crossorigin: 'true' },
+      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-700.woff2', crossorigin: 'true' }
     ]
   },
   /*
@@ -34,7 +27,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['vue-material-design-icons/styles.css'],
+  css: ['~assets/style/fontfaces.scss'],
   /*
    ** Load Variables
    */
@@ -68,6 +61,7 @@ export default {
    */
   modules: [
     'portal-vue/nuxt',
+    'nuxt-responsive-loader',
     '@nuxtjs/sitemap'
   ],
   /*

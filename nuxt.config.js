@@ -38,6 +38,12 @@ export default {
     sass: ['~assets/style/_variables.sass']
   },
   /*
+   ** Load Variables
+   */
+  styleResources: {
+    sass: ['~assets/style/_variables.sass']
+  },
+  /*
    ** Plugins to load before mounting the App
    */
   plugins: [

@@ -168,8 +168,6 @@ export default {
       width: 100%
       flex: 1 0
       margin: 0
-    > *
-      flex: 1
   h3
     font-size: 1.5rem
     margin: 0 0 .5rem 0

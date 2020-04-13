@@ -11,7 +11,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '' // TODO: edit
+        content: 'Brand your jersey like a professional athlete - but for a good cause & support the NGOs you love. Become an ambassador now! 🏃'
       }
     ],
     link: [
@@ -34,7 +34,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['vue-material-design-icons/styles.css'],
   /*
    ** Load Variables
    */
@@ -44,7 +44,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vue-unicons', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -64,7 +66,10 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['portal-vue/nuxt'],
+  modules: [
+    'portal-vue/nuxt',
+    '@nuxtjs/sitemap'
+  ],
   /*
    ** Build confiuration
    */
@@ -72,6 +77,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
 }

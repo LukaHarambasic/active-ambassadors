@@ -2,6 +2,14 @@
   <portal to="modal">
     <div v-if="organisation" class="overlay">
       <div v-if="organisation" class="modal">
+        <button class="close" @click.prevent="onCloseModal">
+          <unicon
+            name="multiply"
+            width="2rem"
+            height="2rem"
+            class="close-icon"
+          ></unicon>
+        </button>
         <div class="left">
           <img
             :src="organisation.logo"
@@ -17,23 +25,24 @@
         <div class="right">
           <h3>{{ organisation.title }}</h3>
           <p>{{ organisation.description }}</p>
-          <a :href="organisation.website" target="_blank"
-            ><span>Website</span>
-            <i class="material-icons">open_in_new</i>
-          </a>
-          <button class="close" @click.prevent="onCloseModal">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-              />
-            </svg>
-          </button>
+          <p>
+            <a :href="organisation.website" target="_blank" class="website"
+              ><span>Website</span>
+              <unicon
+                name="external-link-alt"
+                class="external-link"
+                height="1.5rem"
+                width="1.5rem"
+              ></unicon>
+            </a>
+          </p>
+          <a
+            v-if="organisation.foundraisingCampaign"
+            :href="organisation.foundraisingCampaign"
+            target="_blank"
+            class="foundraising-campaign"
+            >Visit our fundraising campaign</a
+          >
         </div>
       </div>
     </div>
@@ -45,6 +54,16 @@ export default {
   computed: {
     organisation() {
       return this.$store.state.selectedOrganisation
+    }
+  },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.addEventListener('keyup', (event) => {
+        if (event.keyCode === 27) {
+          this.onCloseModal()
+        }
+      })
     }
   },
   methods: {
@@ -74,6 +93,27 @@ export default {
   z-index: 1000
   @media screen and (max-width: 38rem)
     padding: 1rem
+
+.close
+  border: none
+  background: none
+  position: absolute
+  top: 1.5rem
+  right: 1.5rem
+  transition: $animation
+  border-radius: 50%
+  width: 3rem
+  height: 3rem
+  border: $border-width solid $color-secondary
+  background: $color-light
+  &:hover
+    cursor: pointer
+    background: $color-secondary
+    .close-icon
+      fill: $color-light
+  .close-icon
+    fill: $color-secondary
+
 .modal
   z-index: 1500
   border: $border
@@ -100,24 +140,6 @@ export default {
     overflow-y: auto
   @media screen and (max-width: 28rem)
     padding: 2rem
-  .close
-    border: none
-    background: none
-    position: absolute
-    top: 1rem
-    right: 1rem
-    transition: $animation
-    @media screen and (max-width: 28rem)
-      top: 1.5rem
-      right: 1.5rem
-    &:hover
-      cursor: pointer
-      svg
-        fill: $color-secondary
-    svg
-      fill: $color-primary
-      width: 3rem
-      height: 3rem
   .left
     flex: 1 0
     display: flex
@@ -137,31 +159,46 @@ export default {
   .right
     flex: 2
     margin: 0 0 0 2rem
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-content: flex-start
+    align-items: stretch
     @media screen and (max-width: 38rem)
       width: 100%
       flex: 1 0
       margin: 0
+    > *
+      flex: 1
   h3
     font-size: 1.5rem
     margin: 0 0 .5rem 0
   p
     margin: 0 0 1rem 0
-  a
+  .website
     border-radius: $border-radius
     border: $border
+    border-color: $color-secondary
     padding: .5rem 1rem
     font-weight: bold
     display: inline-block
     text-decoration: none
     color: $color-secondary
     background: transparent
+    font-size: 1.5rem
     &:hover
       color: $color-light
       background: $color-secondary
-    span, i
+      .external-link
+        fill: $color-light
+    .external-link
+      fill: $color-secondary
+      width: 1.5rem
+      height: 2rem
+    .external-link, span
       vertical-align: middle
-      font-size: 1.5rem
-      line-height: 1.2
+      line-height: 1.5
+
   .tags
     padding: 0
     margin: 1rem 0 0 0

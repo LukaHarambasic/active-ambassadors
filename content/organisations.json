@@ -6,15 +6,22 @@
       "logo": "organisations/respekt-menschen.jpg",
       "website": "http://home.respekt-menschen.de/",
       "color": "#EB8513",
-      "tags": ["Refugees", "Local"]
+      "tags": [
+        "Refugees",
+        "Local"
+      ]
     },
     {
       "title": "Against Malaria Foundation",
       "description": "We protect people from malaria. We fund nets and ensure they are distributed and used. We show you where the nets go. We monitor and report their use and impact. 100% of public donations buys long-lasting insecticidal nets (LLINs). An LLIN costs US$2.00. We work with distribution partners to distribute nets and ensure use. We conduct net use surveys and track monthly malaria data.",
       "logo": "organisations/against_malaria_foundation.svg",
       "website": "https://www.againstmalaria.com/",
+      "foundraisingCampaign": "https://www.againstmalaria.com/activeambassadors",
       "color": "#0492D2",
-      "tags": ["Worldwide", "Diseases"]
+      "tags": [
+        "Worldwide",
+        "Diseases"
+      ]
     },
     {
       "title": "264.education e. V.",
@@ -22,7 +29,11 @@
       "logo": "organisations/264.svg",
       "website": "https://264.education/",
       "color": "#2b2d52",
-      "tags": ["Worldwide", "Children", "Education"]
+      "tags": [
+        "Worldwide",
+        "Children",
+        "Education"
+      ]
     }
   ]
 }

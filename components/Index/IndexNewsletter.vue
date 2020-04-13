@@ -12,6 +12,7 @@
         novalidate
       >
         <div class="inputs">
+          <label for="mce-EMAIL">E-Mail</label>
           <input
             id="mce-EMAIL"
             type="email"
@@ -68,6 +69,10 @@
       justify-content: flex-start
       align-content: flex-start
       align-items: flex-start
+    label
+      width: 0
+      height: 0
+      display: none
     input[type="email"], input[type="submit"]
       display: inline-block
       padding: 10px 15px
@@ -75,7 +80,7 @@
       border-radius: 0
       border: $border
       transition: $animation
-      -webkit-appearance: none;
+      -webkit-appearance: none
     input[type="email"]
       border-radius: $border-radius 0 0 $border-radius
       width: 60%

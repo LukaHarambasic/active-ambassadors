@@ -1,6 +1,10 @@
 <template>
   <section class="section-hero">
-    <img src="/header_active_ambassadors.png" title alt />
+    <img
+      :srcset="require('~/assets/images/header_active_ambassadors.png').srcSet"
+      title="ACTIVE-AMBASSADORS"
+      alt="ACTIVE-AMBASSADORS"
+    />
     <blockquote>
       We bring athletes and NGOs together. Brand your jersey now.
     </blockquote>

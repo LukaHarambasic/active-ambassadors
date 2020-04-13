@@ -75,7 +75,7 @@
       border-radius: 0
       border: $border
       transition: $animation
-      -webkit-appearance: none;
+      -webkit-appearance: none
     input[type="email"]
       border-radius: $border-radius 0 0 $border-radius
       width: 60%

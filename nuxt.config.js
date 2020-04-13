@@ -4,6 +4,9 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Active-Ambassadors',
     meta: [
       { charset: 'utf-8' },
@@ -11,20 +14,13 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: '' // TODO: edit
+        content: 'Brand your jersey like a professional athlete - but for a good cause & support the NGOs you love. Become an ambassador now! 🏃'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons'
-      }
+      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-regular.woff2', crossorigin: 'true' },
+      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-700.woff2', crossorigin: 'true' }
     ]
   },
   /*
@@ -34,7 +30,13 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~assets/style/fontfaces.scss'],
+  /*
+   ** Load Variables
+   */
+  styleResources: {
+    sass: ['~assets/style/_variables.sass']
+  },
   /*
    ** Load Variables
    */
@@ -44,7 +46,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vue-unicons', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -64,7 +68,11 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['portal-vue/nuxt'],
+  modules: [
+    'portal-vue/nuxt',
+    'nuxt-responsive-loader',
+    '@nuxtjs/sitemap'
+  ],
   /*
    ** Build confiuration
    */
@@ -72,6 +80,9 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
+  },
+  sitemap: {
+    hostname: 'https://active-ambassadors.org'
   }
 }

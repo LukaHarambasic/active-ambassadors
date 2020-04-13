@@ -13,6 +13,8 @@
         <ul>
           <li>
             <nuxt-link to="/imprint">Imprint</nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>
           </li>
         </ul>
@@ -141,7 +143,7 @@ footer
     align-content: flex-start
     align-items: flex-start
     li
-      margin: 0 1rem 0 0
+      margin: 0 1.5rem 0 0
       &:last-of-type
         margin: 0
 </style>

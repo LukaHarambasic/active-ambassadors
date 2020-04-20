@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LayoutsCookie />
     <portal-target name="modal"></portal-target>
     <div class="container">
       <header>
@@ -25,10 +26,12 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import LayoutsCookie from '~/components/Layouts/LayoutsCookie.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    LayoutsCookie
   }
 }
 </script>

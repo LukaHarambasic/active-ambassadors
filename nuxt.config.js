@@ -38,12 +38,6 @@ export default {
     sass: ['~assets/style/_variables.sass']
   },
   /*
-   ** Load Variables
-   */
-  styleResources: {
-    sass: ['~assets/style/_variables.sass']
-  },
-  /*
    ** Plugins to load before mounting the App
    */
   plugins: [
@@ -53,16 +47,7 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-162950945-1',
-        dev: false,
-        set: [{ field: 'anonymizeIp', value: true }]
-      }
-    ],
     '@nuxtjs/style-resources'
   ],
   /*

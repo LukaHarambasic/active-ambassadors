@@ -3,20 +3,21 @@
     <section>
       <h2>Transparency</h2>
       <p>
-        Active-Ambassadors is a non-profit project that is encouraging athletes
-        to brand their jerseys with sponsoring for NGOs. We send a DIY material
-        kit to our ambassadors so they can iron the branding on their shirts
-        themselves.
+        Active-Ambassadors is a non-profit project that encourages athletes to
+        brand their jerseys with sponsoring for NGOs. We send a a do-it-yourself
+        (DIY) kit to our ambassadors so they can iron the branding on their
+        shirts themselves.
       </p>
     </section>
     <transparency-expenses />
     <section>
-      <h2>Expenses per unit</h2>
+      <h2>Costs per DIY kit</h2>
       <p>
-        We have costs about <strong>3.00 €</strong> per unit. If you want to
-        have a closer look, you can also take a look at the
+        One DIY kit costs us about <strong>3.00 €</strong>. If you want to have
+        a closer look, you can also take a look at the
         <a
           href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=183902468"
+          target="_blank"
           >Google Sheet</a
         >
         here.

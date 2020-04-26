@@ -6,6 +6,7 @@
       data check out our
       <a
         href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=0"
+        target="_blank"
         >Google Sheet</a
       >.
     </p>
@@ -15,7 +16,12 @@
           <div class="top-left">
             <h4 class="title">
               {{ item.title }}
-              <a :href="item.link" class="link">
+              <a
+                v-if="item.link"
+                :href="item.link"
+                class="link"
+                target="_blank"
+              >
                 <unicon
                   name="link"
                   width="1rem"
@@ -27,7 +33,7 @@
           </div>
           <div class="expense">{{ item.expense }}</div>
         </div>
-        <div class="date">{{ item.date }}</div>
+        <div v-if="item.date" class="date">{{ item.date }}</div>
       </li>
     </ul>
   </section>
@@ -79,6 +85,10 @@ export default {
           expense: '5.99 €',
           date: '15.04.2020',
           link: 'https://www.amazon.de/gp/product/B0017RFHWG/'
+        },
+        {
+          title: 'SUM',
+          expense: '130.22 €'
         }
       ]
     }

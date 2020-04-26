@@ -120,6 +120,11 @@ header
     justify-content: flex-start
     align-content: stretch
     align-items: flex-start
+    @media screen and (max-width: 28rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-content: stretch
+      align-items: center
   h1
     font-weight: bold
     text-transform: uppercase

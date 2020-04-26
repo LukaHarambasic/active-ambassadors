@@ -13,17 +13,19 @@
       <li v-for="(item, index) in expenses" :key="index">
         <div class="top">
           <div class="top-left">
-            <h4 class="title">{{ item.title }}</h4>
-            <a :href="item.link" class="link">
-              <unicon
-                name="link"
-                width="1rem"
-                height="1rem"
-                class="icon"
-              ></unicon
-            ></a>
+            <h4 class="title">
+              {{ item.title }}
+              <a :href="item.link" class="link">
+                <unicon
+                  name="link"
+                  width="1rem"
+                  height="1rem"
+                  class="icon"
+                ></unicon
+              ></a>
+            </h4>
           </div>
-          <span class="expense">{{ item.expense }}</span>
+          <div class="expense">{{ item.expense }}</div>
         </div>
         <div class="date">{{ item.date }}</div>
       </li>
@@ -95,11 +97,14 @@ ul
   justify-content: flex-start
   align-content: stretch
   align-items: center
+  padding: 0
 li
   border-bottom: 1px solid #cccccc
   margin: 0 0 1rem 0
   padding: 1rem
   width: 60%
+  @media screen and (max-width: 66rem)
+    width: 100%
 .top
   display: flex
   flex-direction: row
@@ -116,30 +121,24 @@ li
     align-items: flex-start
 .title
   font-weight: bold
+.expense
+  @media screen and (max-width: 66rem)
+    min-width: 30%
+    text-align: right
 .link
   border-radius: 50%
   width: 1.5rem
   height: 1.5rem
   text-align: center
   margin: 0 0 0 0.25rem
+  @media screen and (max-width: 66rem)
+    margin: 0 0 0 0.05rem
   &:hover
     border: none
-  // background: $color-secondary
-  // border: 1px solid $color-secondary
+    text-decoration: underline
   .icon
     fill: $color-secondary
-  // .icon
-  //   fill: $color-light
-  //   line-height: 1rem
-  // &:hover
-  //   background: $color-light
-  //   .icon
-  //     fill: $color-secondary
 .date
   font-size: 0.8rem
   margin: -0.25rem 0 0 0
-  // color: $color-light
-  // background: $color-dark
-  // padding: 0.25rem 0.5rem
-  // border-radius: $border-radius
 </style>

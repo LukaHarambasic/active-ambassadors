@@ -36,6 +36,7 @@
         <div v-if="item.date" class="date">{{ item.date }}</div>
       </li>
     </ul>
+    <div class="last-updated">Last updated {{ lastUpdated }}</div>
   </section>
 </template>
 
@@ -90,7 +91,8 @@ export default {
           title: 'SUM',
           expense: '130.22 €'
         }
-      ]
+      ],
+      lastUpdated: new Date()
     }
   }
 }

@@ -11,17 +11,31 @@
     </section>
     <transparency-expenses />
     <section>
-      <h2>Expenses per unit</h2>
+      <h2>Costs per DIY kit</h2>
       <p>
-        We have costs about <strong>3.00 €</strong> per unit. If you want to
-        have a closer look, you can also take a look at the
+        One DIY kit costs us about <strong>3.00 €</strong>. If you want to have
+        a closer look, you can also take a look at the
         <a
           href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=183902468"
+          target="_blank"
           >Google Sheet</a
         >
         here.
       </p>
       <transparency-expenses-per-unit />
+    </section>
+    <section>
+      <h2>Tech</h2>
+      <p>
+        We not only publish our expenses but also our development is completely
+        transparent. Do not hesitate to open an issue or to create a Pull
+        Request when you think it's necessary.
+        <a
+          target="_blank"
+          href="https://github.com/LukaHarambasic/active-ambassadors"
+          >GitHub</a
+        >
+      </p>
     </section>
   </div>
 </template>

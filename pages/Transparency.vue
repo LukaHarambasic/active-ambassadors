@@ -24,6 +24,19 @@
       </p>
       <transparency-expenses-per-unit />
     </section>
+    <section>
+      <h2>Tech</h2>
+      <p>
+        We not only publish our expenses but also our development is completely
+        transparent. Do not hesitate to open an issue or to create a Pull
+        Request when you think it's necessary.
+        <a
+          target="_blank"
+          href="https://github.com/LukaHarambasic/active-ambassadors"
+          >GitHub</a
+        >
+      </p>
+    </section>
   </div>
 </template>
 

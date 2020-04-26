@@ -6,7 +6,7 @@
         We use cookies to provide our services and for analytics and marketing.
         To find out more about our use of cookies, please see our
         <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>. Click accept
-        to help us collect some data to improve our service for you :)
+        and help us to collect some data to improve our service for you :)
       </p>
     </div>
     <div class="buttons">
@@ -60,9 +60,9 @@ export default {
         scriptSrc.async = true
         document.body.appendChild(scriptSrc)
         const scriptCode = document.createElement('script')
-        const coding =
+        const code =
           'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "UA-162950945-1", { "anonymize_ip": true });'
-        scriptCode.text = coding
+        scriptCode.text = code
         document.body.appendChild(scriptCode)
       }
     }

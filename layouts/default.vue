@@ -4,8 +4,16 @@
     <portal-target name="modal"></portal-target>
     <div class="container">
       <header>
-        <logo />
-        <h1>Active-Ambassadors</h1>
+        <div class="logo-wrapper">
+          <logo />
+          <h1>Active-Ambassadors</h1>
+        </div>
+        <nav>
+          <nuxt-link class="nav-link" to="/">Home</nuxt-link>
+          <nuxt-link class="nav-link" to="/transparency"
+            >Transparency</nuxt-link
+          >
+        </nav>
       </header>
       <main>
         <nuxt />
@@ -95,7 +103,7 @@ header
   display: flex
   flex-direction: row
   flex-wrap: nowrap
-  justify-content: center
+  justify-content: space-between
   align-content: center
   align-items: center
   @media screen and (max-width: 45rem)
@@ -105,6 +113,18 @@ header
     justify-content: center
     align-content: center
     align-items: center
+  .logo-wrapper
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: flex-start
+    align-content: stretch
+    align-items: flex-start
+    @media screen and (max-width: 28rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-content: stretch
+      align-items: center
   h1
     font-weight: bold
     text-transform: uppercase
@@ -113,6 +133,10 @@ header
     letter-spacing: 2px
     @media screen and (max-width: 28rem)
       text-align: center
+  nav
+    .nav-link
+      margin: 0 0 0 1rem
+      color: $color-dark
 
 main
   width: 100%

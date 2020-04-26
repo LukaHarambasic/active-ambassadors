@@ -106,12 +106,7 @@ export default {
             legend: {
               display: false
             },
-            showAllTooltips: true,
-            tooltips: {
-              callbacks: {
-                label: (item) => `${item.label} €`
-              }
-            }
+            showAllTooltips: true
           }
         )
       }

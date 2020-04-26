@@ -3,10 +3,10 @@
     <section>
       <h2>Transparency</h2>
       <p>
-        Active-Ambassadors is a non-profit project that encourages athletes to
-        brand their jerseys with sponsoring for NGOs. We send a a do-it-yourself
-        (DIY) kit to our ambassadors so they can iron the branding on their
-        shirts themselves.
+        Active-Ambassadors is a non-profit project that is encouraging athletes
+        to brand their jerseys with sponsoring for NGOs. We send a DIY material
+        kit to our ambassadors so they can iron the branding on their shirts
+        themselves.
       </p>
     </section>
     <transparency-expenses />

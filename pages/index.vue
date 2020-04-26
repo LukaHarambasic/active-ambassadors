@@ -4,7 +4,6 @@
     <index-hero />
     <index-newsletter />
     <index-organisations />
-    <index-look />
     <index-mail />
   </div>
 </template>
@@ -14,7 +13,6 @@ import IndexModal from '@/components/Index/IndexModal'
 import IndexHero from '@/components/Index/IndexHero'
 import IndexNewsletter from '@/components/Index/IndexNewsletter'
 import IndexOrganisations from '@/components/Index/IndexOrganisations'
-import IndexLook from '@/components/Index/IndexLook'
 import IndexMail from '@/components/Index/IndexMail'
 
 export default {
@@ -23,7 +21,6 @@ export default {
     IndexHero,
     IndexNewsletter,
     IndexOrganisations,
-    IndexLook,
     IndexMail
   }
 }

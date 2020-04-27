@@ -109,7 +109,7 @@ export default {
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    justify-content: space-between
+    justify-content: center // TODO: space-between if count >= 3
     align-content: flex-start
     align-items: flex-start
     position: relative
@@ -124,7 +124,7 @@ export default {
       border-color: $color-primary
       background: $color-light
       display: inline-block
-      margin: 0 0 2rem 0
+      margin: 0 0 2rem 2rem // TODO: remove last 2rem if count >= 3
       display: flex
       flex-direction: column
       flex-wrap: nowrap

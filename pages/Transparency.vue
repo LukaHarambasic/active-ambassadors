@@ -9,12 +9,12 @@
         themselves.
       </p>
     </section>
-    <transparency-expenses />
-    <section>
+    <transparency-expenses v-if="expenses" />
+    <section v-if="expensesPerKit">
       <h2>Costs per DIY kit</h2>
       <p>
-        One DIY kit costs us about <strong>3.00 €</strong>. If you want to have
-        a closer look, you can also take a look at the
+        One DIY kit costs us about <strong>{{ expensesPerKitSum }} €</strong>.
+        If you want to have a closer look, you can also take a look at the
         <a
           href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=183902468"
           target="_blank"
@@ -37,6 +37,9 @@
         >
       </p>
     </section>
+    <section v-if="lastUpdated" class="last-updated">
+      <p>Last Updated: {{ lastUpdated }}</p>
+    </section>
   </div>
 </template>
 
@@ -49,8 +52,19 @@ export default {
     TransparencyExpenses,
     TransparencyExpensesPerUnit
   },
-  async fetch() {
-    // TODO: add api file to fetch csv and convert it to json
+  computed: {
+    lastUpdated() {
+      return this.$store.state.general.lastUpdated
+    },
+    expenses() {
+      return this.$store.state.expenses
+    },
+    expensesPerKit() {
+      return this.$store.state.expensesPerKit
+    },
+    expensesPerKitSum() {
+      return this.$store.state.expensesPerKitSum
+    }
   }
 }
 </script>
@@ -58,4 +72,10 @@ export default {
 <style lang="sass" scoped>
 section
   margin: 0 0 4rem 0
+  p
+    margin: 0 0 2rem 0
+.last-updated
+  p
+    text-align: center
+    font-size: 1rem
 </style>

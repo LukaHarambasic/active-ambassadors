@@ -53,30 +53,9 @@ const pluginConfig = {
 
 export default {
   extends: Pie,
-  data() {
-    return {
-      expensesPerUnit: [
-        {
-          title: 'Transfer Paper',
-          expense: 0.65
-        },
-        {
-          title: 'Envelope',
-          expense: 0.59
-        },
-        {
-          title: 'Printing',
-          expense: 0.1
-        },
-        {
-          title: 'Postage',
-          expense: 1
-        },
-        {
-          title: 'Overhead',
-          expense: 0.66
-        }
-      ]
+  computed: {
+    expensesPerKit() {
+      return this.$store.state.expensesPerKit
     }
   },
   mounted() {
@@ -87,16 +66,17 @@ export default {
     renderPieChart() {
       if (process.browser) {
         const colors = ['#E82C4E', '#EC5771', '#F18195', '#F6ABB8', '#FAD5DC']
-        const expensesPerUnit = this.expensesPerUnit
-          .sort((a, b) => b.expense - a.expense)
+        const expensesPerKitCopy = Array.from(this.expensesPerKit)
+        const expensesPerKit = expensesPerKitCopy
+          .sort((a, b) => b.amount - a.amount)
           .map((item, index) => ({ ...item, color: colors[index] }))
         this.renderChart(
           {
-            labels: expensesPerUnit.map((item) => item.title),
+            labels: expensesPerKit.map((item) => item.title),
             datasets: [
               {
-                backgroundColor: expensesPerUnit.map((item) => item.color),
-                data: expensesPerUnit.map((item) => item.expense)
+                backgroundColor: expensesPerKit.map((item) => item.color),
+                data: expensesPerKit.map((item) => item.amount)
               }
             ]
           },

@@ -1,28 +1,35 @@
 <template>
   <div>
-    <h2>Print on a white shirt</h2>
-    <p>
-      Just wait a few seconds until you get redirected to a YouTube video which
-      will explain you how to iron the transfer paper to your jersey. Click
-      <a
-        href="https://www.youtube.com/watch?v=AXCh6rW2LbY"
-        title="How To Use T Shirt Transfer Paper Step By Step"
-        >here</a
-      >
-      if the redirect is not working.
-    </p>
+    <section>
+      <h2>Print on a white shirt</h2>
+      <p>
+        Before the transfer, you should deactivate the steam function on your
+        iron and warm it up on the highest level for about 4 minutes. Then iron
+        over the logo for 2 minutes.
+      </p>
+    </section>
+    <section>
+      <youtube :url="url" />
+    </section>
   </div>
 </template>
 
 <script>
+import Youtube from '@/components/Youtube'
+
 export default {
-  created() {
-    if (process.client) {
-      // eslint-disable-next-line nuxt/no-globals-in-created
-      window.location.replace('https://www.youtube.com/watch?v=AXCh6rW2LbY')
+  components: {
+    Youtube
+  },
+  data() {
+    return {
+      url: 'https://www.youtube-nocookie.com/embed/AXCh6rW2LbY'
     }
   }
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+section
+  width: 100%
+</style>

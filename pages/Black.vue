@@ -8,7 +8,7 @@
         over the logo for 2 minutes.
       </p>
     </section>
-    <section>
+    <section class="video">
       <youtube :url="url" />
     </section>
   </div>

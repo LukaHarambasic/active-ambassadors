@@ -1,12 +1,13 @@
 <template>
-  <div class="embed-container">
-    <iframe
-      v-if="isLoaded"
-      :src="url"
-      frameborder="0"
-      allow="accelerometer autoplay encrypted-media gyroscope picture-in-picture"
-      allowfullscreen
-    ></iframe>
+  <div class="youtube">
+    <div v-if="isLoaded" class="embed-container">
+      <iframe
+        :src="url"
+        frameborder="0"
+        allow="accelerometer autoplay encrypted-media gyroscope picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
     <div v-else class="load-video">
       <p>
         We have <a :href="url">this YouTube video</a> embedded to provide you
@@ -40,8 +41,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.youtube
+  padding: 2rem 0 0 0
 .embed-container
-  margin: 2rem 0 0 0
+  margin: 0 0 0 0
   position: relative
   padding-bottom: 56.25%
   height: 0

@@ -2,6 +2,7 @@
   <div>
     <index-modal />
     <index-hero />
+    <index-instructions />
     <index-newsletter />
     <index-organisations />
     <index-mail />
@@ -20,6 +21,7 @@ export default {
   components: {
     IndexModal,
     IndexHero,
+    IndexInstructions,
     IndexNewsletter,
     IndexOrganisations,
     IndexMail

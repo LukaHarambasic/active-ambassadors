@@ -13,7 +13,7 @@
     <section>
       <h2>Costs per DIY kit</h2>
       <p>
-        One DIY kit costs us about <strong>3.00 €</strong>. If you want to have
+        One DIY kit costs us about <strong>4.00 €</strong>. If you want to have
         a closer look, you can also take a look at the
         <a
           href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=183902468"

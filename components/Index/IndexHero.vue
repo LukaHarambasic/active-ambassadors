@@ -10,6 +10,24 @@
     </blockquote>
   </section>
 </template>
+<template>
+  <section>
+    We will send you all what you need so you can brand your favorite jersey at home.<br />
+    <p>Your favorite jersey + our do-it-yourself (DIY) kit</p>
+    <br/><br/>
+    <p>[1]<br/>
+    Please fill in our form mentioning your address, contact details and the organisation you want to support
+    <hr/>
+    </p>
+    <p>[2]<br/>
+    We send you a parcel with a do-it yourself (DIY) kit so you can brand your own jersey at home. It is a super easy process, you just need an iron - everything else will be sent by us.
+    <hr/>
+    </p>
+    <p>[3]<br/>
+    Share you experience with us @active_ambassadors<hr/>
+    </p>
+  </section>
+</template>
 
 <style lang="sass" scoped>
 .section-hero

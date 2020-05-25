@@ -24,7 +24,7 @@
     <hr/>
     </p>
     <p>[3]<br/>
-    Share you experience with us @active_ambassadors<hr/>
+    Share you experience with us and your friends on social media!<hr/>
     </p>
   </section>
 </template>

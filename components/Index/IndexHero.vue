@@ -8,8 +8,7 @@
     <blockquote>
       We bring athletes and NGOs together. Brand your jersey now.
     </blockquote>
-  </section>
-  <section>
+    <center><br/><br/>
     We will send you all what you need so you can brand your favorite jersey at home.<br />
     <p>Your favorite jersey + our do-it-yourself (DIY) kit</p>
     <br/><br/>
@@ -23,7 +22,7 @@
     </p>
     <p><br/>[3]<br/>
     Share you experience with us and your friends on social media!<hr/>
-    </p>
+    </p></center
   </section>
 </template>
 

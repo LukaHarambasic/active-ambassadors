@@ -22,20 +22,9 @@ Share you experience with us and your friends on social media!<hr/>
 </template>
 <style lang="sass" scoped>
 .section-hero
-  position: relative
-img
-  border-radius: $border-radius
-blockquote
-  position: absolute
-  width: 70%
-  top: 0
-  left: 0
   font-size: 3.5rem
   font-weight: bold
-  color: $color-light
-  top: 50%
-  left: 50%
-  transform: translate(-50%,-50%)
+  color: black
   text-align: center
   @media screen and (max-width: 66rem)
     font-size: 2.5rem

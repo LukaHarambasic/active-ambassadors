@@ -5,6 +5,7 @@
       title="ACTIVE-AMBASSADORS"
       alt="ACTIVE-AMBASSADORS"
     />
+  </section>
 </template>
 
 <style lang="sass" scoped>

@@ -12,7 +12,7 @@
       <p>Telefon: +49 159 05811694</p>
       <p>
         E-Mail:
-        <a href="mailto:hi@active-ambassadors.com">hi@active-ambassadors.com</a>
+        <a href="mailto:hi@active-ambassadors.org">hi@active-ambassadors.org</a>
       </p>
     </section>
   </div>

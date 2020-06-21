@@ -54,6 +54,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/axios',
     'portal-vue/nuxt',
     'nuxt-responsive-loader',
     '@nuxtjs/sitemap'

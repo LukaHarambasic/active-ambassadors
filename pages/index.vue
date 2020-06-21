@@ -2,7 +2,7 @@
   <div>
     <index-modal />
     <index-hero />
-    <index-instruction />
+    <index-steps />
     <index-newsletter />
     <index-organisations />
     <index-mail />
@@ -12,7 +12,7 @@
 <script>
 import IndexModal from '@/components/Index/IndexModal'
 import IndexHero from '@/components/Index/IndexHero'
-import IndexInstruction from '@/components/Index/IndexInstruction'
+import IndexSteps from '@/components/Index/IndexSteps'
 import IndexNewsletter from '@/components/Index/IndexNewsletter'
 import IndexOrganisations from '@/components/Index/IndexOrganisations'
 import IndexMail from '@/components/Index/IndexMail'
@@ -21,7 +21,7 @@ export default {
   components: {
     IndexModal,
     IndexHero,
-    IndexInstruction,
+    IndexSteps,
     IndexNewsletter,
     IndexOrganisations,
     IndexMail

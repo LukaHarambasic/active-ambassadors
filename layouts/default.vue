@@ -40,6 +40,16 @@ export default {
   components: {
     Logo,
     LayoutsCookie
+  },
+  async fetch() {
+    await this.fetchAll()
+  },
+  methods: {
+    async fetchAll() {
+      await this.$store.dispatch('fetchExpenses')
+      await this.$store.dispatch('fetchExpensesPerKitAndSum')
+      await this.$store.dispatch('fetchGeneral')
+    }
   }
 }
 </script>
@@ -150,7 +160,7 @@ section
       width: 100%
 
 footer
-  margin: 6rem 0 0 0
+  margin: 4rem 0 0 0
   width: 100%
   display: flex
   flex-direction: row

@@ -4,10 +4,12 @@ import api from '@/assets/js/api'
 // Local Data
 import { organisations } from '@/content/organisations.json'
 import { tags } from '@/content/tags.json'
+import { steps } from '@/content/steps.json'
 
 export const state = () => ({
   organisations: shuffleArray(organisations),
   tags: sortArrayAlphabetically(tags),
+  steps,
   selectedOrganisation: null,
   expenses: [],
   expensesPerKit: [],

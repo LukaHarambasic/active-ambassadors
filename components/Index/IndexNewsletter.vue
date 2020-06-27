@@ -84,14 +84,14 @@
         width: 100%
         border-radius: $border-radius
     input[type="submit"]
-      border-radius: 0 $border-radius $border-radius 0
-      width: 30%
-      color: $color-light
-      background: $color-secondary
-      border-color: $color-secondary
-      margin: 0 0 0 .5rem
+        border-radius: 0 $border-radius $border-radius 0
+        width: 30%
+        color: $color-light
+        background: $color-primary
+        border-color: $color-primary
+        margin: 0 0 0 .5rem
       &:hover
-        color: $color-secondary
+        color: $color-primary
         background: $color-light
         cursor: pointer
       @media screen and (max-width: 28rem)

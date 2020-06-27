@@ -5,6 +5,9 @@
       title="ACTIVE-AMBASSADORS"
       alt="ACTIVE-AMBASSADORS"
     />
+    <blockquote>
+      We bring athletes and NGOs together. Brand your jersey now.
+    </blockquote>
   </section>
 </template>
 

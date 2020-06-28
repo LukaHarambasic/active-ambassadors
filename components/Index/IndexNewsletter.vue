@@ -15,7 +15,7 @@
           <input
             id="mce-EMAIL"
             type="email"
-            value=""
+            value
             name="EMAIL"
             placeholder="support@us.com"
             required
@@ -33,7 +33,7 @@
             type="text"
             name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
             tabindex="-1"
-            value=""
+            value
           />
         </div>
       </form>
@@ -84,12 +84,12 @@
         width: 100%
         border-radius: $border-radius
     input[type="submit"]
-        border-radius: 0 $border-radius $border-radius 0
-        width: 30%
-        color: $color-light
-        background: $color-primary
-        border-color: $color-primary
-        margin: 0 0 0 .5rem
+      border-radius: 0 $border-radius $border-radius 0
+      width: 30%
+      color: $color-light
+      background: $color-primary
+      border-color: $color-primary
+      margin: 0 0 0 .5rem
       &:hover
         color: $color-primary
         background: $color-light

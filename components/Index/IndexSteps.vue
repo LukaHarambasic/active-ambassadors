@@ -60,7 +60,7 @@ export default {
     align-content: center
     align-items: center
     border-radius: 50%
-    background: $color-secondary
+    background: $color-primary
     width: 3rem
     height: 3rem
     color: $color-light

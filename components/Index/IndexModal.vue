@@ -93,7 +93,6 @@ export default {
   z-index: 1000
   @media screen and (max-width: 38rem)
     padding: 1rem
-
 .close
   border: none
   background: none
@@ -104,16 +103,15 @@ export default {
   border-radius: 50%
   width: 3rem
   height: 3rem
-  border: $border-width solid $color-secondary
+  border: $border-width solid $color-primary
   background: $color-light
   &:hover
     cursor: pointer
-    background: $color-secondary
+    background: $color-primary
     .close-icon
       fill: $color-light
   .close-icon
-    fill: $color-secondary
-
+    fill: $color-primary
 .modal
   z-index: 1500
   border: $border
@@ -176,27 +174,27 @@ export default {
   .website
     border-radius: $border-radius
     border: $border
-    border-color: $color-secondary
-    padding: .5rem 1rem
+    border-color: $color-primary
+    padding: .5rem .75rem
     font-weight: bold
     display: inline-block
     text-decoration: none
-    color: $color-secondary
+    color: $color-primary
     background: transparent
-    font-size: 1.5rem
+    font-size: 1rem
     &:hover
       color: $color-light
-      background: $color-secondary
+      background: $color-primary
       .external-link
         fill: $color-light
     .external-link
-      fill: $color-secondary
-      width: 1.5rem
-      height: 2rem
+      fill: $color-primary
+      svg
+        width: 100%
+        height: 100%
     .external-link, span
       vertical-align: middle
-      line-height: 1.5
-
+      line-height: 1
   .tags
     padding: 0
     margin: 1rem 0 0 0

@@ -14,7 +14,8 @@ export const state = () => ({
   expenses: [],
   expensesPerKit: [],
   expensesPerKitSum: 0,
-  general: {}
+  income: [],
+  ambassadorsSum: 0
 })
 
 export const mutations = {
@@ -27,14 +28,17 @@ export const mutations = {
   setExpenses(state, payload) {
     state.expenses = payload
   },
+  setIncome(state, payload) {
+    state.income = payload
+  },
   setExpensesPerKit(state, payload) {
     state.expensesPerKit = payload
   },
   setExpensesPerKitSum(state, payload) {
     state.expensesPerKitSum = payload
   },
-  setGeneral(state, payload) {
-    state.general = payload
+  setAmbassadorsSum(state, payload) {
+    state.ambassadorsSum = payload
   }
 }
 
@@ -43,13 +47,18 @@ export const actions = {
     if (!state.expenses) return null
     commit('setExpenses', await api.fetchExpenses())
   },
+  async fetchIncome({ commit, state }) {
+    if (!state.income) return null
+    commit('setIncome', await api.fetchIncome())
+  },
   async fetchExpensesPerKitAndSum({ commit, state }) {
     if (!state.expensesPerKit) return null
     const { expenses, sum } = await api.fetchExpensesPerKitAndSum()
     commit('setExpensesPerKit', expenses)
     commit('setExpensesPerKitSum', sum)
   },
-  async fetchGeneral({ commit, state }) {
-    commit('setGeneral', await api.fetchGeneral())
+  async fetchAmbassadorsSum({ commit, state }) {
+    if (state.ambassadorsSum !== 0) return null
+    commit('setAmbassadorsSum', await api.fetchAmbassadorsSum())
   }
 }

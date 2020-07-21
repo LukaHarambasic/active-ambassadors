@@ -10,6 +10,7 @@
       </p>
     </section>
     <transparency-expenses v-if="expenses" />
+    <transparency-income v-if="income" />
     <section v-if="expensesPerKit">
       <h2>Costs per DIY kit</h2>
       <p>
@@ -37,27 +38,26 @@
         >
       </p>
     </section>
-    <section v-if="lastUpdated" class="last-updated">
-      <p>Last Updated: {{ lastUpdated }}</p>
-    </section>
   </div>
 </template>
 
 <script>
-import TransparencyExpensesPerUnit from '@/components/Transparency/TransparencyExpensesPerUnit'
 import TransparencyExpenses from '@/components/Transparency/TransparencyExpenses'
+import TransparencyIncome from '@/components/Transparency/TransparencyIncome'
+import TransparencyExpensesPerUnit from '@/components/Transparency/TransparencyExpensesPerUnit'
 
 export default {
   components: {
     TransparencyExpenses,
+    TransparencyIncome,
     TransparencyExpensesPerUnit
   },
   computed: {
-    lastUpdated() {
-      return this.$store.state.general.lastUpdated
-    },
     expenses() {
       return this.$store.state.expenses
+    },
+    income() {
+      return this.$store.state.income
     },
     expensesPerKit() {
       return this.$store.state.expensesPerKit

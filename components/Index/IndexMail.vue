@@ -20,8 +20,8 @@
   @media screen and (max-width: 45rem)
     margin: 3rem 0 0 0
   a
-    font-size: 3rem
-    line-height: 3rem
+    font-size: 1.5rem
+    line-height: 1.5rem
     text-align: center
     border-bottom: 2px solid
     border-color: $color-secondary
@@ -29,8 +29,6 @@
     &:hover
       color: $color-secondary
       border-color: transparent
-    @media screen and (max-width: 45rem)
-      font-size: 1.5rem
     @media screen and (max-width: 28rem)
       font-size: 1.2rem
       line-height: 1.2rem

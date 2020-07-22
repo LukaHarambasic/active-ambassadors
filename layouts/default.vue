@@ -46,9 +46,10 @@ export default {
   },
   methods: {
     async fetchAll() {
+      await this.$store.dispatch('fetchAmbassadorsSum')
       await this.$store.dispatch('fetchExpenses')
+      await this.$store.dispatch('fetchIncome')
       await this.$store.dispatch('fetchExpensesPerKitAndSum')
-      await this.$store.dispatch('fetchGeneral')
     }
   }
 }

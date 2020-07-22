@@ -98,6 +98,8 @@ export default {
       color: $color-primary
       font-weight: bold
       transition: $animation
+      @media screen and (max-width: 45rem)
+        margin: 0 0 .75rem 0
       &:hover
         background: $color-primary
         color: $color-light
@@ -143,6 +145,7 @@ export default {
       @media screen and (max-width: 45rem)
         width: calc(100% - 2rem)
         height: auto
+        margin: 0 0 2rem 0
       img
         width: 100%
         max-height: 11rem

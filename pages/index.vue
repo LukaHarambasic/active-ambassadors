@@ -1,12 +1,12 @@
 <template>
   <div>
     <index-modal />
-    <index-hero />
-    <index-steps />
-    <index-newsletter />
-    <index-counter />
-    <index-organisations />
-    <index-mail />
+    <index-hero :slogan="slogan" />
+    <index-steps :title="jerseyTitle" :steps="jerseySteps" />
+    <index-newsletter :title="newsletterTitle" />
+    <index-counter :title="ambassadorsTitle" />
+    <index-organisations :title="organisationsTitle" />
+    <index-mail :title="contactTitle" :email="contactEmail" />
   </div>
 </template>
 
@@ -28,6 +28,26 @@ export default {
     IndexNewsletter,
     IndexOrganisations,
     IndexMail
+  },
+  async asyncData({ $prismic, error }) {
+    try {
+      const document = (await $prismic.api.getSingle('home')).data
+      const jerseySteps = document.jersey_steps.map(
+        (item) => item.jersey_step_text[0].text
+      )
+      return {
+        slogan: document.slogan[0].text,
+        ambassadorsTitle: document.ambassadors_title[0].text,
+        newsletterTitle: document.newsletter_title[0].text,
+        organisationsTitle: document.organisations_title[0].text,
+        jerseyTitle: document.jersey_title[0].text,
+        jerseySteps,
+        contactTitle: document.contact_title[0].text,
+        contactEmail: document.contact_email[0].text
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
   }
 }
 </script>

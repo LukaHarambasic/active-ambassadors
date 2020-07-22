@@ -4,7 +4,7 @@
       <div class="number">
         <span>{{ counter }}</span>
       </div>
-      <div class="slogan">Active Ambassadors</div>
+      <div class="slogan" v-text="title" />
     </div>
   </section>
 </template>
@@ -12,6 +12,12 @@
 <script>
 export default {
   name: 'IndexCounter',
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
   computed: {
     counter() {
       return this.$store.state.ambassadorsSum

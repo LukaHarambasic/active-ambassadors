@@ -66,6 +66,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/prismic',
     '@nuxtjs/axios',
     'portal-vue/nuxt',
     'nuxt-responsive-loader',
@@ -80,7 +81,16 @@ export default {
      */
     extend(config, ctx) {}
   },
+  /*
+   * Sitemap Config
+   */
   sitemap: {
     hostname: process.env.DOMAIN
+  },
+  /*
+   * Prismic Config
+   */
+  prismic: {
+    endpoint: 'https://active-ambassadors-website.cdn.prismic.io/api/v2'
   }
 }

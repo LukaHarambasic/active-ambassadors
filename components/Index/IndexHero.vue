@@ -5,11 +5,20 @@
       title="ACTIVE-AMBASSADORS"
       alt="ACTIVE-AMBASSADORS"
     />
-    <blockquote>
-      We bring athletes and NGOs together. Brand your jersey now.
-    </blockquote>
+    <blockquote v-text="slogan" />
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    slogan: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .section-hero

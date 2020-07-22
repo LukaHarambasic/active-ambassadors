@@ -1,6 +1,6 @@
 <template>
   <section class="section-organisations">
-    <h2>Organisations we support</h2>
+    <h2 v-text="title" />
     <!-- <ul class="tags">
         <li @click.prevent="onFilter('All')">
           All
@@ -38,6 +38,12 @@
 <script>
 export default {
   components: {},
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       tagSelected: 'All'

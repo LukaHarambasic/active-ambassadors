@@ -31,19 +31,19 @@ export default {
   },
   async asyncData({ $prismic, error }) {
     try {
-      const document = (await $prismic.api.getSingle('home')).data
-      const jerseySteps = document.jersey_steps.map(
+      const { data } = await $prismic.api.getSingle('home', { lang: 'en-us' })
+      const jerseySteps = data.jersey_steps.map(
         (item) => item.jersey_step_text[0].text
       )
       return {
-        slogan: document.slogan[0].text,
-        ambassadorsTitle: document.ambassadors_title[0].text,
-        newsletterTitle: document.newsletter_title[0].text,
-        organisationsTitle: document.organisations_title[0].text,
-        jerseyTitle: document.jersey_title[0].text,
+        slogan: data.slogan[0].text,
+        ambassadorsTitle: data.ambassadors_title[0].text,
+        newsletterTitle: data.newsletter_title[0].text,
+        organisationsTitle: data.organisations_title[0].text,
+        jerseyTitle: data.jersey_title[0].text,
         jerseySteps,
-        contactTitle: document.contact_title[0].text,
-        contactEmail: document.contact_email[0].text
+        contactTitle: data.contact_title[0].text,
+        contactEmail: data.contact_email[0].text
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })

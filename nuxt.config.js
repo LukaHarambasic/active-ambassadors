@@ -91,6 +91,6 @@ export default {
    * Prismic Config
    */
   prismic: {
-    endpoint: 'https://active-ambassadors-website.cdn.prismic.io/api/v2'
+    endpoint: 'https://active-ambassadors.cdn.prismic.io/api/v2'
   }
 }

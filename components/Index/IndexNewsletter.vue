@@ -15,7 +15,7 @@
           <input
             id="mce-EMAIL"
             type="email"
-            value=""
+            value
             name="EMAIL"
             placeholder="support@us.com"
             required
@@ -33,7 +33,7 @@
             type="text"
             name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
             tabindex="-1"
-            value=""
+            value
           />
         </div>
       </form>

@@ -46,7 +46,7 @@ export default {
         contactEmail: data.contact_email[0].text
       }
     } catch (e) {
-      error({ statusCode: 404, message: 'Page not found' })
+      error({ statusCode: 404, message: 'Prismic single not found' })
     }
   }
 }

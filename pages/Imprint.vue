@@ -1,25 +1,28 @@
 <template>
   <div>
-    <h2>Imprint</h2>
+    <h2 v-text="title" />
     <section>
-      <h3>Angaben gemäß § 5 TMG:</h3>
-
-      <p>Leonard Schwier</p>
-      <p>Weberstr. 59</p>
-      <p>60318 Frankfurt am Main</p>
-      <br />
-      <h4>Kontakt</h4>
-      <p>Telefon: +49 159 05811694</p>
-      <p>
-        E-Mail:
-        <a href="mailto:hi@active-ambassadors.org">hi@active-ambassadors.org</a>
-      </p>
+      <div v-html="$prismic.asHtml(content)"></div>
     </section>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $prismic, error }) {
+    try {
+      const { data } = await $prismic.api.getSingle('imprint', {
+        lang: 'en-us'
+      })
+      return {
+        title: data.title[0].text,
+        content: data.content
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Prismic single not found' })
+    }
+  }
+}
 </script>
 
 <style lang="sass" scoped></style>

@@ -1,6 +1,4 @@
-# Active-Ambassadors
-
-[Website](https://active-ambassadors.org)
+# Active-Ambassadors [🔗](https://active-ambassadors.org)
 
 ## Setup
 

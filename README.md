@@ -16,9 +16,9 @@
 * When content on Prismic.io is changed a new build on [Netlify](https://www.netlify.com/) will be trigerred
 * Everyday at 24:00 (german time) a build will be triggered from [IFTTT](https://ifttt.com/) as [Airtable](https://airtable.com/) doesn't provide webhooks
 
-### Development
+## Development
 
-## Build Setup
+### Build Setup
 
 ```bash
 # install dependencies

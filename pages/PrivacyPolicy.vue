@@ -2,7 +2,7 @@
   <div>
     <h2 v-text="title" />
     <section>
-      <div v-html="$prismic.asHtml(content)"></div>
+      <div v-html="$prismic.asHtml(content)" />
     </section>
   </div>
 </template>
@@ -14,7 +14,6 @@ export default {
       const { data } = await $prismic.api.getSingle('data_privacy', {
         lang: 'en-us'
       })
-      console.log(data)
       return {
         title: data.title[0].text,
         content: data.content

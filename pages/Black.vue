@@ -1,15 +1,11 @@
 <template>
   <div>
     <section>
-      <h2>Print on a black shirt</h2>
-      <p>
-        Before the transfer, you should deactivate the steam function on your
-        iron and warm it up on the highest level for about 4 minutes. Then iron
-        over the logo for 2 minutes.
-      </p>
+      <h2 v-text="title" />
+      <p v-html="$prismic.asHtml(content)" />
     </section>
     <section class="video">
-      <youtube :url="url" />
+      <youtube v-if="url" :url="url" />
     </section>
   </div>
 </template>
@@ -21,9 +17,18 @@ export default {
   components: {
     Youtube
   },
-  data() {
-    return {
-      url: 'https://www.youtube-nocookie.com/embed/Xi_2X8sKifY'
+  async asyncData({ $prismic, error }) {
+    try {
+      const { data } = await $prismic.api.getSingle('black', {
+        lang: 'en-us'
+      })
+      return {
+        title: data.title[0].text,
+        content: data.content,
+        url: data.youtube.url
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Prismic single not found' })
     }
   }
 }

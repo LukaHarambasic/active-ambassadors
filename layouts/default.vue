@@ -6,7 +6,7 @@
       <header>
         <div class="logo-wrapper">
           <logo />
-          <h1>Active-Ambassadors</h1>
+          <h1 v-text="title" />
         </div>
         <nav>
           <nuxt-link class="nav-link" to="/">Home</nuxt-link>
@@ -43,6 +43,11 @@ export default {
   },
   async fetch() {
     await this.fetchAll()
+  },
+  computed: {
+    title() {
+      return this.$store.state.title
+    }
   },
   methods: {
     async fetchAll() {

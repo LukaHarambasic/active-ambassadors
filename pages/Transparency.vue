@@ -1,42 +1,20 @@
 <template>
   <div>
     <section>
-      <h2>Transparency</h2>
-      <p>
-        Active-Ambassadors is a non-profit project that is encouraging athletes
-        to brand their jerseys with sponsoring for NGOs. We send a DIY material
-        kit to our ambassadors so they can iron the branding on their shirts
-        themselves.
-      </p>
+      <h2 v-text="title" />
+      <p v-html="$prismic.asHtml(description)" />
     </section>
     <transparency-expenses v-if="expenses" />
     <transparency-income v-if="income" />
     <section v-if="expensesPerKit">
-      <h2>Costs per DIY kit</h2>
-      <p>
-        One DIY kit costs us about <strong>{{ expensesPerKitSum }} €</strong>.
-        If you want to have a closer look, you can also take a look at the
-        <a
-          href="https://docs.google.com/spreadsheets/d/1IQuvNWEWRC5HMRhYhcOUJRylo6w5Js3lBl6lw_DgEiI/edit#gid=183902468"
-          target="_blank"
-          >Google Sheet</a
-        >
-        here.
-      </p>
+      <h2 v-text="diyTitle" />
+      <p v-html="$prismic.asHtml(diyDescription)" />
       <transparency-expenses-per-unit />
+      <div class="expenses-per-kit-sum" v-text="expensesPerKitSum" />
     </section>
     <section>
-      <h2>Tech</h2>
-      <p>
-        We not only publish our expenses but also our development is completely
-        transparent. Do not hesitate to open an issue or to create a Pull
-        Request when you think it's necessary.
-        <a
-          target="_blank"
-          href="https://github.com/LukaHarambasic/active-ambassadors"
-          >GitHub</a
-        >
-      </p>
+      <h2 v-text="techTitle" />
+      <p v-html="$prismic.asHtml(techDescription)" />
     </section>
   </div>
 </template>
@@ -52,6 +30,25 @@ export default {
     TransparencyIncome,
     TransparencyExpensesPerUnit
   },
+  async asyncData({ $prismic, error }) {
+    try {
+      const { data } = await $prismic.api.getSingle('transparency', {
+        lang: 'en-us'
+      })
+      return {
+        title: data.title[0].text,
+        description: data.description,
+        expensesTitle: data.expenses_title[0].text,
+        incomeTitle: data.income_title[0].text,
+        diyTitle: data.diy_title[0].text,
+        diyDescription: data.diy_description,
+        techTitle: data.tech_title[0].text,
+        techDescription: data.tech_description
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Prismic single not found' })
+    }
+  },
   computed: {
     expenses() {
       return this.$store.state.expenses
@@ -63,7 +60,7 @@ export default {
       return this.$store.state.expensesPerKit
     },
     expensesPerKitSum() {
-      return this.$store.state.expensesPerKitSum
+      return `${this.$store.state.expensesPerKitSum} €`
     }
   }
 }
@@ -78,4 +75,9 @@ section
   p
     text-align: center
     font-size: 1rem
+.expenses-per-kit-sum
+  font-weight: bold
+  font-size: 1.5rem
+  text-align: center
+  margin: 0.5rem 0 0 0
 </style>

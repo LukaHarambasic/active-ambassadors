@@ -15,7 +15,10 @@ export const state = () => ({
   expensesPerKit: [],
   expensesPerKitSum: 0,
   income: [],
-  ambassadorsSum: 0
+  ambassadorsSum: 0,
+  cookieContent: null,
+  youtubeContent: null,
+  title: ''
 })
 
 export const mutations = {
@@ -39,10 +42,38 @@ export const mutations = {
   },
   setAmbassadorsSum(state, payload) {
     state.ambassadorsSum = payload
+  },
+  setTitle(state, payload) {
+    state.title = payload
+  },
+  setCookieContent(state, payload) {
+    state.cookieContent = payload
+  },
+  setYoutubeContent(state, payload) {
+    state.youtubeContent = payload
   }
 }
 
 export const actions = {
+  async nuxtServerInit({ commit }) {
+    const { data } = await this.$prismic.api.getSingle('general', {
+      lang: 'en-us'
+    })
+    const cookie = {
+      title: data.cookie_title[0].text,
+      message: data.cookie_message,
+      buttonPositive: data.cookie_button_positive[0].text,
+      buttonNegative: data.cookie_button_negative[0].text
+    }
+    const youtube = {
+      message: data.youtube_message,
+      button: data.youtube_button[0].text
+    }
+    const title = data.website_title[0].text
+    commit('setCookieContent', cookie)
+    commit('setYoutubeContent', youtube)
+    commit('setTitle', title)
+  },
   async fetchExpenses({ commit, state }) {
     if (!state.expenses) return null
     commit('setExpenses', await api.fetchExpenses())

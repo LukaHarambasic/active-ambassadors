@@ -1,8 +1,6 @@
 <template>
   <section class="section-steps">
-    <h2>
-      How to get your jersey :)
-    </h2>
+    <h2 v-text="title" />
     <ul class="steps">
       <li v-for="(step, index) in steps" :key="index" class="step">
         <div class="number">
@@ -16,9 +14,14 @@
 
 <script>
 export default {
-  computed: {
-    steps() {
-      return this.$store.state.steps
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    steps: {
+      type: Array,
+      required: true
     }
   }
 }

@@ -91,10 +91,8 @@ const fetchIncome = async () => {
     AIRTABLE_INCOME_TABLE,
     AIRTABLE_INCOME_VIEW
   )
-  console.log(records)
   return records.map((record) => {
     const fields = record.fields
-    console.log(fields.Item)
     return {
       type: fields.Item,
       date: fields.Date,

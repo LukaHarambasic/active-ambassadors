@@ -1,11 +1,31 @@
 <template>
   <section class="section-mail">
-    <h2>Contact us</h2>
+    <h2 v-text="title" />
     <div class="content">
-      <a href="mailto:hi@active-ambassadors.com">hi@active-ambassadors.com</a>
+      <a :href="mailtoLink" v-text="email" />
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    email: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    mailtoLink() {
+      return `mailto:${this.email}`
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .section-mail

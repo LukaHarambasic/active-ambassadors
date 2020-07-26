@@ -1,6 +1,6 @@
 <template>
   <section class="section-newsletter">
-    <h2>Stay updated</h2>
+    <h2 v-text="title" />
     <div class="content">
       <form
         id="mc-embedded-subscribe-form"
@@ -40,6 +40,17 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .section-newsletter

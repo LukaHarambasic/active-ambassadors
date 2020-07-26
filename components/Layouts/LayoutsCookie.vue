@@ -1,19 +1,20 @@
 <template>
   <div v-if="isOpen" class="cookie">
     <div class="message">
-      <h3>Cookies</h3>
-      <p>
-        We use cookies to provide our services and for analytics and marketing.
-        To find out more about our use of cookies, please see our
-        <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>. Click accept
-        and help us to collect some data to improve our service for you :)
-      </p>
+      <h2 v-text="content.title" />
+      <p v-html="$prismic.asHtml(content.message)" />
     </div>
     <div class="buttons">
-      <button class="button accept" @click="accept">
-        Accept
-      </button>
-      <button class="button deny" @click="deny">Deny</button>
+      <button
+        class="button accept"
+        @click="accept"
+        v-text="content.buttonPositive"
+      />
+      <button
+        class="button deny"
+        @click="deny"
+        v-text="content.buttonNegative"
+      />
     </div>
   </div>
 </template>
@@ -24,6 +25,11 @@ export default {
   data() {
     return {
       isOpen: false
+    }
+  },
+  computed: {
+    content() {
+      return this.$store.state.cookieContent
     }
   },
   mounted() {

@@ -1,15 +1,14 @@
+import Prismic from 'prismic-javascript'
 import { shuffleArray, sortArrayAlphabetically } from '@/assets/js/array'
 import api from '@/assets/js/api'
 
 // Local Data
-import { organisations } from '@/content/organisations.json'
 import { tags } from '@/content/tags.json'
-import { steps } from '@/content/steps.json'
 
 export const state = () => ({
-  organisations: shuffleArray(organisations),
+  organisations: [],
   tags: sortArrayAlphabetically(tags),
-  steps,
+  steps: [],
   selectedOrganisation: null,
   expenses: [],
   expensesPerKit: [],
@@ -51,11 +50,15 @@ export const mutations = {
   },
   setYoutubeContent(state, payload) {
     state.youtubeContent = payload
+  },
+  setOrganisations(state, payload) {
+    state.organisations = payload
   }
 }
 
 export const actions = {
   async nuxtServerInit({ commit }) {
+    // fetch & set general
     const { data } = await this.$prismic.api.getSingle('general', {
       lang: 'en-us'
     })
@@ -73,6 +76,21 @@ export const actions = {
     commit('setCookieContent', cookie)
     commit('setYoutubeContent', youtube)
     commit('setTitle', title)
+    // fetch & set organisations
+    const { results } = await this.$prismic.api.query(
+      Prismic.Predicates.at('document.type', 'organisations')
+    )
+    const organisations = results.map(({ data }) => {
+      const tags = data.tags.map((tag) => tag.tags)
+      return {
+        title: data.title[0].text,
+        description: data.description,
+        logo: data.logo.url,
+        website: data.website.url,
+        tags
+      }
+    })
+    commit('setOrganisations', shuffleArray(organisations))
   },
   async fetchExpenses({ commit, state }) {
     if (!state.expenses) return null

@@ -20,6 +20,7 @@
     "chart.js": "^2.9.3",
     "nuxt": "^2.13.3",
     "portal-vue": "^2.1.7",
+    "prismic-javascript": "^3.0.1",
     "vue-chartjs": "^3.5.0",
     "vue-unicons": "^2.3.0"
   },

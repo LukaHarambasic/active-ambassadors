@@ -58,7 +58,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    // fetch % set general
+    // fetch & set general
     const { data } = await this.$prismic.api.getSingle('general', {
       lang: 'en-us'
     })

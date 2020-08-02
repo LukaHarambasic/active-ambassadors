@@ -1,54 +1,109 @@
-import axios from 'axios'
+import Axios from 'axios'
 
-const URL_GENERAL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSESlR3d7C6lqQpS2oNFuYyfZW_DRQ9vsG1dTMN3nAYahyjSs3wGY5j5nkZXlAl27haBbvFfzs8jPBX/pub?output=csv'
-const URL_KIT =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSESlR3d7C6lqQpS2oNFuYyfZW_DRQ9vsG1dTMN3nAYahyjSs3wGY5j5nkZXlAl27haBbvFfzs8jPBX/pub?gid=183902468&single=true&output=csv'
-const URL_EXPENSES =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vSESlR3d7C6lqQpS2oNFuYyfZW_DRQ9vsG1dTMN3nAYahyjSs3wGY5j5nkZXlAl27haBbvFfzs8jPBX/pub?gid=0&single=true&output=csv'
+// Base
+const AIRTABLE_BASE_URL = process.env.AIRTABLE_BASE_URL
+const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY
+const AIRTABLE_BASE = process.env.AIRTABLE_BASE
+// Shipping Table
+const AIRTABLE_SHIPPING_VIEW = process.env.AIRTABLE_SHIPPING_VIEW
+const AIRTABLE_SHIPPING_TABLE = process.env.AIRTABLE_SHIPPING_TABLE
+// Expenses Table
+const AIRTABLE_EXPENSES_VIEW = process.env.AIRTABLE_EXPENSES_VIEW
+const AIRTABLE_EXPENSES_TABLE = process.env.AIRTABLE_EXPENSES_TABLE
+// Income Table
+const AIRTABLE_INCOME_VIEW = process.env.AIRTABLE_INCOME_VIEW
+const AIRTABLE_INCOME_TABLE = process.env.AIRTABLE_INCOME_TABLE
+// DIY KIT Table
+const AIRTABLE_DIY_VIEW = process.env.AIRTABLE_DIY_VIEW
+const AIRTABLE_DIY_TABLE = process.env.AIRTABLE_DIY_TABLE
 
-const csv2json = (csv) => {
-  const rows = csv.split('\n')
-  const json = rows.map((row) => row.split(','))
-  json.shift()
-  return json
+const AXIOS_CONFIG = {
+  headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
 }
 
-const fetchGeneral = async () => {
-  const { data } = await axios.get(URL_GENERAL)
-  const json = csv2json(data)
-  return {
-    lastUpdated: json[0][1]
-  }
+// TODO: to helpers
+/* Builds the URL for airtable requests */
+const buildAirtableURL = (table, view) =>
+  `${AIRTABLE_BASE_URL}/v0/${AIRTABLE_BASE}/${table}?view=${view}`
+
+// TODO: to helpers
+/* Makes the airtable requests */
+const getAirtableRecords = async (table, view) => {
+  const url = buildAirtableURL(table, view)
+  const { data } = await Axios.get(url, AXIOS_CONFIG)
+  return data.records
 }
 
+const round = (number) => (Math.round(number * 100) / 100).toFixed(2)
+
+/* Fetch and calculate the numbers of ambassadors from airtable */
+const fetchAmbassadorsSum = async () => {
+  const records = await getAirtableRecords(
+    AIRTABLE_SHIPPING_TABLE,
+    AIRTABLE_SHIPPING_VIEW
+  )
+  return records.length
+}
+
+/* Fetch and transform expenses per diy kit and calculate diy kit sum from airtable */
 const fetchExpensesPerKitAndSum = async () => {
-  const { data } = await axios.get(URL_KIT)
-  const json = csv2json(data)
-  const expenses = json.map((row) => {
+  const records = await getAirtableRecords(
+    AIRTABLE_DIY_TABLE,
+    AIRTABLE_DIY_VIEW
+  )
+  const expenses = records.map((record) => {
+    const fields = record.fields
     return {
-      title: row[0],
-      amount: parseFloat(row[1].replace(' €', ''))
+      title: fields.Desc,
+      amount: fields.Cost
     }
   })
-  const sum = expenses.shift().amount
+  const sum = expenses.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.amount,
+    0
+  )
   return {
     expenses,
-    sum
+    sum: round(sum)
   }
 }
 
+/* Fetch and transform espense data from airtable */
 const fetchExpenses = async () => {
-  const { data } = await axios.get(URL_EXPENSES)
-  const json = csv2json(data)
-  return json.map((row) => {
+  const records = await getAirtableRecords(
+    AIRTABLE_EXPENSES_TABLE,
+    AIRTABLE_EXPENSES_VIEW
+  )
+  return records.map((record) => {
+    const fields = record.fields
     return {
-      title: row[1],
-      date: row[0],
-      amount: row[2],
-      link: !row[3].replace(/\s/g, '').length ? '' : row[3] // check if string only contains strings
+      title: fields.Item,
+      date: fields.Date,
+      amount: `${round(fields.Amount)}€`,
+      link: fields.Link
     }
   })
 }
 
-export default { fetchGeneral, fetchExpensesPerKitAndSum, fetchExpenses }
+/* Fetch and transform income data from airtable */
+const fetchIncome = async () => {
+  const records = await getAirtableRecords(
+    AIRTABLE_INCOME_TABLE,
+    AIRTABLE_INCOME_VIEW
+  )
+  return records.map((record) => {
+    const fields = record.fields
+    return {
+      type: fields.Item,
+      date: fields.Date,
+      amount: `${round(fields.Amount)}€`
+    }
+  })
+}
+
+export default {
+  fetchExpensesPerKitAndSum,
+  fetchExpenses,
+  fetchIncome,
+  fetchAmbassadorsSum
+}

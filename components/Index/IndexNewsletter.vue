@@ -1,6 +1,6 @@
 <template>
   <section class="section-newsletter">
-    <h2>Stay updated</h2>
+    <h2 v-text="title" />
     <div class="content">
       <form
         id="mc-embedded-subscribe-form"
@@ -15,7 +15,7 @@
           <input
             id="mce-EMAIL"
             type="email"
-            value=""
+            value
             name="EMAIL"
             placeholder="support@us.com"
             required
@@ -33,13 +33,24 @@
             type="text"
             name="b_ff764f6cd454e326a56c63ca2_93128bcb5f"
             tabindex="-1"
-            value=""
+            value
           />
         </div>
       </form>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .section-newsletter

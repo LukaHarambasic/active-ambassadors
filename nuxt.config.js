@@ -14,13 +14,26 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Brand your jersey like a professional athlete - but for a good cause & support the NGOs you love. Become an ambassador now! 🏃'
+        content:
+          'Brand your jersey like a professional athlete - but for a good cause & support the NGOs you love. Become an ambassador now! 🏃'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-regular.woff2', crossorigin: 'true' },
-      { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/open-sans-v17-latin-700.woff2', crossorigin: 'true' }
+      {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: '/fonts/open-sans-v17-latin-regular.woff2',
+        crossorigin: 'true'
+      },
+      {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: '/fonts/open-sans-v17-latin-700.woff2',
+        crossorigin: 'true'
+      }
     ]
   },
   /*
@@ -40,20 +53,20 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vue-unicons', mode: 'client' }
-  ],
+  plugins: [{ src: '~/plugins/vue-unicons', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/prismic',
     '@nuxtjs/axios',
     'portal-vue/nuxt',
     'nuxt-responsive-loader',
@@ -66,9 +79,18 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   },
+  /*
+   * Sitemap Config
+   */
   sitemap: {
-    hostname: 'https://active-ambassadors.org'
+    hostname: process.env.DOMAIN
+  },
+  /*
+   * Prismic Config
+   */
+  prismic: {
+    endpoint: 'https://active-ambassadors.cdn.prismic.io/api/v2'
   }
 }

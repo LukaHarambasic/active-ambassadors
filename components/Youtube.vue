@@ -9,12 +9,8 @@
       ></iframe>
     </div>
     <div v-else class="load-video">
-      <p>
-        We have <a :href="url">this YouTube video</a> embedded to provide you
-        some additional information. If you want to load it, it will collect
-        data about you.
-      </p>
-      <button @click="onLoad">Load Video</button>
+      <p v-html="$prismic.asHtml(content.message)" />
+      <button @click="onLoad" v-text="content.button" />
     </div>
   </div>
 </template>
@@ -30,6 +26,11 @@ export default {
   data() {
     return {
       isLoaded: false
+    }
+  },
+  computed: {
+    content() {
+      return this.$store.state.youtubeContent
     }
   },
   methods: {

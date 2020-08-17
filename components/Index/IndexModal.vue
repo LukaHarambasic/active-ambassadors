@@ -24,7 +24,7 @@
         </div>
         <div class="right">
           <h3>{{ organisation.title }}</h3>
-          <p>{{ organisation.description }}</p>
+          <p v-html="$prismic.asHtml(organisation.description)" />
           <p>
             <a :href="organisation.website" target="_blank" class="website"
               ><span>Website</span>

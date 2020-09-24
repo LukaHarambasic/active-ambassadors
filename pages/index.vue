@@ -6,7 +6,7 @@
           We bring athletes and NGOs together. Make a change. Print your jersey
           now.
         </h3>
-        <nuxt-link to="/get-involved" class="call-to-action">
+        <nuxt-link to="/get-involved" class="button">
           Get involved.
         </nuxt-link>
       </div>
@@ -165,14 +165,18 @@
             </div>
           </li>
         </ul>
+        <nuxt-link to="/get-involved" class="button">
+          Get involved.
+        </nuxt-link>
       </div>
     </section>
     <section class="section-print">
       <h2>Print your jersey.</h2>
-      <!--TIMELINE-->
+      <p>Hier kommt ne Timeline hin</p>
     </section>
     <section class="section-partners">
       <h2>Support our Partners.</h2>
+      <p>Hier kommen wieder irgendwie usnere partner hin</p>
     </section>
   </div>
 </template>
@@ -221,13 +225,6 @@ export default {
   h3
     color: $color-light
     font-size: 5rem
-  .call-to-action
-    margin: 2rem 0 0 0
-    font-size: 2rem
-    color: $color-light
-    border: $border-width solid $color-light
-    border-radius: $border-radius
-    padding: 1rem 2rem
 .section-who
   height: 50vh
   ul
@@ -258,8 +255,8 @@ export default {
         border-radius: 50%
         margin: 0 0 1rem 0
       h3
-        font-size: 5rem
-        line-height: 5rem
+        font-size: 4rem
+        line-height: 4rem
       h4
         font-size: 2rem
         font-weight: normal
@@ -301,18 +298,18 @@ export default {
         overflow: hidden
         margin: 0
         padding: 0
-        opacity: 0.15
+        opacity: 0.12
         width: 25%
         height: 33.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333%
         img
           object-position: center
           width: 100%
   .content
-    padding: 4rem 0
+    padding: 6rem 0
   h2, h3, p
     color: $color-light
   h2
-    margin: 4rem 0 4rem 0
+    margin: 0 0 4rem 0
   ul
     margin: 0
     padding: 0
@@ -325,6 +322,8 @@ export default {
       align-content: flex-start
       align-items: flex-start
       margin: 0 0 4rem 0
+      &:last-of-type
+        margin: 0 0 2rem 0
       .icon
         flex: 0 0 auto
         width: 6rem

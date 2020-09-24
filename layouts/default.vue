@@ -55,7 +55,6 @@ h2
   font-size: 2.5rem
   text-align: center
   margin: 0 0 1rem 0
-  width: 100%
 
 a
   color: $color-primary
@@ -65,6 +64,18 @@ a
   border-color: transparent
   &:hover
     border-color: $color-primary
+
+.button
+  margin: 2rem 0 0 0
+  font-size: 1.5rem
+  color: $color-light
+  border: $border-width solid $color-light
+  border-radius: $border-radius
+  padding: 1rem 2rem
+  &:hover
+    background: $color-light
+    color: $color-primary
+    border-color: $color-light
 
 .container
   margin: 0 auto 4rem auto

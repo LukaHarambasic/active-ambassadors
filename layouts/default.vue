@@ -1,46 +1,12 @@
 <template>
-  <div>
-    <LayoutsCookie />
-    <portal-target name="modal"></portal-target>
-    <div class="container">
-      <header>
-        <div class="logo-wrapper">
-          <logo />
-          <h1 v-text="title" />
-        </div>
-        <nav>
-          <nuxt-link class="nav-link" to="/">Home</nuxt-link>
-          <nuxt-link class="nav-link" to="/transparency"
-            >Transparency</nuxt-link
-          >
-        </nav>
-      </header>
-      <main>
-        <nuxt />
-      </main>
-      <footer>
-        <ul>
-          <li>
-            <nuxt-link to="/imprint">Imprint</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link>
-          </li>
-        </ul>
-      </footer>
-    </div>
-  </div>
+  <main>
+    <nuxt />
+  </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import LayoutsCookie from '~/components/Layouts/LayoutsCookie.vue'
-
 export default {
-  components: {
-    Logo,
-    LayoutsCookie
-  },
+  components: {},
   async fetch() {
     await this.fetchAll()
   },
@@ -62,7 +28,7 @@ export default {
 
 <style lang="sass">
 html
-  font-family: $font-family
+  font-family: $font-family-body
   font-size: 16px
   word-spacing: 1px
   text-size-adjust: 100%
@@ -83,11 +49,13 @@ h1, h2, h3, h4, h5
   margin: 0
   color: $color-dark
   font-weight: bold
+  font-family: $font-family-headline
 
 h2
-  font-size: 1.7rem
+  font-size: 2.5rem
   text-align: center
   margin: 0 0 1rem 0
+  width: 100%
 
 a
   color: $color-primary

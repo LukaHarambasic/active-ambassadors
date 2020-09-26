@@ -206,7 +206,20 @@
     <section class="section-partners">
       <div class="content">
         <h2>Support our Partners.</h2>
-        <p>Hier kommen wieder irgendwie usnere partner hin</p>
+        <ul class="partners">
+          <li
+            v-for="(partner, index) in partners"
+            :key="index"
+            @click.prevent="onOpenModal(index)"
+          >
+            <img
+              :src="partner.logo"
+              :title="partner.title"
+              :alt="partner.title"
+            />
+            <h3>{{ partner.title }}</h3>
+          </li>
+        </ul>
       </div>
     </section>
   </div>
@@ -233,6 +246,17 @@ export default {
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Prismic single not found' })
+    }
+  },
+  computed: {
+    partners() {
+      return this.$store.state.organisations
+    }
+  },
+
+  methods: {
+    onOpenModal(index) {
+      this.$store.commit('selectOrganisation', index)
     }
   }
 }
@@ -416,4 +440,55 @@ export default {
   .content
     padding: 6rem 0
     align-items: center
+  .partners
+    padding: 0
+    margin: 1rem 0 0 0
+    list-style: none
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center // TODO: space-between if count >= 3
+    align-content: flex-start
+    align-items: flex-start
+    position: relative
+    @media screen and (max-width: 45rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-content: center
+      align-items: flex-start
+    li
+      border-radius: $border-radius
+      background: $color-grey-light
+      margin: 0 0 2rem 2rem // TODO: remove last 2rem if count >= 3
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: flex-start
+      align-content: flex-start
+      align-items: flex-start
+      padding: 2rem
+      height: 20rem
+      width: 20rem
+      transition: $animation
+      &:hover
+        transform: scale(1.05)
+        cursor: pointer
+        img
+          filter: grayscale(0%)
+      @media screen and (max-width: 66rem)
+        width: calc(50% - 1rem)
+      @media screen and (max-width: 45rem)
+        width: calc(100% - 2rem)
+        height: auto
+        margin: 0 0 2rem 0
+      img
+        width: 100%
+        max-height: 11rem
+        margin: 0 0 0.5rem 0
+        filter: grayscale(100%)
+      h3
+        font-size: 1.5rem
+        text-align: center
+        margin: 0 0 0.5rem 0
+        width: 100%
 </style>

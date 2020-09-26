@@ -170,13 +170,44 @@
         </nuxt-link>
       </div>
     </section>
-    <section class="section-print">
-      <h2>Print your jersey.</h2>
-      <p>Hier kommt ne Timeline hin</p>
+    <section class="section-timeline">
+      <div class="content">
+        <h2>Print your jersey.</h2>
+        <ol>
+          <li>
+            <h3>Choose your organisation</h3>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+          </li>
+          <li>
+            <h3>The parcel will be shipped</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+          </li>
+          <li>
+            <h3>Send us your donation</h3>
+            <p>
+              Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate.
+            </p>
+          </li>
+        </ol>
+        <nuxt-link to="/get-involved" class="button secondary">
+          Try it out.
+        </nuxt-link>
+      </div>
     </section>
     <section class="section-partners">
-      <h2>Support our Partners.</h2>
-      <p>Hier kommen wieder irgendwie usnere partner hin</p>
+      <div class="content">
+        <h2>Support our Partners.</h2>
+        <p>Hier kommen wieder irgendwie usnere partner hin</p>
+      </div>
     </section>
   </div>
 </template>
@@ -306,6 +337,7 @@ export default {
           width: 100%
   .content
     padding: 6rem 0
+    align-items: center
   h2, h3, p
     color: $color-light
   h2
@@ -337,4 +369,51 @@ export default {
           font-size: 1.8rem
         p
           font-size: 1.3rem
+.section-timeline
+  height: 75vh
+  background: $color-grey-light
+  .content
+    padding: 6rem 0
+    align-items: center
+  h2
+    margin: 0 0 4rem 0
+  ol
+    list-style: none
+    counter-reset: step // TODO: Was is des?
+    display: flex
+    padding: 0
+    margin: 0 0 2rem 0
+    li
+      display: flex
+      flex-direction: column
+      flex: 1
+      text-align: center
+      position: relative
+      h3
+        font-size: 2rem
+      &:before
+        width: 4rem
+        height: 4rem
+        line-height: 4rem
+        font-size: 2rem
+        font-family: $font-family-headline
+        content: counter(step)"."
+        counter-increment: step
+        align-self: center
+        background: $color-secondary
+        color: $color-light
+        border-radius: 100%
+        margin: 0 0 .5rem 0
+      &:after
+        height: 2px
+        width: calc(100% - 4rem)
+        content: ''
+        position: absolute
+        top: 1.5rem
+        left: calc(50% + 2em)
+.section-partners
+  height: 100vh
+  .content
+    padding: 6rem 0
+    align-items: center
 </style>

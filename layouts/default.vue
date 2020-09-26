@@ -1,7 +1,43 @@
 <template>
-  <main>
-    <nuxt />
-  </main>
+  <div>
+    <main>
+      <nuxt />
+    </main>
+    <footer>
+      <div class="content">
+        <div class="box">
+          <h1>Active-Ambassadors</h1>
+        </div>
+        <div class="box">
+          <h4>Get in Touch</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/active_ambassadors/"
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/active-ambassadors"
+                >LinkedIn</a
+              >
+            </li>
+            <li><a href="mailto:hi@active-ambassadors.org">Mail</a></li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>Sitemap</h4>
+          <ul>
+            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><nuxt-link to="/get-involved">Get involved</nuxt-link></li>
+            <li><nuxt-link to="/transparency">Transparency</nuxt-link></li>
+            <li><nuxt-link to="/about">About</nuxt-link></li>
+            <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
+            <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -55,6 +91,7 @@ h2
   font-size: 2.5rem
   text-align: center
   margin: 0 0 1rem 0
+  width: 100%
 
 a
   color: $color-primary
@@ -76,6 +113,12 @@ a
     background: $color-light
     color: $color-primary
     border-color: $color-light
+  &.secondary
+    color: $color-secondary
+    border-color: $color-secondary
+    &:hover
+      background: $color-secondary
+      color: $color-light
 
 .container
   margin: 0 auto 4rem auto
@@ -146,6 +189,8 @@ section
 
 footer
   margin: 4rem 0 0 0
+  background: $color-dark
+  color: $color-light
   width: 100%
   display: flex
   flex-direction: row
@@ -153,19 +198,37 @@ footer
   justify-content: center
   align-content: flex-start
   align-items: flex-start
-  ul
-    margin: 0
-    padding: 0
-    display: none
-    list-style: none
+  .content
+    margin: 0 auto 0 auto
+    padding: 4rem 0
+    width: 64rem
     display: flex
     flex-direction: row
     flex-wrap: nowrap
-    justify-content: center
-    align-content: flex-start
-    align-items: flex-start
-    li
-      margin: 0 1.5rem 0 0
-      &:last-of-type
-        margin: 0
+    justify-content: space-between
+    align-content: stretch
+    align-items: stretch
+  .box
+    h1, h4
+      color: $color-light
+      font-size: 1.3rem
+    a
+      color: $color-light
+      border-color: $color-light
+      &:hover
+        border-color: $color-primary
+    ul
+      margin: .5rem 0 0 0
+      padding: 0
+      list-style: none
+      display: flex
+      flex-direction: column
+      flex-wrap: nowrap
+      justify-content: flex-start
+      align-content: flex-start
+      align-items: flex-start
+      li
+        margin: 0 0 .5rem 0
+        &:last-of-type
+          margin: 0
 </style>

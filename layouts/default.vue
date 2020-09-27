@@ -1,5 +1,6 @@
 <template>
   <div>
+    <portal-target name="modal"></portal-target>
     <main>
       <nuxt />
     </main>
@@ -7,6 +8,11 @@
       <div class="content">
         <div class="box">
           <h1>Active-Ambassadors</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
         </div>
         <div class="box">
           <h4>Get in Touch</h4>
@@ -209,6 +215,7 @@ footer
     align-content: stretch
     align-items: stretch
   .box
+    width: calc(100% / 3)
     h1, h4
       color: $color-light
       font-size: 1.3rem

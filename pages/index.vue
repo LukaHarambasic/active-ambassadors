@@ -1,5 +1,6 @@
 <template>
   <div>
+    <index-modal />
     <header class="header">
       <div class="content">
         <h3>
@@ -226,8 +227,12 @@
 </template>
 
 <script>
+import IndexModal from '@/components/Index/IndexModal'
+
 export default {
-  components: {},
+  components: {
+    IndexModal
+  },
   async asyncData({ $prismic, error }) {
     try {
       const { data } = await $prismic.api.getSingle('home', { lang: 'en-us' })

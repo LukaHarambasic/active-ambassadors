@@ -97,7 +97,14 @@ h2
   font-size: 2.5rem
   text-align: center
   margin: 0 0 1rem 0
-  width: 100%
+  padding: 0 0 0 1rem
+  line-height: 2.5rem
+  &:before
+    background: $color-secondary
+    border-radius: $border-radius
+    width: .5rem
+    height: 100%
+    content: ''
 
 a
   color: $color-primary
@@ -185,7 +192,6 @@ header
 main
   width: 100%
   min-height: 50rem
-  margin: 0 0 2rem 0
 
 section
   > .content
@@ -194,7 +200,6 @@ section
       width: 100%
 
 footer
-  margin: 4rem 0 0 0
   background: $color-dark
   color: $color-light
   width: 100%
@@ -215,7 +220,7 @@ footer
     align-content: stretch
     align-items: stretch
   .box
-    width: calc(100% / 3)
+    width: calc((100% / 3) - 3rem)
     h1, h4
       color: $color-light
       font-size: 1.3rem

@@ -16,7 +16,7 @@
             :title="organisation.title"
             :alt="organisation.title"
           />
-          <ul class="tags">
+          <ul v-if="organisation.tags" class="tags">
             <li v-for="(tag, index) in organisation.tags" :key="index">
               {{ tag }}
             </li>
@@ -25,17 +25,19 @@
         <div class="right">
           <h3>{{ organisation.title }}</h3>
           <p v-html="$prismic.asHtml(organisation.description)" />
-          <p>
-            <a :href="organisation.website" target="_blank" class="website"
-              ><span>Website</span>
-              <unicon
-                name="external-link-alt"
-                class="external-link"
-                height="1.5rem"
-                width="1.5rem"
-              ></unicon>
-            </a>
-          </p>
+          <a
+            v-if="organisation.website"
+            :href="organisation.website"
+            target="_blank"
+            class="website"
+            ><span>Website</span>
+            <unicon
+              name="external-link-alt"
+              class="external-link"
+              height="1.5rem"
+              width="1.5rem"
+            ></unicon>
+          </a>
           <a
             v-if="organisation.foundraisingCampaign"
             :href="organisation.foundraisingCampaign"
@@ -94,7 +96,6 @@ export default {
   @media screen and (max-width: 38rem)
     padding: 1rem
 .close
-  border: none
   background: none
   position: absolute
   top: 1.5rem

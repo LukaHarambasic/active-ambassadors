@@ -1,5 +1,8 @@
 <template>
-  <section class="section-ambassador-box">
+  <section
+    class="section-ambassador-box"
+    :class="{ primary: isBackgroundPrimary }"
+  >
     <div class="content">
       <h2>Order your ambassador box</h2>
       <ol>
@@ -24,7 +27,7 @@
           </p>
         </li>
       </ol>
-      <nuxt-link to="/get-involved" class="button secondary">
+      <nuxt-link v-if="showButton" to="/get-involved" class="button secondary">
         Order here
       </nuxt-link>
     </div>
@@ -32,15 +35,38 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'SectionAmbassadorBox',
+  props: {
+    showButton: {
+      type: Boolean,
+      default: true
+    },
+    background: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    isBackgroundPrimary() {
+      return this.background === 'primary'
+    }
+  }
+}
 </script>
 
 <style lang="sass" scoped>
 .section-ambassador-box
-  background: $color-grey-light
-.content
-  padding: 6rem 0
-  align-items: center
+  background: $color-primary-light
+  &.primary
+    background: $color-primary
+    color: $color-light
+    h2, h3
+      color: $color-light
+    li
+      &:before
+        background: $color-light
+        color: $color-primary
 ol
   list-style: none
   counter-reset: step // TODO: Was is des?

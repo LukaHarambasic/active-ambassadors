@@ -24,7 +24,9 @@ export default {
   width: 100vw
   height: 100vh
   color: $color-light
-  h3
-    color: $color-light
-    font-size: 5rem
+.content
+  align-items: flex-start
+h3
+  color: $color-light
+  font-size: 5rem
 </style>

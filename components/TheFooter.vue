@@ -33,7 +33,7 @@
           <li><nuxt-link to="/transparency">Transparency</nuxt-link></li>
           <li><nuxt-link to="/about">About</nuxt-link></li>
           <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
-          <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
+          <li><nuxt-link to="/privacypolicy">Privacy Policy</nuxt-link></li>
         </ul>
       </div>
     </div>

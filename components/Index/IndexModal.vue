@@ -115,7 +115,7 @@ export default {
     fill: $color-secondary
 .modal
   z-index: 1500
-  background: $color-grey-light
+  background: $color-primary-light
   border-radius: $border-radius
   padding: 4rem
   width: 45rem

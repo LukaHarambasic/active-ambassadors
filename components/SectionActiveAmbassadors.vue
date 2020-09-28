@@ -127,9 +127,6 @@ export default {
       img
         object-position: center
         width: 100%
-.content
-  padding: 6rem 0
-  align-items: center
 h2, h3, p
   color: $color-light
 ul

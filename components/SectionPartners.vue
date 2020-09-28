@@ -38,9 +38,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.content
-  padding: 6rem 0
-  align-items: center
 .partners
   padding: 0
   margin: 1rem 0 4rem 0
@@ -59,7 +56,7 @@ export default {
     align-items: flex-start
 li
   border-radius: $border-radius
-  background: $color-grey-light
+  background: $color-primary-light
   display: flex
   flex-direction: column
   flex-wrap: nowrap

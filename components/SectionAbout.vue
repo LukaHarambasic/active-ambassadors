@@ -68,7 +68,7 @@ li
   width: calc(100% / 3)
   padding: 2rem 4rem
   text-align: center
-  background: $color-grey-light
+  background: $color-primary-light
   display: flex
   flex-direction: column
   flex-wrap: nowrap
@@ -76,7 +76,7 @@ li
   align-content: flex-start
   align-items: center
   &.light
-    background: $color-grey-light
+    background: $color-primary-light
     h3, h4, p
       color: $color-secondary
     .icon

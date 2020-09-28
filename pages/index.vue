@@ -18,6 +18,7 @@ import SectionActiveAmbassadors from '@/components/SectionActiveAmbassadors'
 import SectionPartners from '@/components/SectionPartners'
 
 export default {
+  layout: 'home',
   components: {
     IndexModal,
     SectionHero,

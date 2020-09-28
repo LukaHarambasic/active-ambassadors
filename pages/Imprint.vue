@@ -1,8 +1,14 @@
 <template>
   <div>
-    <h2 v-text="title" />
-    <section>
-      <div v-html="$prismic.asHtml(content)"></div>
+    <section class="section-imprint primary">
+      <div class="content">
+        <h2 v-text="title" />
+      </div>
+    </section>
+    <section class="primary-light">
+      <div class="content">
+        <div v-html="$prismic.asHtml(content)" />
+      </div>
     </section>
   </div>
 </template>

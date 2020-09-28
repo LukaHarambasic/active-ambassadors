@@ -43,9 +43,10 @@
           <h3>WHO</h3>
           <h4>We Are</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
+            We are a group of enthusiasts who want to make a change. We believe
+            that everyone can make a change. Therefore, we started this
+            non-profit project in April 2020 to start this journey with the
+            resource we have.
           </p>
         </li>
         <li class="dark">
@@ -106,8 +107,11 @@
           <h3>WHAT</h3>
           <h4>We Do</h4>
           <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.
+            Encourage others print jersey. We will provide everything that is
+            needed We will help you to print the logos of the organisations you
+            support on the jersey you love. You can print your favorite jersey
+            easily at home. Everything you need is an iron your jersey, We will
+            send you a parcel with everything you need.
           </p>
         </li>
         <li class="light">
@@ -148,9 +152,7 @@
           <h3>WHY</h3>
           <h4>We Do It</h4>
           <p>
-            Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate.
+            We would to increase awareness, especially for small orgs.
           </p>
         </li>
       </ul>
@@ -158,85 +160,8 @@
     <section class="section-active-ambassadors">
       <div class="mosaic">
         <ul>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassadors-leo.jpg"
-            />
-          </li>
-          <li>
-            <img
-              src="../static/active-ambassadors/active-ambassador-julia.jpg"
-            />
+          <li v-for="(ambassador, index) in mosaic" :key="index">
+            <img :src="ambassador" />
           </li>
         </ul>
       </div>
@@ -390,6 +315,7 @@
 
 <script>
 import IndexModal from '@/components/Index/IndexModal'
+// import { shuffleArray } from '@/assets/js/array'
 
 export default {
   components: {
@@ -415,12 +341,38 @@ export default {
       error({ statusCode: 404, message: 'Prismic single not found' })
     }
   },
+  data() {
+    return {
+      mosaicRaw: [
+        '/active-ambassadors/active-ambassador-julia.jpg',
+        '/active-ambassadors/active-ambassador-2.jpg',
+        '/active-ambassadors/active-ambassador-fritz.jpg',
+        '/active-ambassadors/active-ambassador-mathias.jpg',
+        '/active-ambassadors/active-ambassador-hannes.jpg',
+        '/active-ambassadors/active-ambassador-leo.jpg',
+        '/active-ambassadors/active-ambassador-julia.jpg',
+        '/active-ambassadors/active-ambassador-2.jpg',
+        '/active-ambassadors/active-ambassador-fritz.jpg',
+        '/active-ambassadors/active-ambassador-mathias.jpg',
+        '/active-ambassadors/active-ambassador-hannes.jpg',
+        '/active-ambassadors/active-ambassador-leo.jpg'
+      ]
+    }
+  },
   computed: {
     partners() {
       return this.$store.state.organisations
+    },
+    mosaic() {
+      const NUMBER_OF_IMAGES = 12
+      const mosaic = []
+      while (mosaic.length < NUMBER_OF_IMAGES) {
+        mosaic.push(...this.mosaicRaw)
+      }
+      mosaic.length = NUMBER_OF_IMAGES
+      return mosaic // TODO: add shuffle if length > 12 shuffleArray(mosaic)
     }
   },
-
   methods: {
     onOpenModal(index) {
       this.$store.commit('selectOrganisation', index)
@@ -437,7 +389,7 @@ export default {
   display: flex
   flex-direction: column
   flex-wrap: nowrap
-  justify-content: flex-start
+  justify-content: center
   align-content: flex-start
   align-items: flex-start
   h2
@@ -479,7 +431,7 @@ export default {
     padding: 0
     list-style: none
     li
-      flex: 1 1 auto
+      width: calc(100% / 3)
       padding: 2rem 4rem
       text-align: center
       background: $color-grey-light
@@ -671,6 +623,7 @@ export default {
         max-width: 100%
         max-height: 11rem
         margin: 0 0 0.5rem 0
+        transition: $animation
         filter: grayscale(100%)
       h3
         font-size: 1.5rem

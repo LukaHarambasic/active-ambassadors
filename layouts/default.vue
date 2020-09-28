@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <portal-target name="modal"></portal-target>
     <header>
       <div class="content">
@@ -32,51 +32,14 @@
     <main>
       <nuxt />
     </main>
-    <footer>
-      <div class="content">
-        <div class="box">
-          <h1>Active-Ambassadors</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Get in Touch</h4>
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/active_ambassadors/"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/company/active-ambassadors"
-                >LinkedIn</a
-              >
-            </li>
-            <li><a href="mailto:hi@active-ambassadors.org">Mail</a></li>
-          </ul>
-        </div>
-        <div class="box">
-          <h4>Sitemap</h4>
-          <ul>
-            <li><nuxt-link to="/">Home</nuxt-link></li>
-            <li><nuxt-link to="/get-involved">Get involved</nuxt-link></li>
-            <li><nuxt-link to="/transparency">Transparency</nuxt-link></li>
-            <li><nuxt-link to="/about">About</nuxt-link></li>
-            <li><nuxt-link to="/imprint">Imprint</nuxt-link></li>
-            <li><nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <the-footer />
   </div>
 </template>
 
 <script>
+import TheFooter from '@/components/TheFooter'
 export default {
-  components: {},
+  components: { TheFooter },
   async fetch() {
     await this.fetchAll()
   },
@@ -124,7 +87,7 @@ h1, h2, h3, h4, h5
 h2
   font-size: 2.5rem
   text-align: center
-  margin: 0 0 1rem 0
+  margin: 0 0 4rem 0
   padding: 0 0 0 1rem
   line-height: 2.5rem
   &:before
@@ -161,93 +124,56 @@ a
       background: $color-secondary
       color: $color-light
 
-.container
-  position: relative
-  > header
-    position: absolute
-    z-index: 500
-    top: 0
-    left: 0
-    width: 100%
-    padding: 2rem 1rem
-    display: flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: center
-    align-content: center
-    align-items: center
-    .content
-      margin: 0 auto
-      width: 64rem
-      height: 100%
-      display: flex
-      flex-direction: row
-      flex-wrap: nowrap
-      justify-content: space-between
-      align-content: center
-      align-items: center
-    .logo
-      width: 3rem
-      height: 3rem
-    nav
-      ul
-        list-style: none
-        padding: 0
-        margin: 0
-        li
-          padding: 0
-          a
-            margin: 0 0 0 1rem
-            color: $color-light
-            &.nuxt-link-exact-active
-              text-decoration: underline
-
-main
+header
+  position: absolute
+  z-index: 500
+  top: 0
+  left: 0
   width: 100%
-  min-height: 50rem
-
-footer
-  background: $color-dark
-  color: $color-light
-  width: 100%
+  padding: 2rem 1rem
   display: flex
   flex-direction: row
   flex-wrap: nowrap
   justify-content: center
-  align-content: flex-start
-  align-items: flex-start
+  align-content: center
+  align-items: center
   .content
     margin: 0 auto
-    padding: 4rem 0
     width: 64rem
+    height: 100%
     display: flex
     flex-direction: row
     flex-wrap: nowrap
     justify-content: space-between
-    align-content: stretch
-    align-items: stretch
-  .box
-    width: calc((100% / 3) - 3rem)
-    h1, h4
-      color: $color-light
-      font-size: 1.3rem
-    a
-      color: $color-light
-      border-color: $color-light
-      &:hover
-        border-color: $color-primary
+    align-content: center
+    align-items: center
+  .logo
+    width: 3rem
+    height: 3rem
+  nav
     ul
-      margin: .5rem 0 0 0
-      padding: 0
       list-style: none
-      display: flex
-      flex-direction: column
-      flex-wrap: nowrap
-      justify-content: flex-start
-      align-content: flex-start
-      align-items: flex-start
+      padding: 0
+      margin: 0
       li
-        margin: 0 0 .5rem 0
-        &:last-of-type
-          margin: 0
+        padding: 0
+        a
+          margin: 0 0 0 1rem
+          color: $color-light
+          &.nuxt-link-exact-active
+            text-decoration: underline
+
+main
+  width: 100%
+  min-height: 50rem
+  .content
+    margin: 0 auto 0 auto
+    width: 64rem
+    height: 100%
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
 </style>

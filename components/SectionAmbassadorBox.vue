@@ -38,41 +38,44 @@ export default {}
 <style lang="sass" scoped>
 .section-ambassador-box
   background: $color-grey-light
-  .content
-    padding: 6rem 0
-    align-items: center
-  ol
-    list-style: none
-    counter-reset: step // TODO: Was is des?
-    display: flex
-    padding: 0
-    margin: 0 0 2rem 0
-    li
-      display: flex
-      flex-direction: column
-      flex: 1
-      text-align: center
-      position: relative
-      h3
-        font-size: 2rem
-      &:before
-        width: 4rem
-        height: 4rem
-        line-height: 4rem
-        font-size: 2rem
-        font-family: $font-family-headline
-        content: counter(step)"."
-        counter-increment: step
-        align-self: center
-        background: $color-secondary
-        color: $color-light
-        border-radius: 100%
-        margin: 0 0 .5rem 0
-      &:after
-        height: 2px
-        width: calc(100% - 4rem)
-        content: ''
-        position: absolute
-        top: 1.5rem
-        left: calc(50% + 2em)
+.content
+  padding: 6rem 0
+  align-items: center
+ol
+  list-style: none
+  counter-reset: step // TODO: Was is des?
+  display: flex
+  justify-content: space-between
+  align-content: flex-start
+  align-items: flex-start
+  padding: 0
+  margin: 0 0 2rem 0
+li
+  display: flex
+  flex-direction: column
+  text-align: center
+  position: relative
+  width: calc((100% / 3) - (8rem / 3)) // 1/3 - 4rem between two boxes
+  &:before
+    width: 4rem
+    height: 4rem
+    line-height: 4rem
+    font-size: 2rem
+    font-family: $font-family-headline
+    content: counter(step)"."
+    counter-increment: step
+    align-self: center
+    background: $color-secondary
+    color: $color-light
+    border-radius: 100%
+    margin: 0 0 .5rem 0
+  &:after
+    height: 2px
+    width: calc(100% - 4rem)
+    content: ''
+    position: absolute
+    top: 1.5rem
+    left: calc(50% + 2em)
+h3
+  font-size: 2rem
 </style>

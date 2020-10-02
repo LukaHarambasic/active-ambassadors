@@ -29,4 +29,10 @@ export default {
 h3
   color: $color-light
   font-size: 5rem
+  @media screen and (max-width: 50rem)
+    font-size: 4rem
+  @media screen and (max-width: 35rem)
+    font-size: 3rem
+  @media screen and (max-width: 24rem)
+    font-size: 2rem
 </style>

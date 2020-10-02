@@ -100,7 +100,6 @@ export const actions = {
       ...shuffleArray(normalOrganisations),
       advertismentOrganisation
     }
-    console.log(organisationsOrdered)
     commit('setOrganisations', organisationsOrdered)
   },
   async fetchExpenses({ commit, state }) {

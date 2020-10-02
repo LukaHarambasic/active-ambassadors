@@ -66,6 +66,7 @@ li
   padding: 2rem
   height: 20rem
   width: calc((100% / 3) - 2rem)
+  margin: 0 0 2rem 0
   transition: $animation
   &:hover
     transform: scale(1.03)

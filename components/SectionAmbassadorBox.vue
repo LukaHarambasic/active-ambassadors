@@ -76,12 +76,17 @@ ol
   align-items: flex-start
   padding: 0
   margin: 0 0 2rem 0
+  @media screen and (max-width: 68rem)
+    flex-direction: column
 li
   display: flex
   flex-direction: column
   text-align: center
   position: relative
   width: calc((100% / 3) - (8rem / 3)) // 1/3 - 4rem between two boxes
+  @media screen and (max-width: 68rem)
+    width: 100%
+    margin: 0 0 2rem 0
   &:before
     width: 4rem
     height: 4rem

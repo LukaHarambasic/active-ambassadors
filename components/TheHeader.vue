@@ -58,6 +58,8 @@ header
   justify-content: space-between
   align-content: center
   align-items: center
+  @media screen and (max-width: 24rem)
+    flex-direction: column
 .logo
   width: 3rem
   height: 3rem
@@ -65,6 +67,8 @@ ul
   list-style: none
   padding: 0
   margin: 0
+  @media screen and (max-width: 24rem)
+    margin: 2rem 0 0 0
 li
   padding: 0
 a

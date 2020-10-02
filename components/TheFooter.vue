@@ -68,8 +68,15 @@ footer
     justify-content: space-between
     align-content: stretch
     align-items: stretch
+    @media screen and (max-width: 68rem)
+      width: calc(100% - 4rem)
+    @media screen and (max-width: 50rem)
+      flex-direction: column
   .box
     width: calc((100% / 3) - 3rem)
+    @media screen and (max-width: 50rem)
+      width: 100%
+      margin: 0 0 2rem 0
     h1, h4
       color: $color-light
       font-size: 1.3rem

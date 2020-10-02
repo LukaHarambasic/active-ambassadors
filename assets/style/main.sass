@@ -52,6 +52,9 @@ a
   border: $border-width solid $color-light
   border-radius: $border-radius
   padding: 1rem 2rem
+  @media screen and (max-width: 50rem)
+    font-size: 1.2rem
+    padding: .75rem 1.5rem
   &:hover
     background: $color-light
     color: $color-primary
@@ -76,6 +79,8 @@ main
     align-content: flex-start
     align-items: center
     padding: 6rem 0
+    @media screen and (max-width: 68rem)
+      width: calc(100% - 4rem)
   section
     width: 100%
     &.primary

@@ -1,7 +1,7 @@
 <template>
   <div>
     <portal-target name="modal"></portal-target>
-    <the-header />
+    <the-header :is-absolute="true" />
     <main>
       <nuxt />
     </main>
@@ -13,6 +13,7 @@
 import TheFooter from '@/components/TheFooter'
 import TheHeader from '@/components/TheHeader'
 export default {
+  name: 'Home',
   components: { TheHeader, TheFooter },
   async fetch() {
     await this.fetchAll()

@@ -1,20 +1,26 @@
 <template>
   <div>
-    <section>
-      <h2 v-text="title" />
-      <p v-html="$prismic.asHtml(description)" />
+    <section class="section-transparency primary">
+      <div class="content">
+        <h2 v-text="title" />
+        <p v-html="$prismic.asHtml(description)" />
+      </div>
     </section>
     <transparency-expenses v-if="expenses" />
     <transparency-income v-if="income" />
-    <section v-if="expensesPerKit">
-      <h2 v-text="diyTitle" />
-      <p v-html="$prismic.asHtml(diyDescription)" />
-      <transparency-expenses-per-unit />
-      <div class="expenses-per-kit-sum" v-text="expensesPerKitSum" />
+    <section v-if="expensesPerKit" class="section-kit primary-light">
+      <div class="content">
+        <h2 v-text="diyTitle" />
+        <p v-html="$prismic.asHtml(diyDescription)" />
+        <transparency-expenses-per-unit />
+        <div class="expenses-per-kit-sum" v-text="expensesPerKitSum" />
+      </div>
     </section>
-    <section>
-      <h2 v-text="techTitle" />
-      <p v-html="$prismic.asHtml(techDescription)" />
+    <section class="section-tech">
+      <div class="content">
+        <h2 v-text="techTitle" />
+        <p v-html="$prismic.asHtml(techDescription)" />
+      </div>
     </section>
   </div>
 </template>
@@ -67,10 +73,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-section
-  margin: 0 0 4rem 0
-  p
-    margin: 0 0 2rem 0
 .last-updated
   p
     text-align: center

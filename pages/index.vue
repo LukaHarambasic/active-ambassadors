@@ -1,33 +1,31 @@
 <template>
   <div>
     <index-modal />
-    <index-hero :slogan="slogan" />
-    <index-steps :title="jerseyTitle" :steps="jerseySteps" />
-    <index-newsletter :title="newsletterTitle" />
-    <index-counter :title="ambassadorsTitle" />
-    <index-organisations :title="organisationsTitle" />
-    <index-mail :title="contactTitle" :email="contactEmail" />
+    <section-hero />
+    <section-about />
+    <section-active-ambassadors />
+    <section-ambassador-box />
+    <section-partners />
   </div>
 </template>
 
 <script>
 import IndexModal from '@/components/Index/IndexModal'
-import IndexHero from '@/components/Index/IndexHero'
-import IndexSteps from '@/components/Index/IndexSteps'
-import IndexCounter from '@/components/Index/IndexCounter'
-import IndexNewsletter from '@/components/Index/IndexNewsletter'
-import IndexOrganisations from '@/components/Index/IndexOrganisations'
-import IndexMail from '@/components/Index/IndexMail'
+import SectionHero from '@/components/SectionHero'
+import SectionAmbassadorBox from '@/components/SectionAmbassadorBox'
+import SectionAbout from '@/components/SectionAbout'
+import SectionActiveAmbassadors from '@/components/SectionActiveAmbassadors'
+import SectionPartners from '@/components/SectionPartners'
 
 export default {
+  layout: 'home',
   components: {
     IndexModal,
-    IndexHero,
-    IndexSteps,
-    IndexCounter,
-    IndexNewsletter,
-    IndexOrganisations,
-    IndexMail
+    SectionHero,
+    SectionAmbassadorBox,
+    SectionAbout,
+    SectionActiveAmbassadors,
+    SectionPartners
   },
   async asyncData({ $prismic, error }) {
     try {

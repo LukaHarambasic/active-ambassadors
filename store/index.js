@@ -90,7 +90,17 @@ export const actions = {
         tags
       }
     })
-    commit('setOrganisations', shuffleArray(organisations))
+    const normalOrganisations = organisations.filter(
+      (organisation) => !organisation.tags.find((tag) => tag === 'Love')
+    )
+    const advertismentOrganisation = organisations.find((organisation) =>
+      organisation.tags.find((tag) => tag === 'Love')
+    )
+    const organisationsOrdered = {
+      ...shuffleArray(normalOrganisations),
+      advertismentOrganisation
+    }
+    commit('setOrganisations', organisationsOrdered)
   },
   async fetchExpenses({ commit, state }) {
     if (!state.expenses) return null

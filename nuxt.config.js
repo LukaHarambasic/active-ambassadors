@@ -21,8 +21,18 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Domine&display=swap'
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: '/fonts/domine-v10-latin-regular.woff2',
+        crossorigin: 'true'
+      },
+      {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: '/fonts/domine-v10-latin-700.woff2',
+        crossorigin: 'true'
       },
       {
         rel: 'preload',

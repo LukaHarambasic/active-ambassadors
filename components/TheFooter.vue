@@ -4,9 +4,10 @@
       <div class="box">
         <h1>Active-Ambassadors</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
+          We are a group of sport enthusiasts that wants to make the world a
+          better place. We believe that everyone can make a change. Therefore,
+          we started this non-profit project in April 2020 to start our journey
+          using the resources we have. 🤝
         </p>
       </div>
       <div class="box">

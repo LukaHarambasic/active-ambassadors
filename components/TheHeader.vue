@@ -73,5 +73,5 @@ a
   &:hover
     opacity: .8
   &.nuxt-link-exact-active
-    text-decoration: underline
+    font-weight: bold
 </style>

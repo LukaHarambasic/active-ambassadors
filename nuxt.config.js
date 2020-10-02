@@ -24,6 +24,20 @@ export default {
         rel: 'preload',
         as: 'font',
         type: 'font/woff2',
+        href: '/fonts/domine-v10-latin-regular.woff2',
+        crossorigin: 'true'
+      },
+      {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
+        href: '/fonts/domine-v10-latin-700.woff2',
+        crossorigin: 'true'
+      },
+      {
+        rel: 'preload',
+        as: 'font',
+        type: 'font/woff2',
         href: '/fonts/open-sans-v17-latin-regular.woff2',
         crossorigin: 'true'
       },
@@ -43,7 +57,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~assets/style/fontfaces.scss'],
+  css: ['~assets/style/fontfaces.scss', '~assets/style/main.sass'],
   /*
    ** Load Variables
    */

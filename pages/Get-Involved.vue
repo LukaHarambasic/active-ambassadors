@@ -3,7 +3,7 @@
     <section class="section-get-involved primary">
       <div class="content">
         <h2>Get Involved</h2>
-        <p>Lorem Ipsum</p>
+        <!--<p>Lorem Ipsum</p>-->
       </div>
     </section>
     <section-ambassador-box :show-button="false" />

@@ -15,20 +15,18 @@
           <div class="text">
             <h3>Active</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
+              You are an athlete or a sports enthusiast who wants to actively
+              shape the impact of non-profit organizations.
             </p>
           </div>
         </li>
         <li>
-          <div class="icon"><icon-engaged /></div>
+          <div class="icon"><icon-involved /></div>
           <div class="text">
-            <h3>Engaged</h3>
+            <h3>Involved</h3>
             <p>
-              Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate.
+              You want to proactively shape the world and challenge the status
+              quo.
             </p>
           </div>
         </li>
@@ -37,8 +35,8 @@
           <div class="text">
             <h3>Communicative</h3>
             <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
+              You love to be a part of a community and share our vision of
+              making the world a better place.
             </p>
           </div>
         </li>
@@ -52,14 +50,14 @@
 
 <script>
 import IconActive from '@/components/Icons/IconActive'
-import IconEngaged from '@/components/Icons/IconEngaged'
 import IconCommunicative from '@/components/Icons/IconCommunicative'
+import IconInvolved from '@/components/Icons/IconInvolved'
 
 export default {
   name: 'SectionActiveAmbassadors',
   components: {
+    IconInvolved,
     IconActive,
-    IconEngaged,
     IconCommunicative
   },
   data() {

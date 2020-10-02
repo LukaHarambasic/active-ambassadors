@@ -6,9 +6,13 @@
         <h3>WHO</h3>
         <h4>We Are</h4>
         <p>
-          We are a group of enthusiasts who want to make a change. We believe
-          that everyone can make a change. Therefore, we started this non-profit
-          project in April 2020 to start this journey with the resource we have.
+          We are a group of sport enthusiasts that wants to make the world a
+          better place. 🏃‍️
+          <br />
+          We believe that everyone can make a change. 🌍
+          <br />
+          Therefore, we started this non-profit project in April 2020 to start
+          our journey using the resources we have. 🤝
         </p>
       </li>
       <li class="dark">
@@ -16,11 +20,12 @@
         <h3>WHAT</h3>
         <h4>We Do</h4>
         <p>
-          Encourage others print jersey. We will provide everything that is
-          needed We will help you to print the logos of the organisations you
-          support on the jersey you love. You can print your favorite jersey
-          easily at home. Everything you need is an iron your jersey, We will
-          send you a parcel with everything you need.
+          We enable you to imprint your own jersey with** the logo of the
+          organization you love. 🎽
+          <br />
+          No need to worry about special equipment - we will send you a parcel
+          with everything you need - you just need an iron and your own jersey.
+          📦
         </p>
       </li>
       <li class="light">
@@ -28,7 +33,11 @@
         <h3>WHY</h3>
         <h4>We Do It</h4>
         <p>
-          We would to increase awareness, especially for small orgs.
+          We believe that there are many organizations which do not receive the
+          attention they deserve. 👂
+          <br />
+          Hence, we want to increase awareness for the great impact they have
+          and support them on their journey. 📢
         </p>
       </li>
     </ul>

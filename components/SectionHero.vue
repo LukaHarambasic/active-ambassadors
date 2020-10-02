@@ -34,5 +34,5 @@ h3
   @media screen and (max-width: 35rem)
     font-size: 3rem
   @media screen and (max-width: 24rem)
-    font-size: 2.5rem
+    font-size: 2.2rem
 </style>

@@ -100,13 +100,6 @@ li
     color: $color-light
     border-radius: 100%
     margin: 0 0 .5rem 0
-  &:after
-    height: 2px
-    width: calc(100% - 4rem)
-    content: ''
-    position: absolute
-    top: 1.5rem
-    left: calc(50% + 2em)
 h3
   font-size: 2rem
 </style>

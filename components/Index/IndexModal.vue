@@ -85,7 +85,7 @@ export default {
   right: 0
   bottom: 0
   width: 100%
-  height: 100vh
+  height: 100%
   display: flex
   flex-direction: column
   flex-wrap: nowrap

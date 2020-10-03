@@ -95,14 +95,14 @@ export default {
 <style lang="sass" scoped>
 .section-active-ambassadors
   position: relative
-  height: 100vh
-  @media screen and (max-width: 50rem)
-    height: auto
+  height: auto
+  min-height: 100vh
   @media screen and (max-width: 38rem)
     background: $color-dark
 .mosaic
   position: absolute
-  height: 100vh
+  height: auto
+  min-height: 100vh
   width: 100%
   background: $color-dark
   z-index: -1000

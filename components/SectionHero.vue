@@ -22,11 +22,9 @@ export default {
 .section-hero
   background: $color-primary
   width: 100%
-  height: 100vh
+  height: auto
+  min-height: 100vh
   color: $color-light
-  @media screen and (max-width: 26rem)
-    height: auto
-    min-height: 100vh
 .content
   align-items: flex-start
 h3

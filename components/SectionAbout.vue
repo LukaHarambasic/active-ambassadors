@@ -54,9 +54,8 @@ export default {
 
 <style lang="sass" scoped>
 .section-about
-  height: 50vh
-  @media screen and (max-width: 75rem)
-    height: auto
+  height: auto
+  min-height: 50vh
 ul
   height: 100%
   display: flex

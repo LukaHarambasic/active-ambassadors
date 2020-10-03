@@ -6,7 +6,7 @@
         <h3>WHO</h3>
         <h4>We Are</h4>
         <p>
-          We are a group of sport enthusiasts that wants to make the world a
+          We are a group of sport enthusiasts that want to make the world a
           better place. We believe that everyone can make a change. Therefore,
           we started this non-profit project in April 2020 to start our journey
           using the resources we have. 🤝

@@ -9,7 +9,7 @@
     <section-ambassador-box :show-button="false" />
     <section>
       <div class="content">
-        <h2>We need something from you :)</h2>
+        <h2>ell us about you and your heart project ❤️</h2>
         <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script>
         <iframe
           class="airtable-embed airtable-dynamic-height"

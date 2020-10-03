@@ -78,8 +78,8 @@ li
   display: flex
   flex-direction: column
   flex-wrap: nowrap
-  justify-content: flex-start
-  align-content: flex-start
+  justify-content: center
+  align-content: center
   align-items: center
   @media screen and (max-width: 68rem)
     width: 100%

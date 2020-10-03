@@ -103,7 +103,7 @@ export default {
 .mosaic
   position: absolute
   height: 100vh
-  width: 100vw
+  width: 100%
   background: $color-dark
   z-index: -1000
   overflow: hidden

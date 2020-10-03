@@ -21,7 +21,7 @@ export default {
 <style lang="sass" scoped>
 .section-hero
   background: $color-primary
-  width: 100vw
+  width: 100%
   height: 100vh
   color: $color-light
   @media screen and (max-width: 26rem)

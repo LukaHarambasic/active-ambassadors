@@ -55,7 +55,7 @@ export default {
 <style lang="sass" scoped>
 .section-about
   height: 50vh
-  @media screen and (max-width: 68rem)
+  @media screen and (max-width: 75rem)
     height: auto
 ul
   height: 100%
@@ -103,7 +103,7 @@ li
   width: 6rem
   height: 6rem
   border-radius: 50%
-  margin: 0 0 1rem 0
+  margin: 0 0 2rem 0
   padding: 1rem
   @media screen and (max-width: 88rem)
     width: 5rem
@@ -117,6 +117,7 @@ h3
 h4
   font-size: 2rem
   font-weight: normal
+  margin: 0 0 .5rem 0
   @media screen and (max-width: 8rem)
     font-size: 1.8rem
 </style>

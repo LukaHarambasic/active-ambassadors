@@ -2,7 +2,7 @@
   <footer>
     <div class="content">
       <div class="box">
-        <h1>Active-Ambassadors</h1>
+        <h1>Active Ambassadors</h1>
         <p>
           We are a group of sport enthusiasts that want to make the world a
           better place. We believe that everyone can make a change. Therefore,

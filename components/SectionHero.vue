@@ -21,12 +21,10 @@ export default {
 <style lang="sass" scoped>
 .section-hero
   background: $color-primary
-  width: 100vw
-  height: 100vh
+  width: 100%
+  height: auto
+  min-height: 100vh
   color: $color-light
-  @media screen and (max-width: 26rem)
-    height: auto
-    min-height: 100vh
 .content
   align-items: flex-start
 h3

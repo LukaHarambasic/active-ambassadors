@@ -2,7 +2,9 @@
   <header :class="{ absolute: isAbsolute }">
     <div class="inner">
       <div class="logo">
-        <icon-logo />
+        <nuxt-link to="/">
+          <icon-logo />
+        </nuxt-link>
       </div>
       <nav>
         <ul>

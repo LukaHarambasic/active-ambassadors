@@ -24,6 +24,9 @@ export default {
   width: 100vw
   height: 100vh
   color: $color-light
+  @media screen and (max-width: 26rem)
+    height: auto
+    min-height: 100vh
 .content
   align-items: flex-start
 h3
@@ -33,6 +36,6 @@ h3
     font-size: 4rem
   @media screen and (max-width: 35rem)
     font-size: 3rem
-  @media screen and (max-width: 24rem)
+  @media screen and (max-width: 26rem)
     font-size: 2.2rem
 </style>

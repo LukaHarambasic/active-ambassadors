@@ -48,6 +48,8 @@ header
     z-index: 500
     top: 0
     left: 0
+    @media screen and (max-width: 26rem)
+      position: relative
 .inner
   margin: 0 auto
   width: 64rem

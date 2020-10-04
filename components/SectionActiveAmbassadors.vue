@@ -42,7 +42,7 @@
         </li>
       </ul>
       <nuxt-link to="/get-involved" class="button">
-        Get involved.
+        Get involved
       </nuxt-link>
     </div>
   </section>

@@ -9,7 +9,7 @@
           We are a group of sport enthusiasts that want to make the world a
           better place. We believe that everyone can make a change. Therefore,
           we started this non-profit project in April 2020 to start our journey
-          using the resources we have. 🤝
+          using the resources we have.
         </p>
       </li>
       <li class="dark">
@@ -20,7 +20,7 @@
           We enable you to imprint your own jersey with the logo of the
           organization you love. No need to worry about special equipment - we
           will send you a parcel with everything you need - you just need an
-          iron and your own jersey. 🎽
+          iron and your own jersey.
         </p>
       </li>
       <li class="light">
@@ -30,7 +30,7 @@
         <p>
           We believe that there are many organizations which do not receive the
           attention they deserve. Hence, we want to increase awareness for the
-          great impact they have and support them on their journey. 📢
+          great impact they have and support them on their journey.
         </p>
       </li>
     </ul>

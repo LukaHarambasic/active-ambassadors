@@ -38,6 +38,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.section-partners
+  background: $color-light
 .partners
   padding: 0
   margin: 1rem 0 4rem 0

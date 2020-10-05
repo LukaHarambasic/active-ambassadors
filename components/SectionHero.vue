@@ -2,7 +2,7 @@
   <section class="section-hero">
     <div class="content">
       <h3>
-        We bring athletes and NGOs together. Make a change. Print your jersey
+        We bring athletes and NGOs together. Make a change. Imprint your jersey
         now.
       </h3>
       <nuxt-link to="/get-involved" class="button">

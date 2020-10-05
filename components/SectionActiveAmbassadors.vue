@@ -97,6 +97,7 @@ export default {
   position: relative
   height: auto
   min-height: 100vh
+  overflow: hidden
   @media screen and (max-width: 38rem)
     background: $color-dark
 .mosaic

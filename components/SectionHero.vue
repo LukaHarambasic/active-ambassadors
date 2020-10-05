@@ -25,8 +25,18 @@ export default {
   height: auto
   min-height: 100vh
   color: $color-light
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  @media screen and (max-width: 26rem)
+    min-height: auto
 .content
   align-items: flex-start
+  @media screen and (max-width: 26rem)
+    padding: 3rem 0
 h3
   color: $color-light
   font-size: 5rem

@@ -54,10 +54,8 @@ export default {
 
 <style lang="sass" scoped>
 .section-about
-  height: auto
-  min-height: 50vh
+  background: $color-primary-light
 ul
-  height: 100%
   display: flex
   flex-direction: row
   flex-wrap: nowrap

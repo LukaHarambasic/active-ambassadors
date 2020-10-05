@@ -45,6 +45,8 @@ header
   align-content: center
   align-items: center
   background: $color-primary
+  @media screen and (max-width: 26rem)
+    padding: 2rem 1rem 0 1rem
   &.absolute
     position: absolute
     z-index: 500

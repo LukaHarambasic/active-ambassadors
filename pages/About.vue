@@ -62,10 +62,19 @@ export default {
           sports: ['🏃🏼‍', '🧘🏼']
         },
         {
+          picture: '/active-ambassadors/active-ambassador-julia.jpg',
+          name: 'Julia',
+          position: 'Lorem Ipsum',
+          linkedin:
+            'https://www.linkedin.com/in/julia-margeth-theuer-she-her-30619210b/',
+          email: 'julia.mt@active-ambassadors.org',
+          sports: ['🏃🏼‍', '🧘🏼']
+        },
+        {
           picture: '/active-ambassadors/active-ambassador-leo.jpg',
           name: 'Luka',
           position: 'Website, Tools & Automation',
-          linkedin: 'https://www.linkedin.com/in/leonardschwier/',
+          linkedin: 'https://www.linkedin.com/in/harambasic',
           email: 'luka@active-ambassadors.org',
           sports: ['🤾', '🤾', '🤾']
         }
@@ -87,12 +96,12 @@ export default {
   margin: 0
   display: flex
   flex-direction: row
-  flex-wrap: nowrap
+  flex-wrap: wrap
   justify-content: space-between
   align-content: stretch
   align-items: stretch
   li
-    width: calc((100% / 3) - (2 * 2rem)) // 1rd minus 2rem between li
+    width: calc((100% / 3) - ((2 * 2rem) / 3)) // 100% / n - ((n-1) * spacing) / n
     border-radius: $border-radius
     background: $color-primary-light
     display: flex
@@ -102,6 +111,11 @@ export default {
     align-content: center
     align-items: center
     padding: 2rem
+    margin: 0 0 2rem 0
+    @media screen and (max-width: 68rem)
+      width: calc((100% / 2) - (2rem / 2))
+    @media screen and (max-width: 45rem)
+      width: 100%
 img
   margin: 0 0 1rem 0
 .title

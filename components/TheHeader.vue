@@ -10,7 +10,11 @@
         <ul>
           <li>
             <nuxt-link to="/">Home</nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/get-involved">Get Involved</nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/transparency">Transparency</nuxt-link>
           </li>
         </ul>
@@ -73,8 +77,16 @@ ul
   list-style: none
   padding: 0
   margin: 0
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: flex-start
+  align-content: center
+  align-items: center
   @media screen and (max-width: 24rem)
     margin: 2rem 0 0 0
+    justify-content: center
+    flex-wrap: wrap
 li
   padding: 0
 a

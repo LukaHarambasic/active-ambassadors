@@ -2,7 +2,9 @@
   <header :class="{ absolute: isAbsolute }">
     <div class="inner">
       <div class="logo">
-        <icon-logo />
+        <nuxt-link to="/">
+          <icon-logo />
+        </nuxt-link>
       </div>
       <nav>
         <ul>
@@ -43,11 +45,15 @@ header
   align-content: center
   align-items: center
   background: $color-primary
+  @media screen and (max-width: 26rem)
+    padding: 2rem 1rem 0 1rem
   &.absolute
     position: absolute
     z-index: 500
     top: 0
     left: 0
+    @media screen and (max-width: 26rem)
+      position: relative
 .inner
   margin: 0 auto
   width: 64rem

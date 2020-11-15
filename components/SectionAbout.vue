@@ -6,10 +6,10 @@
         <h3>WHO</h3>
         <h4>We Are</h4>
         <p>
-          We are a group of sport enthusiasts that wants to make the world a
+          We are a group of sport enthusiasts that want to make the world a
           better place. We believe that everyone can make a change. Therefore,
           we started this non-profit project in April 2020 to start our journey
-          using the resources we have. 🤝
+          using the resources we have.
         </p>
       </li>
       <li class="dark">
@@ -20,7 +20,7 @@
           We enable you to imprint your own jersey with the logo of the
           organization you love. No need to worry about special equipment - we
           will send you a parcel with everything you need - you just need an
-          iron and your own jersey. 🎽
+          iron and your own jersey.
         </p>
       </li>
       <li class="light">
@@ -30,7 +30,7 @@
         <p>
           We believe that there are many organizations which do not receive the
           attention they deserve. Hence, we want to increase awareness for the
-          great impact they have and support them on their journey. 📢
+          great impact they have and support them on their journey.
         </p>
       </li>
     </ul>
@@ -54,11 +54,8 @@ export default {
 
 <style lang="sass" scoped>
 .section-about
-  height: 50vh
-  @media screen and (max-width: 68rem)
-    height: auto
+  background: $color-primary-light
 ul
-  height: 100%
   display: flex
   flex-direction: row
   flex-wrap: nowrap
@@ -78,8 +75,8 @@ li
   display: flex
   flex-direction: column
   flex-wrap: nowrap
-  justify-content: flex-start
-  align-content: flex-start
+  justify-content: center
+  align-content: center
   align-items: center
   @media screen and (max-width: 68rem)
     width: 100%
@@ -103,7 +100,7 @@ li
   width: 6rem
   height: 6rem
   border-radius: 50%
-  margin: 0 0 1rem 0
+  margin: 0 0 2rem 0
   padding: 1rem
   @media screen and (max-width: 88rem)
     width: 5rem
@@ -117,6 +114,7 @@ h3
 h4
   font-size: 2rem
   font-weight: normal
+  margin: 0 0 .5rem 0
   @media screen and (max-width: 8rem)
     font-size: 1.8rem
 </style>

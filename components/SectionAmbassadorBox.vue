@@ -15,7 +15,7 @@
         <li>
           <h3>Wait for the parcel</h3>
           <p>
-            Tell us where we should send the parcel to. And Leo will send it to
+            Tell us where we should send the parcel to and Leo will send it to
             you!
           </p>
         </li>

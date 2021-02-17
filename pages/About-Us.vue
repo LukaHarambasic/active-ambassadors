@@ -103,7 +103,7 @@ export default {
   align-content: stretch
   align-items: stretch
   > li
-    width: calc((100% / 3) - ((2 * 2rem) / 3)) // 100% / n - ((n-1) * spacing) / n
+    width: calc((100% / 4) - ((3 * 2rem) / 4)) // 100% / n - ((n-1) * spacing) / n
     border-radius: $border-radius
     background: $color-primary-light
     display: flex

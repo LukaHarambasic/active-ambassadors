@@ -48,7 +48,7 @@ export default {
     return {
       team: [
         {
-          picture: '/active-ambassadors/active-ambassador-leo.jpg',
+          picture: '/team/active-ambassador-leo.png',
           name: 'Leonard',
           position: 'Organizations, Production & Shipping',
           linkedin: 'https://www.linkedin.com/in/leonardschwier/',
@@ -56,7 +56,7 @@ export default {
           sports: ['🏃', '🚴‍', '⚽']
         },
         {
-          picture: '/active-ambassadors/active-ambassador-julia.jpg',
+          picture: '/team/active-ambassador-julia.png',
           name: 'Julia',
           position: 'Marketing & Podcast',
           linkedin: 'https://www.linkedin.com/in/julia-ha%C3%9Ffeld/',
@@ -64,7 +64,7 @@ export default {
           sports: ['🏃🏼‍', '🧘🏼']
         },
         {
-          picture: '/active-ambassadors/active-ambassador-julia-mt.png',
+          picture: '/team/active-ambassador-julia-mt.png',
           name: 'Julia',
           position: 'Digital Creation & Podcast',
           linkedin:
@@ -73,7 +73,7 @@ export default {
           sports: ['🧗‍‍', '🚴', '💃']
         },
         {
-          picture: '/active-ambassadors/active-ambassador-luka.jpg',
+          picture: '/team/active-ambassador-luka.jpg',
           name: 'Luka',
           position: 'Website, Tools & Automation',
           linkedin: 'https://www.linkedin.com/in/harambasic',

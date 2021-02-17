@@ -84,7 +84,7 @@ export default {
     }
   },
   methods: {
-    getMailto: (mail) => `mailto:$mail`,
+    getMailto: (mail) => `mailto:${mail}`,
     getAlt: (name) => `Active Ambassadors - $name`
   }
 }

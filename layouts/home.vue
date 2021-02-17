@@ -1,7 +1,7 @@
 <template>
   <div>
     <portal-target name="modal"></portal-target>
-    <the-header :is-absolute="true" />
+    <the-header />
     <main>
       <nuxt />
     </main>

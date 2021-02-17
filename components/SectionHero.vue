@@ -20,10 +20,9 @@ export default {
 
 <style lang="sass" scoped>
 .section-hero
-  background: $color-primary
+  background-image: url("/design/blobs.svg")
+  background-color: $color-primary
   width: 100%
-  height: auto
-  min-height: 100vh
   color: $color-light
   display: flex
   flex-direction: column
@@ -31,10 +30,9 @@ export default {
   justify-content: center
   align-content: center
   align-items: center
-  @media screen and (max-width: 26rem)
-    min-height: auto
 .content
   align-items: flex-start
+  padding: 0 0 4rem 0
   @media screen and (max-width: 26rem)
     padding: 3rem 0
 h3

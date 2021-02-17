@@ -87,13 +87,13 @@ ul
     margin: 2rem 0 0 0
     justify-content: center
     flex-wrap: wrap
-li
-  padding: 0
-a
-  margin: 0 0 0 1rem
-  color: $color-light
-  &:hover
-    opacity: .8
-  &.nuxt-link-exact-active
-    font-weight: bold
+  li
+    padding: 0
+    a
+      margin: 0 0 0 1rem
+      color: $color-light
+      &:hover
+        opacity: .8
+      &.nuxt-link-exact-active
+        font-weight: bold
 </style>

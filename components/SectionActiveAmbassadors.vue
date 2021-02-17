@@ -1,15 +1,8 @@
 <template>
   <section class="section-active-ambassadors">
-    <div class="mosaic">
-      <ul>
-        <li v-for="(ambassador, index) in mosaic" :key="index">
-          <img :src="ambassador" />
-        </li>
-      </ul>
-    </div>
     <div class="content">
       <h2>Who is an Active Ambassador?</h2>
-      <ul>
+      <ul class="steps">
         <li>
           <div class="icon"><icon-active /></div>
           <div class="text">
@@ -41,9 +34,18 @@
           </div>
         </li>
       </ul>
-      <nuxt-link to="/get-involved" class="button">
-        Get involved
+
+      <nuxt-link to="/get-involved" class="button secondary">
+        Join us
       </nuxt-link>
+      <div class="ambassadors">
+        <ul>
+          <li v-for="(ambassador, index) in ambassadors" :key="index">
+            <img :src="ambassador" alt="" />
+          </li>
+        </ul>
+        <p>and many more...</p>
+      </div>
     </div>
   </section>
 </template>
@@ -62,13 +64,7 @@ export default {
   },
   data() {
     return {
-      mosaicRaw: [
-        '/active-ambassadors/active-ambassador-julia.jpg',
-        '/active-ambassadors/active-ambassador-2.jpg',
-        '/active-ambassadors/active-ambassador-fritz.jpg',
-        '/active-ambassadors/active-ambassador-mathias.jpg',
-        '/active-ambassadors/active-ambassador-hannes.jpg',
-        '/active-ambassadors/active-ambassador-leo.jpg',
+      ambassadors: [
         '/active-ambassadors/active-ambassador-julia.jpg',
         '/active-ambassadors/active-ambassador-2.jpg',
         '/active-ambassadors/active-ambassador-fritz.jpg',
@@ -77,70 +73,14 @@ export default {
         '/active-ambassadors/active-ambassador-leo.jpg'
       ]
     }
-  },
-  computed: {
-    mosaic() {
-      const NUMBER_OF_IMAGES = 12
-      const mosaic = []
-      while (mosaic.length < NUMBER_OF_IMAGES) {
-        mosaic.push(...this.mosaicRaw)
-      }
-      mosaic.length = NUMBER_OF_IMAGES
-      return mosaic // TODO: add shuffle if length > 12 shuffleArray(mosaic)
-    }
   }
 }
 </script>
 
 <style lang="sass" scoped>
 .section-active-ambassadors
-  position: relative
-  height: auto
-  min-height: 100vh
-  overflow: hidden
-  @media screen and (max-width: 38rem)
-    background: $color-dark
-.mosaic
-  position: absolute
-  height: auto
-  min-height: 100vh
-  width: 100%
-  background: $color-dark
-  z-index: -1000
-  overflow: hidden
-  @media screen and (max-width: 38rem)
-    display: none
-  ul
-    width: 100%
-    height: 100%
-    margin: 0
-    padding: 0
-    list-style: none
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: flex-start
-    align-content: flex-start
-    align-items: flex-start
-    li
-      overflow: hidden
-      margin: 0
-      padding: 0
-      opacity: 0.12
-      width: 25%
-      height: calc(100% / 3)
-      @media screen and (max-width: 65rem)
-        width: calc(100% / 3)
-        height: 25%
-      img
-        object-position: center
-        width: 100%
-        @media screen and (max-width: 78rem)
-          transform: scale(1.4)
-h2, h3, p
-  color: $color-light
-ul
-  margin: 0
+.steps
+  margin: 0 0 4rem 0
   padding: 0
   list-style: none
   li
@@ -155,32 +95,59 @@ ul
       flex-direction: column
       align-items: center
     &:last-of-type
-      margin: 0 0 2rem 0
-.icon
-  flex: 0 0 auto
-  width: 6rem
-  height: 6rem
-  background: $color-light
-  border-radius: 50%
-  padding: 1rem
-  @media screen and (max-width: 88rem)
-    width: 5rem
-    height: 5rem
-  @media screen and (max-width: 28rem)
-    margin: 0 0 1rem 0
-  svg
-    fill: $color-secondary
-.text
-  flex: 1 1 auto
-  margin: 0 0 0 2rem
-  @media screen and (max-width: 28rem)
+      margin: 0
+  .icon
+    flex: 0 0 auto
+    width: 6rem
+    height: 6rem
+    background: $color-secondary
+    border-radius: 50%
+    padding: 1rem
+    @media screen and (max-width: 88rem)
+      width: 5rem
+      height: 5rem
+    @media screen and (max-width: 28rem)
+      margin: 0 0 1rem 0
+    svg
+      fill: $color-light
+  .text
+    flex: 1 1 auto
+    margin: 0 0 0 2rem
+    @media screen and (max-width: 28rem)
+      margin: 0
+    h3
+      font-size: 1.8rem
+      @media screen and (max-width: 28rem)
+        text-align: center
+    p
+      font-size: 1.3rem
+      @media screen and (max-width: 28rem)
+        text-align: center
+.button
+  margin: 0 0 4rem 0
+.ambassadors
+  width: 100%
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: center
+  align-content: center
+  align-items: center
+  ul
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
+    list-style: none
     margin: 0
-  h3
-    font-size: 1.8rem
-    @media screen and (max-width: 28rem)
-      text-align: center
-  p
-    font-size: 1.3rem
-    @media screen and (max-width: 28rem)
-      text-align: center
+    padding: 0
+    li
+      display: inline
+      margin: 0 .5rem 0 0
+      img
+        border-radius: 2px
+        width: 2rem
+        height: 2rem
 </style>

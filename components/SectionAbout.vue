@@ -1,6 +1,7 @@
 <template>
   <section class="section-about">
     <div class="content">
+      <h2>Active Ambassadors?</h2>
       <ul>
         <li>
           <div class="icon"><icon-who /></div>

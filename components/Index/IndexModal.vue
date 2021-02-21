@@ -78,7 +78,7 @@ export default {
 
 <style lang="sass" scoped>
 .overlay
-  background: rgba($color-secondary, 0.7)
+  background: rgba($color-primary-light, 0.8)
   position: fixed
   left: 0
   top: 0
@@ -115,7 +115,7 @@ export default {
     fill: $color-secondary
 .modal
   z-index: 1500
-  background: $color-primary-light
+  background: $color-light
   border-radius: $border-radius
   padding: 4rem
   width: 45rem

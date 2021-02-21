@@ -148,6 +148,6 @@ export default {
       margin: 0 .5rem 0 0
       img
         border-radius: 2px
-        width: 2rem
-        height: 2rem
+        width: 5rem
+        height: 5rem
 </style>

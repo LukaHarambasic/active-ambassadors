@@ -20,7 +20,7 @@ export default {
 
 <style lang="sass" scoped>
 .section-hero
-  background-image: url("/design/blobs.svg")
+  background-image: url("/design/blobs_gradient.svg")
   background-color: $color-primary
   width: 100%
   color: $color-light

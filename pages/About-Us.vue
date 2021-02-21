@@ -120,6 +120,7 @@ export default {
       width: 100%
 img
   margin: 0 0 1rem 0
+  min-height: 10rem
   border-radius: $border-radius
 .title-row
   display: flex

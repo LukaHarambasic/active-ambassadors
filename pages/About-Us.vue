@@ -53,7 +53,7 @@ export default {
           position: 'Organizations, Production & Shipping',
           linkedin: 'https://www.linkedin.com/in/leonardschwier/',
           email: 'leonard@active-ambassadors.org',
-          sports: ['🏃', '🚴‍', '⚽']
+          sports: ['🏃', '🚴‍']
         },
         {
           picture: '/team/active-ambassador-julia.png',

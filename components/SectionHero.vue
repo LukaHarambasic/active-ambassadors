@@ -20,9 +20,8 @@ export default {
 
 <style lang="sass" scoped>
 .section-hero
-  background-image: url("/design/blobs_gradient.svg")
-  background-color: $color-primary
-  width: 100%
+  margin: 0 auto
+  width: 64rem
   color: $color-light
   display: flex
   flex-direction: column
@@ -30,6 +29,8 @@ export default {
   justify-content: center
   align-content: center
   align-items: center
+  @media screen and (max-width: 68rem)
+    width: calc(100% - 4rem)
 .content
   align-items: flex-start
   padding: 0 0 4rem 0
@@ -38,6 +39,7 @@ export default {
 h3
   color: $color-light
   font-size: 5rem
+  margin: 0 0 2rem 0
   @media screen and (max-width: 50rem)
     font-size: 4rem
   @media screen and (max-width: 35rem)

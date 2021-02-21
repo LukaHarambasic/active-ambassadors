@@ -57,7 +57,7 @@ export default {
 
 <style lang="sass" scoped>
 .section-ambassador-box
-  background-image: url("/design/blobs4.svg")
+  background-image: url("/design/blobs_ambassador_box.svg")
   background-color: $color-primary-light
   background-position: left top
   background-repeat: no-repeat

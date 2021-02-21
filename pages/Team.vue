@@ -167,7 +167,7 @@ img
       background: $color-light
       height: 1rem
       transition: $animation
-      fill: $color-secondary
+      fill: $color-dark
       border-radius: 2px
 .position
   margin: 0 0 .5rem 0

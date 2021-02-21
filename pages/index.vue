@@ -1,7 +1,6 @@
 <template>
   <div>
     <index-modal />
-    <section-hero />
     <section-about />
     <section-active-ambassadors />
     <section-ambassador-box />
@@ -11,7 +10,6 @@
 
 <script>
 import IndexModal from '@/components/Index/IndexModal'
-import SectionHero from '@/components/SectionHero'
 import SectionAmbassadorBox from '@/components/SectionAmbassadorBox'
 import SectionAbout from '@/components/SectionAbout'
 import SectionActiveAmbassadors from '@/components/SectionActiveAmbassadors'
@@ -21,7 +19,6 @@ export default {
   layout: 'home',
   components: {
     IndexModal,
-    SectionHero,
     SectionAmbassadorBox,
     SectionAbout,
     SectionActiveAmbassadors,

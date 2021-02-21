@@ -57,7 +57,7 @@ export default {
 
 <style lang="sass" scoped>
 .section-about
-  background-image: url("/design/blobs3.svg")
+  background-image: url("/design/blobs_about.svg")
   background-color: $color-primary-light
   background-position: right bottom
   background-repeat: no-repeat

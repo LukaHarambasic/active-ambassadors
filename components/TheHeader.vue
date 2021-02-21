@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ absolute: isAbsolute }">
+  <header>
     <div class="inner">
       <div class="logo">
         <nuxt-link to="/">
@@ -28,13 +28,7 @@ import IconLogo from '@/components/Icons/IconLogo'
 
 export default {
   name: 'TheHeader',
-  components: { IconLogo },
-  props: {
-    isAbsolute: {
-      type: Boolean,
-      default: false
-    }
-  }
+  components: { IconLogo }
 }
 </script>
 
@@ -48,16 +42,8 @@ header
   justify-content: center
   align-content: center
   align-items: center
-  background: $color-primary
   @media screen and (max-width: 26rem)
     padding: 2rem 1rem 0 1rem
-  &.absolute
-    position: absolute
-    z-index: 500
-    top: 0
-    left: 0
-    @media screen and (max-width: 26rem)
-      position: relative
 .inner
   margin: 0 auto
   width: 64rem
@@ -95,5 +81,5 @@ ul
       &:hover
         opacity: .8
       &.nuxt-link-exact-active
-        font-weight: bold
+        text-decoration: underline
 </style>

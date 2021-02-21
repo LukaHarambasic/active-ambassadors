@@ -2,8 +2,14 @@
   <div>
     <section class="section-get-involved primary">
       <div class="content">
-        <h2>About Us</h2>
-        <p>Get to know the team behind Active-Ambassadors.</p>
+        <h2>Meet the team</h2>
+        <p>
+          Active Ambassadors is a group of sports enthusiasts that want to make
+          the world a better place and we believe that everyone can make a
+          change. We see athletes with sponsors on their jersey. Why not
+          printing NGO logos on your jerseys to sport their work? Want to learn
+          more? Get in touch!
+        </p>
       </div>
     </section>
     <section class="section-team">

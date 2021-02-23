@@ -79,6 +79,8 @@ export default {
 
 <style lang="sass" scoped>
 .section-active-ambassadors
+  background-image: url("/design/blobs_ambassadors.svg")
+  background-color: $color-light
 .steps
   margin: 0 0 4rem 0
   padding: 0

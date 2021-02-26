@@ -8,14 +8,8 @@
       </div>
       <nav>
         <ul>
-          <li>
-            <nuxt-link to="/">Home</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/get-involved">Get Involved</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/transparency">Transparency</nuxt-link>
+          <li v-for="item in navigation" :key="item.path">
+            <nuxt-link :to="item.path" v-text="item.title" />
           </li>
         </ul>
       </nav>
@@ -28,7 +22,29 @@ import IconLogo from '@/components/Icons/IconLogo'
 
 export default {
   name: 'TheHeader',
-  components: { IconLogo }
+  components: { IconLogo },
+  data() {
+    return {
+      navigation: [
+        {
+          path: '/',
+          title: 'Home'
+        },
+        {
+          path: '/get-involved',
+          title: 'Get Involved'
+        },
+        {
+          path: '/transparency',
+          title: 'Transparency'
+        },
+        {
+          path: '/team',
+          title: 'Team'
+        }
+      ]
+    }
+  }
 }
 </script>
 

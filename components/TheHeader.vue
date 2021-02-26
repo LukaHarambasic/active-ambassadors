@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ absolute: isAbsolute }">
+  <header>
     <div class="inner">
       <div class="logo">
         <nuxt-link to="/">
@@ -8,14 +8,8 @@
       </div>
       <nav>
         <ul>
-          <li>
-            <nuxt-link to="/">Home</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/get-involved">Get Involved</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/transparency">Transparency</nuxt-link>
+          <li v-for="item in navigation" :key="item.path">
+            <nuxt-link :to="item.path" v-text="item.title" />
           </li>
         </ul>
       </nav>
@@ -29,10 +23,26 @@ import IconLogo from '@/components/Icons/IconLogo'
 export default {
   name: 'TheHeader',
   components: { IconLogo },
-  props: {
-    isAbsolute: {
-      type: Boolean,
-      default: false
+  data() {
+    return {
+      navigation: [
+        {
+          path: '/',
+          title: 'Home'
+        },
+        {
+          path: '/get-involved',
+          title: 'Get Involved'
+        },
+        {
+          path: '/transparency',
+          title: 'Transparency'
+        },
+        {
+          path: '/team',
+          title: 'Team'
+        }
+      ]
     }
   }
 }
@@ -48,16 +58,8 @@ header
   justify-content: center
   align-content: center
   align-items: center
-  background: $color-primary
   @media screen and (max-width: 26rem)
     padding: 2rem 1rem 0 1rem
-  &.absolute
-    position: absolute
-    z-index: 500
-    top: 0
-    left: 0
-    @media screen and (max-width: 26rem)
-      position: relative
 .inner
   margin: 0 auto
   width: 64rem
@@ -87,13 +89,13 @@ ul
     margin: 2rem 0 0 0
     justify-content: center
     flex-wrap: wrap
-li
-  padding: 0
-a
-  margin: 0 0 0 1rem
-  color: $color-light
-  &:hover
-    opacity: .8
-  &.nuxt-link-exact-active
-    font-weight: bold
+  li
+    padding: 0
+    a
+      margin: 0 0 0 1rem
+      color: $color-light
+      &:hover
+        opacity: .8
+      &.nuxt-link-exact-active
+        text-decoration: underline
 </style>

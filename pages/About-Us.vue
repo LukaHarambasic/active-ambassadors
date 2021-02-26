@@ -2,14 +2,8 @@
   <div>
     <section class="section-get-involved primary">
       <div class="content">
-        <h2>Meet the team</h2>
-        <p>
-          Active Ambassadors is a group of sports enthusiasts that want to make
-          the world a better place and we believe that everyone can make a
-          change. We see athletes with sponsors on their jersey. Why not
-          printing NGO logos on your jerseys to sport their work? Want to learn
-          more? Get in touch!
-        </p>
+        <h2>About Us</h2>
+        <p>Get to know the team behind Active-Ambassadors.</p>
       </div>
     </section>
     <section class="section-team">
@@ -59,7 +53,7 @@ export default {
           position: 'Organizations, Production & Shipping',
           linkedin: 'https://www.linkedin.com/in/leonardschwier/',
           email: 'leonard@active-ambassadors.org',
-          sports: ['🏃', '🚴‍']
+          sports: ['🏃', '🚴‍', '⚽']
         },
         {
           picture: '/team/active-ambassador-julia.png',
@@ -126,7 +120,6 @@ export default {
       width: 100%
 img
   margin: 0 0 1rem 0
-  min-height: 10rem
   border-radius: $border-radius
 .title-row
   display: flex
@@ -167,7 +160,7 @@ img
       background: $color-light
       height: 1rem
       transition: $animation
-      fill: $color-dark
+      fill: $color-secondary
       border-radius: 2px
 .position
   margin: 0 0 .5rem 0

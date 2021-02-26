@@ -1,7 +1,7 @@
 <template>
   <div>
     <portal-target name="modal"></portal-target>
-    <the-header />
+    <the-header class="header" />
     <main>
       <nuxt />
     </main>
@@ -33,4 +33,7 @@ export default {
 }
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+.header
+  background: $color-primary
+</style>

@@ -1,7 +1,10 @@
 <template>
   <div>
     <portal-target name="modal"></portal-target>
-    <the-header :is-absolute="true" />
+    <div class="blobs">
+      <the-header />
+      <section-hero />
+    </div>
     <main>
       <nuxt />
     </main>
@@ -12,9 +15,10 @@
 <script>
 import TheFooter from '@/components/TheFooter'
 import TheHeader from '@/components/TheHeader'
+import SectionHero from '@/components/SectionHero'
 export default {
   name: 'Home',
-  components: { TheHeader, TheFooter },
+  components: { TheHeader, TheFooter, SectionHero },
   async fetch() {
     await this.fetchAll()
   },
@@ -34,4 +38,8 @@ export default {
 }
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+.blobs
+  background-image: url("/design/blobs_hero.svg")
+  background-color: $color-primary
+</style>

@@ -68,7 +68,7 @@ const fetchExpensesPerKitAndSum = async () => {
   }
 }
 
-/* Fetch and transform espense data from airtable */
+/* Fetch and transform expense data from airtable */
 const fetchExpenses = async () => {
   const records = await getAirtableRecords(
     AIRTABLE_EXPENSES_TABLE,

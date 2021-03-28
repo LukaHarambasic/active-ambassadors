@@ -31,7 +31,7 @@ export default {
         rel: 'preload',
         as: 'font',
         type: 'font/woff2',
-        href: '/fonts/domine-v10-latin-700.woff2',
+        href: '/fonts/domine-v10-latin-600.woff2',
         crossorigin: 'true'
       },
       {

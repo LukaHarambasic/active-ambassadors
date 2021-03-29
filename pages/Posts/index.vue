@@ -66,6 +66,9 @@ export default {
   grid-gap: 4rem
   list-style: none
   padding: 0
+  @media screen and (max-width: 45rem)
+    grid-template-columns: repeat(1, 1fr)
+    grid-gap: 2rem
   .post
     position: relative
     background: $color-primary-light

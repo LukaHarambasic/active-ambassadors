@@ -81,16 +81,31 @@ export default {
     justify-content: flex-start
     align-content: stretch
     align-items: flex-start
+    @media screen and (max-width: 28rem)
+      flex-direction: column
+      justify-content: flex-start
+      align-items: stretch
     .cover
       margin: 0 2rem 0 0
+      @media screen and (max-width: 28rem)
+        margin: 0 0 2rem 0
       img
         border-radius: $border-radius
         width: 24rem
+        @media screen and (max-width: 28rem)
+          width: 100%
     .description
       margin: 0 0 2rem 0
     .links
       list-style: none
       padding: 0
+      @media screen and (max-width: 28rem)
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
+        justify-content: flex-start
+        align-content: flex-start
+        align-items: center
       a
         border: none
         display: inline-block

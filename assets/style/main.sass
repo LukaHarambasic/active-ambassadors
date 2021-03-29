@@ -21,8 +21,7 @@ h1, h2, h3, h4, h5
   color: $color-dark
   font-weight: bold
   font-family: $font-family-headline
-
-
+  word-break: break-word
 
 a
   color: $color-primary
@@ -79,7 +78,7 @@ main
     width: 100%
     &.primary
       background: $color-primary
-      h1, h2, h3, h4, h5, h6, p, a
+      > h1, h2, h3, h4, h5, h6, p, a
         color: $color-light
     &.primary-light
       background: $color-primary-light

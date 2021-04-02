@@ -21,18 +21,7 @@ h1, h2, h3, h4, h5
   color: $color-dark
   font-weight: bold
   font-family: $font-family-headline
-
-h2
-  font-size: 2.5rem
-  text-align: center
-  margin: 0 0 4rem 0
-  line-height: 2.5rem
-  &:before
-    background: $color-secondary
-    border-radius: $border-radius
-    width: .5rem
-    height: 100%
-    content: ''
+  word-break: break-word
 
 a
   color: $color-primary
@@ -76,14 +65,99 @@ main
     justify-content: center
     align-content: center
     align-items: center
-    padding: 6rem 0
+    padding: 4rem 0
+    font-size: 1.2rem
     @media screen and (max-width: 68rem)
       width: calc(100% - 4rem)
+    > h2
+      font-size: 2.5rem
+      text-align: center
+      margin: 0 0 4rem 0
+      line-height: 2.5rem
   section
     width: 100%
     &.primary
       background: $color-primary
-      h1, h2, h3, h4, h5, h6, p, a
+      > h1, h2, h3, h4, h5, h6, p, a
         color: $color-light
     &.primary-light
       background: $color-primary-light
+
+.rich-text
+  h1
+    font-size: 1.75rem
+    margin: 2.5rem 0 .25rem 0
+  h2
+    font-size: 1.5rem
+    margin: 1.5rem 0 .25rem 0
+  h3
+    font-size: 1.2rem
+    margin: 1.2rem 0 .25rem 0
+  h4
+    font-size: 1.2rem
+    margin: 1.2rem 0 .25rem 0
+    font-weight: normal
+  h2, h3, h4, h5
+    a
+      position: absolute
+      margin: 0 0 0 -3rem
+      padding: .5rem 1rem .5rem 1.5rem
+      font-weight: normal
+      border: none
+      &:hover
+        border: none
+    &:hover
+      a
+        &:before
+          content: "#"
+  p
+    margin: 0 0 2rem 0
+    word-break: break-word
+    &:last-child
+      margin: 0
+    a
+      display: inline
+      word-wrap: break-word
+  ul, ol
+    margin: 0 0 0 2rem
+    li
+      margin: .5rem 0 0 0
+  > ul, ol
+    margin: 0 0 2rem 2rem
+  ul
+    list-style: disc
+  ol
+    list-style: decimal-leading-zero
+  a
+    color: $color-primary
+    border-bottom: 2px solid rgba($color-primary, 1)
+    transition: $animation
+    text-decoration: none
+    line-height: 1
+    &:hover
+      text-decoration: none
+      border-color: rgba($color-primary, .3)
+    @media (prefers-color-scheme: dark)
+      color: $color-light
+      border-color: rgba($color-light, 1)
+      &:hover
+        border-bottom: 2px solid rgba($color-light, .3)
+  blockquote
+    padding: .5rem 1rem
+    border-left: .5rem solid $color-secondary
+    margin: 0 0 1rem 1rem
+    p
+      font-size: 1.2rem
+      font-style: italic
+      &:last-child
+        margin: 0
+  strong
+    font-weight: bold
+  em
+    font-style: italic
+  img
+    border-radius: $border-radius
+    width: 80%
+    margin: 0 10%
+  iframe
+    margin: 0 0 1rem 0

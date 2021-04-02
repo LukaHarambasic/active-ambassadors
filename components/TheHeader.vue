@@ -39,6 +39,10 @@ export default {
           title: 'Transparency'
         },
         {
+          path: '/posts',
+          title: 'Posts'
+        },
+        {
           path: '/team',
           title: 'Team'
         }
